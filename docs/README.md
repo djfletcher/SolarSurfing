@@ -2,6 +2,7 @@ SolarSurfing
 ============
 
 [SolarSurfing.com](couchsurfing.com)
+
 [Trello Link](trello.com)
 
 Minimum Viable Product
@@ -11,7 +12,7 @@ SolarSurfing is a web application inspired by Couchsurfing that connects interpl
 
 + Hosting on Heroku
 + New account creation, login, and guest/demo login
-+ Spots (Planets) - description of planet, home, and couch
++ Spots - description of planet, host, and couch
 + Bookings
 + Spots search (by planet & availability) & Google Maps on search
 + Reviews
@@ -37,4 +38,4 @@ Implementation Timeline
 **Objective:**
 ### Bonus Features:
 + Interactive solar system map for spots search by planet
-+ User/host profiles for aliens
++ Realtime information on planet based on date of booking, using NASA's Horizons API
