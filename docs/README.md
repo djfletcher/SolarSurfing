@@ -14,7 +14,7 @@ SolarSurfing is a web application inspired by Couchsurfing that connects interpl
 + New account creation, login, and guest/demo login
 + Spots - description of planet, host, and couch
 + Bookings
-+ Spots search (by planet & availability) & Google Maps on search
++ Spots search (by planet & availability) & interactive solar system map on search
 + Reviews
 + Production README
 
