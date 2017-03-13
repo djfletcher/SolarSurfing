@@ -32,7 +32,7 @@ Implementation Timeline
 
 ### Phase 1: Backend setup and Front End User Authentication (1 day)
 **Objective:** Functioning rails project with front-end authentication.
-### Phase 2: Planets (1 day)
+### Phase 2: Planets (1 day) 
 **Objective:** Eight planets with seed data and show pages.
 ### Phase 3: Hosts (2 days)
 **Objective:** Six hosts per planet (repeats okay) each with functioning show pages embedded in their home planet's show page.

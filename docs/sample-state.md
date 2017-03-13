@@ -1,9 +1,12 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "Daniel",
-    imageUrl: "guest_pic.png"
+  session {
+    currentUser: {
+      id: 2,
+      username: "Daniel",
+      imageUrl: "daniel.png"
+    },
+    errors: []
   },
   planet: {
     id: 4,
