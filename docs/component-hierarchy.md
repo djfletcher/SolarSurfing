@@ -43,7 +43,7 @@ Component Hierarchy
 
 ####HostDetail Container
 + **HostDetail**
-  + props: name, description, imageUrl
+  + props: name, bio, imageUrl
 + **RequestForm Container**
   + **RequestForm**
     + props: planetId, numTravelers, beginDate, endDate; dispatch: createRequest
