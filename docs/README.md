@@ -30,13 +30,13 @@ Design Docs
 Implementation Timeline
 -----------------------
 
-### Phase 1: Backend setup and Front End User Authentication (1 Day)
+### Phase 1: Backend setup and Front End User Authentication (1 day)
 **Objective:** Functioning rails project with front-end authentication.
-### Phase 2: Planets (1 Day)
+### Phase 2: Planets (1 day)
 **Objective:** Eight planets with seed data and show pages.
-### Phase 3: Hosts (2 Days)
+### Phase 3: Hosts (2 days)
 **Objective:** Six hosts per planet (repeats okay) each with functioning show pages embedded in their home planet's show page.
-### Phase 4: Requests and Reviews (2 Day)
+### Phase 4: Requests and Reviews (2 days)
 **Objective:** Create and delete booking requests. Create and delete reviews. 1-2 seed reviews per host.
 ### Phase 5: Search bar and interactive solar system map (2 days)
 **Objective:** Dynamic movement of planets based on date of booking. Possible JS libraries to use include D3 and JTSL.
