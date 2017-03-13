@@ -1,4 +1,4 @@
-# Schema information
+# Schema Information
 
 ## users
 column name     | data type | details
@@ -11,7 +11,7 @@ image_url       | string    | not null
 bio             | string    | not null
 planet_id       | integer   | not null, foreign key
 
-+ has_many: host_requests, guest_requests, reviews, reviews_written 
++ has_many: host_requests, guest_requests, reviews, reviews_written
 + belongs_to: planet
 
 ## planets

@@ -1,7 +1,7 @@
 SolarSurfing
 ============
 
-[SolarSurfing.com](couchsurfing.com)
+[SolarSurfing.com](https://www.couchsurfing.com)
 
 [Trello Link](trello.com)
 
@@ -22,10 +22,10 @@ Design Docs
 -----------
 
 + [Wireframes](https://github.com/djfletcher/SolarSurfing/tree/master/docs/wireframes)
-+ [React Components](github.com)
++ [React Components](https://github.com/djfletcher/SolarSurfing/blob/master/docs/component-hierarchy.md)
 + [API Endpoints](github.com)
-+ [Database Schema](github.com)
-+ [Sample State](github.com)
++ [Database Schema](https://github.com/djfletcher/SolarSurfing/blob/master/docs/schema.md)
++ [Sample State](https://github.com/djfletcher/SolarSurfing/blob/master/docs/sample-state.md)
 
 Implementation Timeline
 -----------------------
