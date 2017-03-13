@@ -4,63 +4,63 @@ Component Hierarchy
 ####Splash
 
 ####Header Container
-+ Header
++ **Header**
   + props: currentUser; dispatch: logoutUser, guestLogin
-  + Join Container
-    + Join
+  + **Join Container**
+    + **Join**
       + props: currentUser; dispatch: signupUser, guestLogin
-  + Login Container
-    + Login
+  + **Login Container**
+    + **Login**
       + props: currentUser; dispatch: loginUser, guestLogin
 
 ####Footer
 
 ####Dashboard
-+ Search Container
-  + Search
++ **Search Container**
+  + **Search**
     + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
-+ OrbitalMap Container
-  + OrbitalMap
++ **OrbitalMap Container**
+  + **OrbitalMap**
     + props: planets; dispatch: requestAllPlanets, receiveAllPlanets
-    + PlanetsIndexItems Container
-      + PlanetsIndexItems
+    + **PlanetsIndexItems Container**
+      + **PlanetsIndexItems**
         + props: name, imageUrl; dispatch: requestSinglePlanet
-+ BestHostsIndex Container
-  + BestHostsIndex
++ **BestHostsIndex Container**
+  + **BestHostsIndex**
     + props: BestHostsIndexItems; dispatch: requestBestHosts, receiveBestHosts
-    + BestHostsIndexItems Container
-      + BestHostsIndexItems
+    + **BestHostsIndexItems Container**
+      + **BestHostsIndexItems**
         + props: name, imageUrl; dispatch: requestSingleHost
 
 ####Planets
 + props: name, description, imageUrl
-+ HostsIndex Container
-  + HostsIndex
++ **HostsIndex Container**
+  + **HostsIndex**
     + props: HostsIndexItems; dispatch: requestHosts, receiveHosts
-    + HostsIndexItems Container
-      + HostsIndexItems
+    + **HostsIndexItems Container**
+      + **HostsIndexItems**
         + props: name, imageUrl; dispatch: requestSingleHost
 
 ####HostDetail Container
-+ HostDetail
++ **HostDetail**
   + props: name, description, imageUrl
-+ RequestForm Container
-  + RequestForm
++ **RequestForm Container**
+  + **RequestForm**
     + props: planetId, numTravelers, beginDate, endDate; dispatch: createRequest
-+ ReviewsIndex Container
-  + ReviewsIndex
++ **ReviewsIndex Container**
+  + **ReviewsIndex**
     + props: reviews; dispatch: requestAllReviews, receiveAllReviews
-    + ReviewsIndexItems Container
-      + ReviewsIndexItems
+    + **ReviewsIndexItems Container**
+      + **ReviewsIndexItems**
         + props: author, body, rating
-+ ReviewForm Container
-  + ReviewForm
++ **ReviewForm Container**
+  + **ReviewForm**
     + props: author, body, rating; dispatch: createReview
 
 ####AboutIndex
-+ About
-+ How It Works
-+ Safety
++ **About**
++ **How It Works**
++ **Safety**
 
 
 
