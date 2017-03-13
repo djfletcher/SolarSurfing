@@ -11,7 +11,7 @@
 ### Users
 
 + `POST /api/users` - join
-+ `PATCH /api/users` - update profile
++ `PATCH /api/users/:user_id` - update profile
 
 ### Session
 
@@ -20,23 +20,23 @@
 
 ### Planets
 
-+ `GET /api/planets` - requested by OrbitalMap to construct PlanetsIndexItems
-  + accepts name param for spots search
++ `GET /api/planets`
+  + accepts name or planet_id as search param
 + `GET /api/planets/:planet_id`
+
+### Requests
+
++ `GET /api/requests`
++ accepts guest_id or host_id as search params
++ `POST /api/requests`
++ `DELETE /api/requests/:request_id`
 
 ### Hosts
 
 + `GET /api/hosts`
   + accepts planet_id as search params
-+ `GET /api/planets/:planet_id/hosts` - show all hosts (HostsIndex) on a particular planet
-+ `GET /api/planets/:planet_id/hosts/:host_id` - show HostsDetail for a particular host
-
-### Requests
-
-+ `GET /api/requests`
-  + accepts guest_id or host_id as search params
-+ `POST /api/requests`
-+ `DELETE /api/requests/:request_id`
++ `GET /api/planets/:planet_id/hosts` - get all hosts (HostsIndex) for a particular planet
++ `GET /api/planets/:planet_id/hosts/:host_id` - get HostsDetail for a particular host
 
 ### Reviews
 
