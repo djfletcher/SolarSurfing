@@ -21,7 +21,7 @@ SolarSurfing is a web application inspired by Couchsurfing that connects interpl
 Design Docs
 -----------
 
-+ [Wireframes](draw.io)
++ [Wireframes](https://github.com/djfletcher/SolarSurfing/tree/master/docs/wireframes)
 + [React Components](github.com)
 + [API Endpoints](github.com)
 + [Database Schema](github.com)
