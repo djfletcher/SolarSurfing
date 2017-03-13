@@ -1,9 +1,9 @@
 Component Hierarchy
 ===================
 
-##Splash
+####Splash
 
-##Header Container
+####Header Container
 + Header
   + props: currentUser; dispatch: logoutUser, guestLogin
   + Join Container
@@ -13,9 +13,9 @@ Component Hierarchy
     + Login
       + props: currentUser; dispatch: loginUser, guestLogin
 
-##Footer
+####Footer
 
-##Dashboard
+####Dashboard
 + Search Container
   + Search
     + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
@@ -32,7 +32,7 @@ Component Hierarchy
       + BestHostsIndexItems
         + props: name, imageUrl; dispatch: requestSingleHost
 
-##Planets
+####Planets
 + props: name, description, imageUrl
 + HostsIndex Container
   + HostsIndex
@@ -41,7 +41,7 @@ Component Hierarchy
       + HostsIndexItems
         + props: name, imageUrl; dispatch: requestSingleHost
 
-##HostDetail Container
+####HostDetail Container
 + HostDetail
   + props: name, description, imageUrl
 + RequestForm Container
@@ -57,7 +57,7 @@ Component Hierarchy
   + ReviewForm
     + props: author, body, rating; dispatch: createReview
 
-##AboutIndex
+####AboutIndex
 + About
 + How It Works
 + Safety
@@ -68,7 +68,7 @@ Routes
 ======
 
 | Path | Component |
---------------------
+|------|-----------|
 | "/" | "Splash" |
 | "/join" | "Join" |
 | "/login" | "Login" |
