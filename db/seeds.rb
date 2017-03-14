@@ -10,7 +10,7 @@ User.create(
   username: 'dan',
   password: 'danny',
   image_url: '[image url goes here]',
-  bio: "Hi, I'm Dan. I suppose you could call me an earthling, though I'd rather if you did not.",
+  bio: "Hi, I'm Dan. I suppose you could call me an earthling, though I'd rather if you didn't.",
   planet_id: 3
 )
 
