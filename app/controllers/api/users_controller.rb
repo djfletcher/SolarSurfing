@@ -7,7 +7,10 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :show
     else
-      render json: @user.errors.full_messages, status: 422
+      render(
+        json: @user.errors.full_messages,
+        status: 422
+      )
     end
   end
 
@@ -15,14 +18,25 @@ class Api::UsersController < ApplicationController
     if logged_in?
       render :show
     else
-      render json: ["Please log in to view this host's details"], status: 401
+      render(
+        json: ["Please log in to view this host's details"],
+        status: 401
+      )
     end
   end
 
   private
-  
+
   def user_params
-    params.require(:user).permit(:username, :password, :image_url, :bio, :planet_id)
+    params
+      .require(:user)
+      .permit(
+        :username,
+        :password,
+        :image_url,
+        :bio,
+        :planet_id
+      )
   end
 
 end
