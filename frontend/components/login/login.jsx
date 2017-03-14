@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Join extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
@@ -20,7 +20,7 @@ class Join extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.signup(user);
+    this.props.login(user);
   }
 
   renderErrors() {
@@ -35,7 +35,7 @@ class Join extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>Please Sign Up or <Link to="/login">Log In</Link> instead</h2>
+        <h2>Please Log In or <Link to="/join">Join</Link> instead</h2>
         <ul>{this.renderErrors()}</ul>
         <label>Username:
           <input
@@ -53,10 +53,10 @@ class Join extends React.Component {
           />
         </label>
         <br />
-        <input type="submit" value="Join" />
+        <input type="submit" value="Log In" />
       </form>
     );
   }
 }
 
-export default Join;
+export default Login;
