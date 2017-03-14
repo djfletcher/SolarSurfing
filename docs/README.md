@@ -1,7 +1,7 @@
 SolarSurfing
 ============
 
-[SolarSurfing.com](https://www.couchsurfing.com)
+[SolarSurfing.com](https://solarsurfing.herokuapp.com/)
 
 [Trello Link](https://trello.com/b/zjB9JjRf/solarsurfing)
 
