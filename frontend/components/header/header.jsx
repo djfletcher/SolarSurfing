@@ -5,11 +5,15 @@ import { Button } from 'react-bootstrap';
 import JoinContainer from '../join/join_container';
 import LoginContainer from '../login/login_container';
 
-const Header = ({ currentUser, logout, router }) => {
+const Header = ({ currentUser, demoLogin, logout, router }) => {
   const logo = <a className="logo">SolarSurfing</a>;
 
   const handleLogout = () => {
     return logout().then(() => router.push('/'));
+  };
+
+  const handleDemoLogin = () => {
+    return demoLogin().then(() => router.push("dashboard"));
   };
 
   if (currentUser) {
@@ -29,6 +33,7 @@ const Header = ({ currentUser, logout, router }) => {
         <ul className="header-buttons">
           <li><LoginContainer /></li>
           <li><JoinContainer /></li>
+          <li><Button onClick={ handleDemoLogin } bsStyle="primary">Demo</Button></li>
         </ul>
       </nav>
     );

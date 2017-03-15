@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session/session_actions';
+import { login, logout } from '../../actions/session/session_actions';
 import { withRouter } from 'react-router';
 import Header from './header';
 
@@ -8,7 +8,11 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  demoLogin: () => dispatch(login({
+    username: 'Earthling',
+    password: 'earthling1'
+  }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));
