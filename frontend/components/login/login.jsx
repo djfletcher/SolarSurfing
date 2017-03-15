@@ -48,7 +48,7 @@ class Login extends React.Component {
       const errors = this.props.errors.responseJSON.map((err, idx) => (
         <li key={idx}>{err}</li>
       ));
-      return errors;
+      return <ul className="form-errors">{ errors }</ul>;
     }
   }
 
@@ -62,7 +62,7 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div className="login login-container">
+      <div className="login">
         <Button
           className="login open-modal-button"
           onClick={ this.openModal }
@@ -77,16 +77,15 @@ class Login extends React.Component {
           show={ this.state.showModal }
           onHide={ this.closeModal }
         >
-          <Modal.Header className="login modal-header">
-            <Modal.Title className="login modal-title">
+          <Modal.Header className="login">
+            <Modal.Title className="login">
               Log in to SolarSurfing
             </Modal.Title>
-
           </Modal.Header>
 
           <form className="login modal-form" onSubmit={ this.handleSubmit }>
-            <Modal.Body className="login modal-body">
-              <ul>{ this.renderErrors() }</ul>
+            <Modal.Body className="login">
+              { this.renderErrors() }
               <input
                 type="text"
                 value={ this.state.username }
@@ -100,10 +99,11 @@ class Login extends React.Component {
                 onChange={ this.update("password") }
               />
             </Modal.Body>
-            <Modal.Footer className="login modal-footer">
+            <Modal.Footer className="login">
               <Button type="submit" bsStyle="primary">Log In</Button>
               <aside>
-                <p>Don't have an account? <Link to="/">Join</Link></p>
+                <p>Don't have an account?</p>
+                <a>Join</a>
               </aside>
             </Modal.Footer>
           </form>

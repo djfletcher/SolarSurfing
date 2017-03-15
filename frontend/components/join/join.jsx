@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 import { omit } from 'lodash';
 
@@ -55,7 +55,7 @@ class Join extends React.Component {
       const errors = this.props.errors.responseJSON.map((err, idx) => (
         <li key={idx}>{err}</li>
       ));
-      return errors;
+      return <ul className="form-errors">{ errors }</ul>;
     }
   }
 
@@ -69,20 +69,30 @@ class Join extends React.Component {
 
   render() {
     return(
-      <div>
-        <button onClick={ this.openModal }>Join</button>
+      <div className="join">
+        <Button
+          className="join open-modal-button"
+          onClick={ this.openModal }
+          bsStyle="primary"
+        >
+          Join
+        </Button>
 
-        <Modal show={ this.state.showModal } onHide={ this.closeModal }>
-          <Modal.Header>
-            <Modal.Title>Join</Modal.Title>
-            <aside>
-              <p>Already a member? <Link to="/">Log In</Link></p>
-            </aside>
+        <Modal
+          className="join modal"
+          bsSize="small"
+          show={ this.state.showModal }
+          onHide={ this.closeModal }
+        >
+          <Modal.Header className="join">
+            <Modal.Title className="join">
+              Join SolarSurfing for free!
+            </Modal.Title>
           </Modal.Header>
 
-          <form onSubmit={ this.handleSubmit }>
-            <Modal.Body>
-              <ul>{ this.renderErrors() }</ul>
+          <form className="join modal-form" onSubmit={ this.handleSubmit }>
+            <Modal.Body className="join">
+              { this.renderErrors() }
               <input
                 type="text"
                 value={ this.state.username }
@@ -120,7 +130,11 @@ class Join extends React.Component {
               </label>
             </Modal.Body>
             <Modal.Footer>
-              <input type="submit" value="Join" />
+              <Button type="submit" bsStyle="primary">Join</Button>
+              <aside>
+                <p>Already have an account?</p>
+                <a>Log In</a>
+              </aside>
             </Modal.Footer>
           </form>
 
