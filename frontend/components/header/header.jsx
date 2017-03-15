@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import JoinContainer from '../join/join_container';
+import LoginContainer from '../login/login_container';
+
 const Header = ({ currentUser, logout }) => {
     if (currentUser) {
       return(
@@ -12,9 +15,9 @@ const Header = ({ currentUser, logout }) => {
     } else {
       return(
         <nav>
-          <Link to="/login">Log In</Link>
-          <br />
-          <Link to="/join">Join</Link>
+          I AM HEADER
+          <LoginContainer />
+          <JoinContainer />
         </nav>
       );
     }

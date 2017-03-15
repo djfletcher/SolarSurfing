@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { omit } from 'lodash';
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "" };
+    this.state = { showModal: false, username: "", password: "" };
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidUpdate() {
@@ -29,8 +33,8 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
-    this.props.login(user);
+    const user = omit(this.state, ['showModal']);
+    this.props.login(user).then(() => this.closeModal());
   }
 
   renderErrors() {
@@ -42,13 +46,24 @@ class Login extends React.Component {
     }
   }
 
+  openModal() {
+    this.setState({ showModal: true });
+  }
+
+  closeModal() {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return(
+      <button onClick={ this.openModal }>Log In</button>
+
+
       <form onSubmit={this.handleSubmit}>
         <h1>Log In</h1>
         <aside>
           Don't have an account?
-          <Link to="/join">Join</Link>
+          <Link to="/">Join</Link>
         </aside>
         <ul>{this.renderErrors()}</ul>
         <label>Username:
@@ -72,5 +87,36 @@ class Login extends React.Component {
     );
   }
 }
+
+//   render() {
+//     return(
+//       <form onSubmit={this.handleSubmit}>
+//         <h1>Log In</h1>
+//         <aside>
+//           Don't have an account?
+//           <Link to="/">Join</Link>
+//         </aside>
+//         <ul>{this.renderErrors()}</ul>
+//         <label>Username:
+//           <input
+//             type="text"
+//             value={this.state.username}
+//             onChange={this.update("username")}
+//           />
+//         <br />
+//         </label>
+//         <label>Password:
+//           <input
+//             type="password"
+//             value={this.state.password}
+//             onChange={this.update("password")}
+//           />
+//         </label>
+//         <br />
+//         <input type="submit" value="Log In" />
+//       </form>
+//     );
+//   }
+// }
 
 export default Login;

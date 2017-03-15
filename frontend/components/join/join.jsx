@@ -1,21 +1,26 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router';
+import { omit } from 'lodash';
 
 class Join extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModal: false,
       username: "",
       password: "",
       image_url: "",
       bio: "",
       planet_id: 3
     };
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidUpdate() {
@@ -28,7 +33,7 @@ class Join extends React.Component {
     }
   }
 
-  update (field) {
+  update(field) {
     return (e) => {
       e.preventDefault();
       this.setState({ [field]: e.target.value });
@@ -37,8 +42,8 @@ class Join extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
-    this.props.signup(user);
+    const user = omit(this.state, ['showModal']);
+    this.props.signup(user).then(() => this.closeModal());
   }
 
   renderErrors() {
@@ -50,22 +55,28 @@ class Join extends React.Component {
     }
   }
 
+  openModal() {
+    this.setState({ showModal: true });
+  }
+
+  closeModal() {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return(
       <div>
-        <Modal.Dialog>
+        <button onClick={ this.openModal }>Join</button>
+
+        <Modal show={ this.state.showModal } onHide={ this.closeModal }>
           <Modal.Header>
             <Modal.Title>Join</Modal.Title>
-
             <aside>
               <p>Already a member?</p>
-              <Link to="/login">Log In</Link>
+              <Link to="/">Log In</Link>
             </aside>
-
           </Modal.Header>
-
           <Modal.Body>
-
             <aside>
               <ul>{this.renderErrors()}</ul>
             </aside>
@@ -138,7 +149,7 @@ class Join extends React.Component {
             <button>Save changes</button>
           </Modal.Footer>
 
-        </Modal.Dialog>
+        </Modal>
       </div>
     );
   }
