@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Home = ({ children }) => (
-  <div>I AM HOME</div>
+  <div>I AM HOME PAGE</div>
 );
 
 export default Home;
-
-// <h1>plaaaaaaaaanets</h1>

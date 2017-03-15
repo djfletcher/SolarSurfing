@@ -72,49 +72,36 @@ class Join extends React.Component {
           <Modal.Header>
             <Modal.Title>Join</Modal.Title>
             <aside>
-              <p>Already a member?</p>
-              <Link to="/">Log In</Link>
+              <p>Already a member? <Link to="/">Log In</Link></p>
             </aside>
           </Modal.Header>
 
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={ this.handleSubmit }>
             <Modal.Body>
-              <aside>
-                <ul>{this.renderErrors()}</ul>
-              </aside>
-              <label>Username:
-                <input
-                  type="text"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                  />
-              </label>
-              <br />
-              <label>Password:
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  />
-              </label>
-              <br />
-              <label>Profile picture:
-                <input
-                  type="text"
-                  value={this.state.image_url}
-                  placeholder="paste image url"
-                  onChange={this.update("image_url")}
-                  />
-              </label>
-              <br />
-              <label>Bio:
-                <textarea
-                  value={this.state.bio}
-                  placeholder="Describe a bit about yourself"
-                  onChange={this.update("bio")}
-                  />
-              </label>
-              <br/ >
+              <ul>{ this.renderErrors() }</ul>
+              <input
+                type="text"
+                value={ this.state.username }
+                placeholder='Username'
+                onChange={ this.update("username") }
+              />
+              <input
+                type="password"
+                value={ this.state.password }
+                placeholder='Password'
+                onChange={ this.update("password") }
+              />
+              <input
+                type="text"
+                value={ this.state.image_url }
+                placeholder="Paste profile picture url"
+                onChange={ this.update("image_url") }
+              />
+              <textarea
+                value={this.state.bio}
+                placeholder="Tell other travelers about yourself"
+                onChange={this.update("bio")}
+              />
               <label>Home Planet
                 <select value={this.state.planet_id} onChange={this.update("planet_id")}>
                   <option value="1">Mercury</option>
@@ -127,13 +114,12 @@ class Join extends React.Component {
                   <option value="8">Neptune</option>
                 </select>
               </label>
-              <br />
-          </Modal.Body>
-          <Modal.Footer>
-            <input type="submit" value="Join" />
-          </Modal.Footer>
-        </form>
-
+            </Modal.Body>
+            <Modal.Footer>
+              <input type="submit" value="Join" />
+            </Modal.Footer>
+          </form>
+        
         </Modal>
       </div>
     );
