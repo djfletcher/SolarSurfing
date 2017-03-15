@@ -7,13 +7,24 @@ class Join extends React.Component {
     this.state = {
       username: "",
       password: "",
-      imageUrl: "",
+      image_url: "",
       bio: "",
-      planetId: 3
+      planet_id: 3
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+  }
+
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
+  }
+
+  redirectIfLoggedIn() {
+    if (this.props.loggedIn) {
+      this.props.router.push("/");
+    }
   }
 
   update (field) {
@@ -41,7 +52,11 @@ class Join extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>Please Sign Up or <Link to="/login">Log In</Link> instead</h2>
+        <h1>Join</h1>
+          <aside>
+            Already a member?
+            <Link to="/login">Log In</Link>
+          </aside>
         <ul>{this.renderErrors()}</ul>
 
         <label>Username:
@@ -67,9 +82,9 @@ class Join extends React.Component {
         <label>Profile picture:
           <input
             type="text"
-            value={this.state.imageUrl}
+            value={this.state.image_url}
             placeholder="paste image url"
-            onChange={this.update("imageUrl")}
+            onChange={this.update("image_url")}
           />
         </label>
 
@@ -83,16 +98,18 @@ class Join extends React.Component {
           />
         </label>
 
-        <select value={this.state.planetId} onChange={this.update("planetId")}>
-          <option value="1">Mercury</option>
-          <option value="2">Venus</option>
-          <option value="3">Earth</option>
-          <option value="4">Mars</option>
-          <option value="5">Jupiter</option>
-          <option value="6">Saturn</option>
-          <option value="7">Uranus</option>
-          <option value="8">Neptune</option>
-        </select>
+        <label>Home Planet
+          <select value={this.state.planet_id} onChange={this.update("planet_id")}>
+            <option value="1">Mercury</option>
+            <option value="2">Venus</option>
+            <option value="3">Earth</option>
+            <option value="4">Mars</option>
+            <option value="5">Jupiter</option>
+            <option value="6">Saturn</option>
+            <option value="7">Uranus</option>
+            <option value="8">Neptune</option>
+          </select>
+        </label>
 
         <br />
 

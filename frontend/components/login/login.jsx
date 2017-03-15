@@ -10,6 +10,16 @@ class Login extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
+  }
+
+  redirectIfLoggedIn() {
+    if (this.props.loggedIn) {
+      this.props.router.push("/");
+    }
+  }
+
   update (field) {
     return (e) => {
       e.preventDefault();
@@ -35,7 +45,11 @@ class Login extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>Please Log In or <Link to="/join">Join</Link> instead</h2>
+        <h1>Log In</h1>
+        <aside>
+          Don't have an account?
+          <Link to="/join">Join</Link>
+        </aside>
         <ul>{this.renderErrors()}</ul>
         <label>Username:
           <input
