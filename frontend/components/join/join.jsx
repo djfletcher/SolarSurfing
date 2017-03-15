@@ -1,4 +1,5 @@
 import React from 'react';
+import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 class Join extends React.Component {
@@ -51,72 +52,167 @@ class Join extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <h1>Join</h1>
-          <aside>
-            Already a member?
-            <Link to="/login">Log In</Link>
-          </aside>
-        <ul>{this.renderErrors()}</ul>
+      <div>
+        <Modal.Dialog>
+          <Modal.Header>
+            <Modal.Title>Join</Modal.Title>
 
-        <label>Username:
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update("username")}
-          />
-        </label>
+            <aside>
+              <p>Already a member?</p>
+              <Link to="/login">Log In</Link>
+            </aside>
 
-        <br />
+          </Modal.Header>
 
-        <label>Password:
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-          />
-        </label>
+          <Modal.Body>
 
-        <br />
+            <aside>
+              <ul>{this.renderErrors()}</ul>
+            </aside>
 
-        <label>Profile picture:
-          <input
-            type="text"
-            value={this.state.image_url}
-            placeholder="paste image url"
-            onChange={this.update("image_url")}
-          />
-        </label>
+            <form onSubmit={this.handleSubmit}>
 
-        <br />
+              <label>Username:
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  />
+              </label>
 
-        <label>Bio:
-          <textarea
-            value={this.state.bio}
-            placeholder="Describe a bit about yourself"
-            onChange={this.update("bio")}
-          />
-        </label>
+              <br />
 
-        <label>Home Planet
-          <select value={this.state.planet_id} onChange={this.update("planet_id")}>
-            <option value="1">Mercury</option>
-            <option value="2">Venus</option>
-            <option value="3">Earth</option>
-            <option value="4">Mars</option>
-            <option value="5">Jupiter</option>
-            <option value="6">Saturn</option>
-            <option value="7">Uranus</option>
-            <option value="8">Neptune</option>
-          </select>
-        </label>
+              <label>Password:
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  />
+              </label>
 
-        <br />
+              <br />
 
-        <input type="submit" value="Join" />
-      </form>
+              <label>Profile picture:
+                <input
+                  type="text"
+                  value={this.state.image_url}
+                  placeholder="paste image url"
+                  onChange={this.update("image_url")}
+                  />
+              </label>
+
+              <br />
+
+              <label>Bio:
+                <textarea
+                  value={this.state.bio}
+                  placeholder="Describe a bit about yourself"
+                  onChange={this.update("bio")}
+                  />
+              </label>
+
+              <br/ >
+
+              <label>Home Planet
+                <select value={this.state.planet_id} onChange={this.update("planet_id")}>
+                  <option value="1">Mercury</option>
+                  <option value="2">Venus</option>
+                  <option value="3">Earth</option>
+                  <option value="4">Mars</option>
+                  <option value="5">Jupiter</option>
+                  <option value="6">Saturn</option>
+                  <option value="7">Uranus</option>
+                  <option value="8">Neptune</option>
+                </select>
+              </label>
+
+              <br />
+
+              <input type="submit" value="Join" />
+            </form>
+
+          </Modal.Body>
+
+          <Modal.Footer>
+            <button>Close</button>
+            <button>Save changes</button>
+          </Modal.Footer>
+
+        </Modal.Dialog>
+      </div>
     );
   }
+
+  // render() {
+  //   return(
+  //     <form onSubmit={this.handleSubmit}>
+  //       <h1>Join</h1>
+  //         <aside>
+  //           Already a member?
+  //           <Link to="/login">Log In</Link>
+  //         </aside>
+  //       <ul>{this.renderErrors()}</ul>
+  //
+  //       <label>Username:
+  //         <input
+  //           type="text"
+  //           value={this.state.username}
+  //           onChange={this.update("username")}
+  //         />
+  //       </label>
+  //
+  //       <br />
+  //
+  //       <label>Password:
+  //         <input
+  //           type="password"
+  //           value={this.state.password}
+  //           onChange={this.update("password")}
+  //         />
+  //       </label>
+  //
+  //       <br />
+  //
+  //       <label>Profile picture:
+  //         <input
+  //           type="text"
+  //           value={this.state.image_url}
+  //           placeholder="paste image url"
+  //           onChange={this.update("image_url")}
+  //         />
+  //       </label>
+  //
+  //       <br />
+  //
+  //       <label>Bio:
+  //         <textarea
+  //           value={this.state.bio}
+  //           placeholder="Describe a bit about yourself"
+  //           onChange={this.update("bio")}
+  //         />
+  //       </label>
+  //
+  //       <br/ >
+  //
+  //       <label>Home Planet
+  //         <select value={this.state.planet_id} onChange={this.update("planet_id")}>
+  //           <option value="1">Mercury</option>
+  //           <option value="2">Venus</option>
+  //           <option value="3">Earth</option>
+  //           <option value="4">Mars</option>
+  //           <option value="5">Jupiter</option>
+  //           <option value="6">Saturn</option>
+  //           <option value="7">Uranus</option>
+  //           <option value="8">Neptune</option>
+  //         </select>
+  //       </label>
+  //
+  //       <br />
+  //
+  //       <input type="submit" value="Join" />
+  //     </form>
+  //   );
+  // }
 }
 
 export default Join;
