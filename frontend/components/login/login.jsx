@@ -54,42 +54,21 @@ class Login extends React.Component {
     this.setState({ showModal: false });
   }
 
-  render() {
-    return(
-      <button onClick={ this.openModal }>Log In</button>
-
-
-      <form onSubmit={this.handleSubmit}>
-        <h1>Log In</h1>
-        <aside>
-          Don't have an account?
-          <Link to="/">Join</Link>
-        </aside>
-        <ul>{this.renderErrors()}</ul>
-        <label>Username:
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update("username")}
-          />
-        <br />
-        </label>
-        <label>Password:
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-          />
-        </label>
-        <br />
-        <input type="submit" value="Log In" />
-      </form>
-    );
-  }
-}
-
 //   render() {
 //     return(
+//       <button onClick={ this.openModal }>Log In</button>
+//
+//       <Modal show={ this.state.showModal } onHide={ this.closeModal }>
+//         <Modal.Title>
+//
+//         </Modal.Title>
+//
+//         <Modal.Body>
+//
+//         </Modal.Body>
+//       </Modal>
+//
+//
 //       <form onSubmit={this.handleSubmit}>
 //         <h1>Log In</h1>
 //         <aside>
@@ -118,5 +97,36 @@ class Login extends React.Component {
 //     );
 //   }
 // }
+
+  render() {
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <h1>Log In</h1>
+        <aside>
+          Don't have an account?
+          <Link to="/">Join</Link>
+        </aside>
+        <ul>{this.renderErrors()}</ul>
+        <label>Username:
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={this.update("username")}
+          />
+        <br />
+        </label>
+        <label>Password:
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={this.update("password")}
+          />
+        </label>
+        <br />
+        <input type="submit" value="Log In" />
+      </form>
+    );
+  }
+}
 
 export default Login;

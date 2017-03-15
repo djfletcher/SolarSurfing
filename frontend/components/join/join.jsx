@@ -76,13 +76,12 @@ class Join extends React.Component {
               <Link to="/">Log In</Link>
             </aside>
           </Modal.Header>
-          <Modal.Body>
-            <aside>
-              <ul>{this.renderErrors()}</ul>
-            </aside>
 
-            <form onSubmit={this.handleSubmit}>
-
+          <form onSubmit={this.handleSubmit}>
+            <Modal.Body>
+              <aside>
+                <ul>{this.renderErrors()}</ul>
+              </aside>
               <label>Username:
                 <input
                   type="text"
@@ -90,9 +89,7 @@ class Join extends React.Component {
                   onChange={this.update("username")}
                   />
               </label>
-
               <br />
-
               <label>Password:
                 <input
                   type="password"
@@ -100,9 +97,7 @@ class Join extends React.Component {
                   onChange={this.update("password")}
                   />
               </label>
-
               <br />
-
               <label>Profile picture:
                 <input
                   type="text"
@@ -111,9 +106,7 @@ class Join extends React.Component {
                   onChange={this.update("image_url")}
                   />
               </label>
-
               <br />
-
               <label>Bio:
                 <textarea
                   value={this.state.bio}
@@ -121,9 +114,7 @@ class Join extends React.Component {
                   onChange={this.update("bio")}
                   />
               </label>
-
               <br/ >
-
               <label>Home Planet
                 <select value={this.state.planet_id} onChange={this.update("planet_id")}>
                   <option value="1">Mercury</option>
@@ -136,18 +127,12 @@ class Join extends React.Component {
                   <option value="8">Neptune</option>
                 </select>
               </label>
-
               <br />
-
-              <input type="submit" value="Join" />
-            </form>
-
           </Modal.Body>
-
           <Modal.Footer>
-            <button>Close</button>
-            <button>Save changes</button>
+            <input type="submit" value="Join" />
           </Modal.Footer>
+        </form>
 
         </Modal>
       </div>
