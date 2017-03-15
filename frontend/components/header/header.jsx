@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Button } from 'react-bootstrap';
 
 import JoinContainer from '../join/join_container';
 import LoginContainer from '../login/login_container';
 
 const Header = ({ currentUser, logout, router }) => {
-  const logo = <h1>plaaaaaaaaanets</h1>;
+  const logo = <a className="logo">plaaaaaaaaanets</a>;
 
   const handleLogout = () => {
     return logout().then(() => router.push('/'));
@@ -13,18 +14,22 @@ const Header = ({ currentUser, logout, router }) => {
 
   if (currentUser) {
     return(
-      <nav>
+      <nav className="header">
         { logo }
-        <h1>Hello, {currentUser.username}!</h1>
-        <button onClick={handleLogout}>Log Out</button>
+        <ul className="header-buttons">
+          <li>Hello, { currentUser.username }!</li>
+          <li><Button onClick={ handleLogout } bsStyle="primary">Log Out</Button></li>
+        </ul>
       </nav>
     );
   } else {
     return(
-      <nav>
+      <nav className="header">
         { logo }
-        <LoginContainer />
-        <JoinContainer />
+        <ul className="header-buttons">
+          <li><LoginContainer /></li>
+          <li><JoinContainer /></li>
+        </ul>
       </nav>
     );
   }
