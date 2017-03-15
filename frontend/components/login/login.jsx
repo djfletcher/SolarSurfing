@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Modal } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import { omit } from 'lodash';
 
 class Login extends React.Component {
@@ -15,14 +15,18 @@ class Login extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentDidUpdate() {
-    this.redirectIfLoggedIn();
-  }
+  // componentDidUpdate() {
+  //   this.redirectIfLoggedIn();
+  // }
+  //
+  // redirectIfLoggedIn() {
+  //   if (this.props.loggedIn) {
+  //     this.props.router.push("/dashboard");
+  //   }
+  // }
 
-  redirectIfLoggedIn() {
-    if (this.props.loggedIn) {
-      this.props.router.push("/");
-    }
+  componentWillUnmount() {
+    this.closeModal();
   }
 
   update (field) {
@@ -36,7 +40,6 @@ class Login extends React.Component {
     e.preventDefault();
     const user = omit(this.state, ['showModal']);
     this.props.login(user)
-      .then(() => this.closeModal())
       .then(() => this.props.router.push("dashboard"));
   }
 
@@ -59,11 +62,18 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div className="login-container">
-        <button className="login open-modal-button" onClick={ this.openModal }>Log In</button>
+      <div className="login login-container">
+        <Button
+          className="login open-modal-button"
+          onClick={ this.openModal }
+          bsStyle="primary"
+        >
+          Log In
+        </Button>
 
         <Modal
           className="login modal"
+          bsSize="small"
           show={ this.state.showModal }
           onHide={ this.closeModal }
         >
@@ -91,7 +101,7 @@ class Login extends React.Component {
               />
             </Modal.Body>
             <Modal.Footer className="login modal-footer">
-              <input type="submit" value="Log In" />
+              <Button type="submit" bsStyle="primary">Log In</Button>
               <aside>
                 <p>Don't have an account? <Link to="/">Join</Link></p>
               </aside>

@@ -18,19 +18,22 @@ class Join extends React.Component {
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+  //
+  // componentDidUpdate() {
+  //   this.redirectIfLoggedIn();
+  // }
+  //
+  // redirectIfLoggedIn() {
+  //   if (this.props.loggedIn) {
+  //     this.props.router.push("/");
+  //   }
+  // }
 
-  componentDidUpdate() {
-    this.redirectIfLoggedIn();
-  }
-
-  redirectIfLoggedIn() {
-    if (this.props.loggedIn) {
-      this.props.router.push("/");
-    }
+  componentWillUnmount() {
+    this.closeModal();
   }
 
   update(field) {
@@ -44,7 +47,6 @@ class Join extends React.Component {
     e.preventDefault();
     const user = omit(this.state, ['showModal']);
     this.props.signup(user)
-      .then(() => this.closeModal())
       .then(() => this.props.router.push("dashboard"));
   }
 
@@ -126,77 +128,6 @@ class Join extends React.Component {
       </div>
     );
   }
-
-  // render() {
-  //   return(
-  //     <form onSubmit={this.handleSubmit}>
-  //       <h1>Join</h1>
-  //         <aside>
-  //           Already a member?
-  //           <Link to="/login">Log In</Link>
-  //         </aside>
-  //       <ul>{this.renderErrors()}</ul>
-  //
-  //       <label>Username:
-  //         <input
-  //           type="text"
-  //           value={this.state.username}
-  //           onChange={this.update("username")}
-  //         />
-  //       </label>
-  //
-  //       <br />
-  //
-  //       <label>Password:
-  //         <input
-  //           type="password"
-  //           value={this.state.password}
-  //           onChange={this.update("password")}
-  //         />
-  //       </label>
-  //
-  //       <br />
-  //
-  //       <label>Profile picture:
-  //         <input
-  //           type="text"
-  //           value={this.state.image_url}
-  //           placeholder="paste image url"
-  //           onChange={this.update("image_url")}
-  //         />
-  //       </label>
-  //
-  //       <br />
-  //
-  //       <label>Bio:
-  //         <textarea
-  //           value={this.state.bio}
-  //           placeholder="Describe a bit about yourself"
-  //           onChange={this.update("bio")}
-  //         />
-  //       </label>
-  //
-  //       <br/ >
-  //
-  //       <label>Home Planet
-  //         <select value={this.state.planet_id} onChange={this.update("planet_id")}>
-  //           <option value="1">Mercury</option>
-  //           <option value="2">Venus</option>
-  //           <option value="3">Earth</option>
-  //           <option value="4">Mars</option>
-  //           <option value="5">Jupiter</option>
-  //           <option value="6">Saturn</option>
-  //           <option value="7">Uranus</option>
-  //           <option value="8">Neptune</option>
-  //         </select>
-  //       </label>
-  //
-  //       <br />
-  //
-  //       <input type="submit" value="Join" />
-  //     </form>
-  //   );
-  // }
 }
 
 export default Join;

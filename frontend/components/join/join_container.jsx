@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { signup } from '../../actions/session/session_actions';
 import Join from './join';
 
@@ -11,4 +12,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   signup: user => dispatch(signup(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Join);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Join));
