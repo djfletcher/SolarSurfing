@@ -7,7 +7,7 @@ import Home from './home';
 
 // const _redirectIfLoggedIn = (nextState, replace) => {
 //   if (store.getState().session.currentUser) {
-//     replace('/');
+//     replace('/dashboard');
 //   }
 // };
 
@@ -21,25 +21,14 @@ const Root = ({ store }) => (
   </Provider>
 );
 
-
 export default Root;
-
 
 
 // const Root = ({ store }) => (
 //   <Provider store={ store }>
 //     <Router history={ hashHistory }>
-//       <Route path="/" component={ App }>
-//         <Route
-//           path="/join"
-//           component={ JoinContainer }
-//           onEnter={ _redirectIfLoggedIn }
-//         />
-//         <Route
-//           path="/login"
-//           component={ LoginContainer }
-//           onEnter={ _redirectIfLoggedIn }
-//         />
+//       <Route component={ App }>
+//         <Route path="/" component={ Home } />
 //       </Route>
 //     </Router>
 //   </Provider>

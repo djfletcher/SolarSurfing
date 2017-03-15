@@ -3,59 +3,44 @@ Component Hierarchy
 
 ####Splash
 
-####Header Container
-+ **Header**
-  + props: currentUser; dispatch: logoutUser, guestLogin
-  + **Join Container**
-    + **Join**
-      + props: currentUser; dispatch: signupUser, guestLogin
-  + **Login Container**
-    + **Login**
-      + props: currentUser; dispatch: loginUser, guestLogin
+####Header
++ props: currentUser; dispatch: logoutUser, guestLogin
++ **Join**
+  + props: currentUser; dispatch: signupUser, guestLogin
++ **Login**
+  + props: currentUser; dispatch: loginUser, guestLogin
 
 ####Footer
 
 ####Dashboard
-+ **Search Container**
-  + **Search**
-    + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
-+ **OrbitalMap Container**
-  + **OrbitalMap**
-    + props: planets; dispatch: requestAllPlanets, receiveAllPlanets
-    + **PlanetsIndexItems Container**
-      + **PlanetsIndexItems**
-        + props: name, imageUrl; dispatch: requestSinglePlanet
-+ **BestHostsIndex Container**
-  + **BestHostsIndex**
-    + props: BestHostsIndexItems; dispatch: requestBestHosts, receiveBestHosts
-    + **BestHostsIndexItems Container**
-      + **BestHostsIndexItems**
-        + props: name, imageUrl; dispatch: requestSingleHost
++ **Search**
+  + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
++ **OrbitalMap**
+  + props: planets; dispatch: requestAllPlanets, receiveAllPlanets
+  + **OrbitalMapItems**
+    + props: name, imageUrl; dispatch: requestSinglePlanet
++ **BestHostsIndex**
+  + props: BestHostsIndexItems; dispatch: requestBestHosts, receiveBestHosts
+  + **BestHostsIndexItems**
+    + props: name, imageUrl; dispatch: requestSingleHost
 
 ####Planets
 + props: name, description, imageUrl
-+ **HostsIndex Container**
-  + **HostsIndex**
-    + props: HostsIndexItems; dispatch: requestHosts, receiveHosts
-    + **HostsIndexItems Container**
-      + **HostsIndexItems**
-        + props: name, imageUrl; dispatch: requestSingleHost
++ **HostsIndex**
+  + props: HostsIndexItems; dispatch: requestHosts, receiveHosts
+  + **HostsIndexItems**
+    + props: name, imageUrl; dispatch: requestSingleHost
 
-####HostDetail Container
-+ **HostDetail**
-  + props: name, bio, imageUrl
-+ **RequestForm Container**
-  + **RequestForm**
-    + props: planetId, numTravelers, beginDate, endDate; dispatch: createRequest
-+ **ReviewsIndex Container**
-  + **ReviewsIndex**
-    + props: reviews; dispatch: requestAllReviews, receiveAllReviews
-    + **ReviewsIndexItems Container**
-      + **ReviewsIndexItems**
-        + props: author, body, rating
-+ **ReviewForm Container**
-  + **ReviewForm**
-    + props: author, body, rating; dispatch: createReview
+####HostDetail
++ props: name, bio, imageUrl
++ **RequestForm**
+  + props: planetId, numTravelers, beginDate, endDate; dispatch: createRequest
++ **ReviewsIndex**
+  + props: reviews; dispatch: requestAllReviews, receiveAllReviews
+  + **ReviewsIndexItems**
+    + props: author, body, rating
++ **ReviewForm**
+  + props: author, body, rating; dispatch: createReview
 
 ####AboutIndex
 + **About**
@@ -69,10 +54,10 @@ Routes
 
 | Path | Component |
 |------|-----------|
-| "/" | "Splash" |
-| "/join" | "Join" |
-| "/login" | "Login" |
+| "/" | "App" |
 | "/dashboard" | "Dashboard" |
 | "/planets/:planet_id" | "Planets" |
 | "/planets/:planet_id/hosts/:host_id" | "HostDetail" |
-| "/about" | "AboutIndex" |
+| "/about" | "About" |
+| "/howitworks" | "HowItWorks" |
+| "/safety" | "Safety" |
