@@ -1,26 +1,14 @@
-// nav.header {
-//   display: flex;
-//
-//   background-color: blue;
-//   border: 2px solid red;
-// }
-
-// header {
-//   background-color: white;
-//   border-bottom: 2px solid #bfcad2;
-//   min-height: 60px;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: 2;
-// }
-
 .header {
-  background-color: white;
-  border-bottom: 2px solid #bfcad2;
+   position: relative;
+   top:0px;
+   height:60px;
+   width:100%;
 
-  display: flex;
-  justify-content: space-between;
+   background-color: white;
+   border-bottom: 2px solid #bfcad2;
+
+   display: flex;
+   justify-content: space-between;
 }
 
 .header-buttons, .logo {
@@ -32,6 +20,10 @@
 
 .logo {
   margin-left: 20px;
+  color: #D4490B;
+  font-weight: bolder;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 24px;
 }
 
 .header-buttons {

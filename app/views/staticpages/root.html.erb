@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>SolarSurfing</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
     <script type="text/javascript">
       <% if logged_in? %>
         window.currentUser = <%= render('api/users/user.json.jbuilder', user: current_user).html_safe %>

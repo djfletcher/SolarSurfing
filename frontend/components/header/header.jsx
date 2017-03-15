@@ -6,7 +6,7 @@ import JoinContainer from '../join/join_container';
 import LoginContainer from '../login/login_container';
 
 const Header = ({ currentUser, logout, router }) => {
-  const logo = <a className="logo">plaaaaaaaaanets</a>;
+  const logo = <a className="logo">SolarSurfing</a>;
 
   const handleLogout = () => {
     return logout().then(() => router.push('/'));
