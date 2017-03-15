@@ -1,18 +1,18 @@
 Component Hierarchy
 ===================
 
-####Splash
+#### Splash
 
-####Header
+#### Header
 + props: currentUser; dispatch: logoutUser, guestLogin
 + **Join**
   + props: currentUser; dispatch: signupUser, guestLogin
 + **Login**
   + props: currentUser; dispatch: loginUser, guestLogin
 
-####Footer
+#### Footer
 
-####Dashboard
+#### Dashboard
 + **Search**
   + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
 + **OrbitalMap**
@@ -24,14 +24,14 @@ Component Hierarchy
   + **BestHostsIndexItems**
     + props: name, imageUrl; dispatch: requestSingleHost
 
-####Planets
+#### Planets
 + props: name, description, imageUrl
 + **HostsIndex**
   + props: HostsIndexItems; dispatch: requestHosts, receiveHosts
   + **HostsIndexItems**
     + props: name, imageUrl; dispatch: requestSingleHost
 
-####HostDetail
+#### HostDetail
 + props: name, bio, imageUrl
 + **RequestForm**
   + props: planetId, numTravelers, beginDate, endDate; dispatch: createRequest
@@ -42,7 +42,7 @@ Component Hierarchy
 + **ReviewForm**
   + props: author, body, rating; dispatch: createReview
 
-####AboutIndex
+#### AboutIndex
 + **About**
 + **How It Works**
 + **Safety**
