@@ -1,0 +1,22 @@
+main, body, h1, h2, h3, h4, h5, div, nav, aside, ul, li, p {
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
+}
+
+main, body {
+  display: flex;
+}
+
+.app {
+  width: 100%;
+}

@@ -35,7 +35,9 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = omit(this.state, ['showModal']);
-    this.props.login(user).then(() => this.closeModal());
+    this.props.login(user)
+      .then(() => this.closeModal())
+      .then(() => this.props.router.push("dashboard"));
   }
 
   renderErrors() {
@@ -57,19 +59,23 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div>
-        <button onClick={ this.openModal }>Log In</button>
+      <div className="login-container">
+        <button className="login open-modal-button" onClick={ this.openModal }>Log In</button>
 
-        <Modal show={ this.state.showModal } onHide={ this.closeModal }>
-          <Modal.Header>
-            <Modal.Title>Log In</Modal.Title>
-              <aside>
-                <p>Don't have an account? <Link to="/">Join</Link></p>
-              </aside>
+        <Modal
+          className="login modal"
+          show={ this.state.showModal }
+          onHide={ this.closeModal }
+        >
+          <Modal.Header className="login modal-header">
+            <Modal.Title className="login modal-title">
+              Log in to SolarSurfing
+            </Modal.Title>
+
           </Modal.Header>
 
-          <form onSubmit={ this.handleSubmit }>
-            <Modal.Body>
+          <form className="login modal-form" onSubmit={ this.handleSubmit }>
+            <Modal.Body className="login modal-body">
               <ul>{ this.renderErrors() }</ul>
               <input
                 type="text"
@@ -84,8 +90,11 @@ class Login extends React.Component {
                 onChange={ this.update("password") }
               />
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer className="login modal-footer">
               <input type="submit" value="Log In" />
+              <aside>
+                <p>Don't have an account? <Link to="/">Join</Link></p>
+              </aside>
             </Modal.Footer>
           </form>
         </Modal>
@@ -93,36 +102,5 @@ class Login extends React.Component {
     );
   }
 }
-
-//   render() {
-//     return(
-//       <form onSubmit={this.handleSubmit}>
-//         <h1>Log In</h1>
-//         <aside>
-//           Don't have an account?
-//           <Link to="/">Join</Link>
-//         </aside>
-//         <ul>{this.renderErrors()}</ul>
-//         <label>Username:
-//           <input
-//             type="text"
-//             value={this.state.username}
-//             onChange={this.update("username")}
-//           />
-//         <br />
-//         </label>
-//         <label>Password:
-//           <input
-//             type="password"
-//             value={this.state.password}
-//             onChange={this.update("password")}
-//           />
-//         </label>
-//         <br />
-//         <input type="submit" value="Log In" />
-//       </form>
-//     );
-//   }
-// }
 
 export default Login;

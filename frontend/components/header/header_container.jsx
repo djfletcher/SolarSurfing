@@ -6,6 +6,11 @@ const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
 });
 
+// const mapDispatchToProps = dispatch => {
+//   debugger;
+//   return {};
+// };
+
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });

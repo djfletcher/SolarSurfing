@@ -5,7 +5,14 @@ import JoinContainer from '../join/join_container';
 import LoginContainer from '../login/login_container';
 
 const Header = ({ currentUser, logout }) => {
+// const Header = ({ currentUser, logout, router }) => {
   const logo = <h1>plaaaaaaaaanets</h1>;
+
+  const handleLogout = () => {
+    debugger;
+    return logout().then(() => router.push('/'));
+  };
+
   if (currentUser) {
     return(
       <nav>

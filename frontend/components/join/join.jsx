@@ -43,7 +43,9 @@ class Join extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = omit(this.state, ['showModal']);
-    this.props.signup(user).then(() => this.closeModal());
+    this.props.signup(user)
+      .then(() => this.closeModal())
+      .then(() => this.props.router.push("dashboard"));
   }
 
   renderErrors() {
@@ -119,7 +121,7 @@ class Join extends React.Component {
               <input type="submit" value="Join" />
             </Modal.Footer>
           </form>
-        
+
         </Modal>
       </div>
     );
