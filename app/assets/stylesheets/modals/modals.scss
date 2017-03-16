@@ -32,6 +32,18 @@ form input, form textarea, form select {
   margin: 2% 12% 0 12%;
 }
 
+.login.modal-footer ul > li:first-child {
+  margin-bottom: 5%;
+}
+
+.join.modal-footer ul > li.words:nth-last-child(2) {
+  margin-top: 6%;
+}
+
+.modal-footer ul > li.words {
+  align-self: center;
+}
+
 .modal-footer button {
   width: 100%;
 }

@@ -25,3 +25,52 @@
 
 dan = User.find(1)
 demo = User.find_by_username("earthling")
+
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
+
+Planet.create(
+  name: ,
+  description: ,
+  image_url:
+)
