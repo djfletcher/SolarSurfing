@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import Splash from './splash/splash';
 import Dashboard from './dashboard/dashboard';
+import PlanetShowContainer from './planets/planet_show_container';
 
 
 const Root = ({ store }) => (
@@ -13,6 +14,11 @@ const Root = ({ store }) => (
       <Route path="/" component={ App } >
         <IndexRoute component={ Splash } onEnter={ _redirectIfLoggedIn } />
         <Route path='dashboard' component={ Dashboard } onEnter={ _redirectIfLoggedOut }/>
+        <Route
+          path='planets/:planetId'
+          component={ PlanetShowContainer }
+          onEnter={ _redirectIfLoggedOut }
+        />
       </Route>
     </Router>
   </Provider>
