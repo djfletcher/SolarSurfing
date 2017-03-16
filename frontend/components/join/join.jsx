@@ -187,6 +187,7 @@ class Join extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -218,6 +219,11 @@ class Join extends React.Component {
     e.preventDefault();
     const user = omit(this.state, ['showModal']);
     this.props.signup(user)
+      .then(() => this.props.router.push("dashboard"));
+  }
+
+  handleDemoLogin() {
+    return this.props.demoLogin()
       .then(() => this.props.router.push("dashboard"));
   }
 

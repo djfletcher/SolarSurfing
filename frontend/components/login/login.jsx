@@ -146,6 +146,7 @@ class Login extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -259,7 +260,7 @@ class Login extends React.Component {
                 <li><Button type="submit" bsStyle="primary">Log In</Button></li>
                 <li className="words">Don't have an account?</li>
                 <li><Button onClick={ this.handleDemoLogin } bsStyle="primary">Demo</Button></li>
-                <li className="words">or</li>      
+                <li className="words">or</li>
                 <li><Button onClick={ this.handleToggle } bsStyle="primary">Join</Button></li>
               </ul>
             </Modal.Footer>
