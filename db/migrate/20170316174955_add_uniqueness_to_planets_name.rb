@@ -1,0 +1,5 @@
+class AddUniquenessToPlanetsName < ActiveRecord::Migration[5.0]
+  def change
+    add_index :planets, :name, unique: true
+  end
+end
