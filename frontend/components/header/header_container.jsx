@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { demoLogin, logout } from '../../actions/session/session_actions';
+import { demoLogin, logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
 import Header from './header';
 

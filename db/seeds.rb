@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# USERS
+# =====
+
 # User.create(
 #   username: 'dan',
 #   password: 'danny',
@@ -27,50 +31,53 @@
 # demo = User.find_by_username("earthling")
 
 
-Planet.create(
-  name: 'Mercury',
-  description: 'for sun lovers',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685019/Planets/mercury1_upf51h.jpg'
-)
+# PLANETS
+# =======
 
-Planet.create(
-  name: 'Venus',
-  description: 'the morning star',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685021/Planets/venus1_prshti.jpg'
-)
-
-Planet.create(
-  name: 'Earth',
-  description: 'so much more than a pale blue dot',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685011/Planets/earth1_sw0ygs.jpg'
-)
-
-Planet.create(
-  name: 'Mars',
-  description: 'your weekend getaway',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685009/Planets/mars1_opw2vg.jpg'
-)
-
-Planet.create(
-  name: 'Jupiter',
-  description: 'big skies, ancient storms, and a Great Red Spot',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685058/Planets/jupiter1_gowggh.png'
-)
-
-Planet.create(
-  name: 'Saturn',
-  description: 'the photographers playground',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685017/Planets/saturn1_gbpbsq.jpg'
-)
-
-Planet.create(
-  name: 'Uranus',
-  description: 'guaranteed to lift your spirits',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685020/Planets/uranus1_d8oibd.jpg'
-)
-
-Planet.create(
-  name: 'Neptune',
-  description: 'the ultimate road trip',
-  image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685012/Planets/neptune1_r3htld.jpg'
-)
+# Planet.create(
+#   name: 'Mercury',
+#   description: 'for sun lovers',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685019/Planets/mercury1_upf51h.jpg'
+# )
+#
+# Planet.create(
+#   name: 'Venus',
+#   description: 'the morning star',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685021/Planets/venus1_prshti.jpg'
+# )
+#
+# Planet.create(
+#   name: 'Earth',
+#   description: 'so much more than a pale blue dot',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685011/Planets/earth1_sw0ygs.jpg'
+# )
+#
+# Planet.create(
+#   name: 'Mars',
+#   description: 'your weekend getaway',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685009/Planets/mars1_opw2vg.jpg'
+# )
+#
+# Planet.create(
+#   name: 'Jupiter',
+#   description: 'big skies, ancient storms, and a Great Red Spot',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685058/Planets/jupiter1_gowggh.png'
+# )
+#
+# Planet.create(
+#   name: 'Saturn',
+#   description: 'the photographers playground',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685017/Planets/saturn1_gbpbsq.jpg'
+# )
+#
+# Planet.create(
+#   name: 'Uranus',
+#   description: 'guaranteed to lift your spirits',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685020/Planets/uranus1_d8oibd.jpg'
+# )
+#
+# Planet.create(
+#   name: 'Neptune',
+#   description: 'the ultimate road trip',
+#   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685012/Planets/neptune1_r3htld.jpg'
+# )

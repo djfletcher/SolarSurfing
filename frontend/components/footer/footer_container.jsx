@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session/session_actions';
+import { logout } from '../../actions/session_actions';
 import Footer from './footer';
 
 // const mapStateToProps = state => ({

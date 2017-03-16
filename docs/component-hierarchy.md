@@ -15,17 +15,17 @@ Component Hierarchy
 #### Dashboard
 + **Search**
   + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
-+ **OrbitalMap**
++ **OrbitalMap** (aka PlanetsIndex)
   + props: planets; dispatch: requestAllPlanets, receiveAllPlanets
-  + **OrbitalMapItems**
-    + props: name, imageUrl; dispatch: requestSinglePlanet
+  + **OrbitalMapItems** (aka PlanetsIndexItems)
+    + props: id, name, imageUrl; dispatch: requestSinglePlanet
 + **BestHostsIndex**
   + props: BestHostsIndexItems; dispatch: requestBestHosts, receiveBestHosts
   + **BestHostsIndexItems**
     + props: name, imageUrl; dispatch: requestSingleHost
 
-#### Planets
-+ props: name, description, imageUrl
+#### PlanetShow
++ props: name, description, imageUrl, hosts
 + **HostsIndex**
   + props: HostsIndexItems; dispatch: requestHosts, receiveHosts
   + **HostsIndexItems**

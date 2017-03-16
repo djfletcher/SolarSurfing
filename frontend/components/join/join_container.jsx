@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { signup, clearErrors, demoLogin } from '../../actions/session/session_actions';
+import { signup, clearErrors, demoLogin } from '../../actions/session_actions';
 import Join from './join';
 
 const mapStateToProps = ({ session }, ownProps) => ({
