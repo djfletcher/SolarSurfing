@@ -13,6 +13,11 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const clearErrors = () => ({
+  type: RECEIVE_ERRORS,
+  errors: []
+});
+
 export const signup = user => dispatch => (
   APIUtil.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)))
@@ -22,6 +27,14 @@ export const signup = user => dispatch => (
 export const login = user => dispatch => (
   APIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(errors => dispatch(receiveErrors(errors)))
+);
+
+export const demoLogin = () => dispatch => (
+  APIUtil.login({
+    username: 'Earthling',
+    password: 'earthling1'
+  }).then(user => dispatch(receiveCurrentUser(user)))
     .fail(errors => dispatch(receiveErrors(errors)))
 );
 
