@@ -1,0 +1,21 @@
+.planet-show {
+  height: 600px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-origin: border-box;
+  // background-clip: content-box;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, p {
+  // margin: 0;
+  // padding: 0;
+  // border: 0;
+}
