@@ -21,6 +21,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 5, allow_nil: true }
   validate :ensure_session_token
 
+  belongs_to :planet
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

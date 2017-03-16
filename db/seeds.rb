@@ -14,13 +14,13 @@
 #   planet_id: 3
 # )
 
-User.create(
-  username: 'Earthling',
-  password: 'earthling1',
-  image_url: '[earthling]',
-  bio: "I'm an earthling. It's a great place to grow up, but I'm ready to check out some other planets.",
-  planet_id: 3
-)
+# User.create(
+#   username: 'Earthling',
+#   password: 'earthling1',
+#   image_url: '[earthling]',
+#   bio: "I'm an earthling. It's a great place to grow up, but I'm ready to check out some other planets.",
+#   planet_id: 3
+# )
 
 
 dan = User.find(1)
