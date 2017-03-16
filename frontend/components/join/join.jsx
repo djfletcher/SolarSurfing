@@ -20,6 +20,7 @@ class Join extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     // this.handleToggle = this.handleToggle.bind(this);
   }
   //
@@ -66,6 +67,11 @@ class Join extends React.Component {
 
   closeModal() {
     this.setState({ showModal: false });
+  }
+
+  handleDemoLogin() {
+    return this.props.demoLogin()
+      .then(() => this.props.router.push("dashboard"));
   }
 
   // handleToggle() {
@@ -142,7 +148,10 @@ class Join extends React.Component {
               </label>
             </Modal.Body>
             <Modal.Footer>
-              <Button type="submit" bsStyle="primary">Join</Button>
+              <ul>
+                <li><Button type="submit" bsStyle="primary">Join</Button></li>
+                <li><Button onClick={ this.handleDemoLogin } bsStyle="primary">Demo</Button></li>
+              </ul>
             </Modal.Footer>
           </form>
 

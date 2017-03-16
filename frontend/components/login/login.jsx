@@ -13,6 +13,7 @@ class Login extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     // this.handleToggle = this.handleToggle.bind(this);
   }
 
@@ -59,6 +60,11 @@ class Login extends React.Component {
 
   closeModal() {
     this.setState({ showModal: false });
+  }
+
+  handleDemoLogin() {
+    return this.props.demoLogin()
+      .then(() => this.props.router.push("dashboard"));
   }
 
   // handleToggle() {
@@ -112,7 +118,10 @@ class Login extends React.Component {
               />
             </Modal.Body>
             <Modal.Footer className="login">
-              <Button type="submit" bsStyle="primary">Log In</Button>
+              <ul>
+                <li><Button type="submit" bsStyle="primary">Log In</Button></li>
+                <li><Button onClick={ this.handleDemoLogin } bsStyle="primary">Demo</Button></li>
+              </ul>
             </Modal.Footer>
           </form>
         </Modal>
@@ -124,7 +133,7 @@ class Login extends React.Component {
 export default Login;
 
 
-// 
+//
 // import React from 'react';
 // import { Link } from 'react-router';
 // import { Modal, Button } from 'react-bootstrap';
