@@ -24,9 +24,12 @@ class HostsIndexItem extends React.Component {
     const { id, username, imageUrl, planetId } = this.props.host;
 
     return(
-      <li className="hosts-index-item" title={ username }>
+      <li className="hosts-index-item">
         <Link to={ `/planets/${planetId}/hosts/${id}` }>
           <img src={imageUrl} alt={username} className="host-thumbnail" />
+          <div className="hosts-index-item-username">
+            <p>{ username }</p>
+          </div>
         </Link>
       </li>
     );

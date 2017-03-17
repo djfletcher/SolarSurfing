@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .hosts-index {
@@ -19,32 +18,47 @@
   border: 1px solid gray;
   border-radius: 6px;
   margin: 25px;
-  padding: 10px;
 }
 
 .hosts-index-item:hover {
   cursor: pointer;
-  opacity: 0.8;
-  background-color: gray;
+
+  .hosts-index-item-username {
+    transition: all 2s;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
-.hosts-index-item:hover:after {
-  content: attr(title);
+.hosts-index-item-username {
+  display: none;
   position: absolute;
-
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: 25%;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
 
   color: #E2ECF9;
-  text-shadow: -1px 0 #2D3B60, 0 1px #2D3B60, 1px 0 #2D3B60, 0 -1px #2D3B60;
   font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  text-shadow: -1px 0 #2D3B60, 0 1px #2D3B60, 1px 0 #2D3B60, 0 -1px #2D3B60;
+  text-decoration: none;
+  font-size: 30px;
+
+  p {
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 40%;
+  }
+}
+
+.hosts-index-item a {
+  position: relative;
 }
 
 .hosts-index-item img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
 }
