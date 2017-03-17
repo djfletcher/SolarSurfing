@@ -81,3 +81,45 @@
 #   description: 'the ultimate road trip',
 #   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685012/Planets/neptune1_r3htld.jpg'
 # )
+#
+# mercury = Planet.find(1)
+# venus = Planet.find(2)
+# earth = Planet.find(3)
+# mars = Planet.find(4)
+# jupiter = Planet.find(5)
+# saturn = Planet.find(6)
+# uranus = Planet.find(7)
+# neptune = Planet.find(8)
+#
+#
+# mercury.update(
+#   description: 'For sun lovers'
+# )
+#
+# venus.update(
+#   description: 'The morning star'
+# )
+#
+# earth.update(
+#   description: 'So much more than a pale blue dot'
+# )
+#
+# mars.update(
+#   description: 'Your weekend getaway'
+# )
+#
+# jupiter.update(
+#   description: 'Big skies, ancient storms, and a Great Red Spot'
+# )
+#
+# saturn.update(
+#   description: 'The photographers playground'
+# )
+#
+# uranus.update(
+#   description: 'Guaranteed to lift your spirits'
+# )
+#
+# neptune.update(
+#   description: 'The ultimate road trip'
+# )

@@ -7,13 +7,19 @@ class PlanetShow extends React.Component {
   }
 
   render() {
-    const background = { backgroundImage: `url(${this.props.imageUrl})` };
-    return(
-      <div className="planet-show" style={ background }>
-        <h1>{ this.props.name }</h1>
-        <p>{ this.props.description }</p>
-      </div>
-    );
+    if (this.props.name) {
+      const background = { backgroundImage: `url(${this.props.imageUrl})` };
+      return(
+        <div className="planet-show" style={ background }>
+          <aside className="planet-info">
+            <h1>{ this.props.name }</h1>
+            <p>{ this.props.description }</p>
+          </aside>
+        </div>
+      );
+    } else {
+      return <div className="planet-show"></div>;
+    }
   }
 }
 
