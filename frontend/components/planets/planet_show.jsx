@@ -9,7 +9,6 @@ class PlanetShow extends React.Component {
 
   render() {
     if (this.props.name) {
-      debugger;
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
         <div>
@@ -19,7 +18,7 @@ class PlanetShow extends React.Component {
               <p>{ this.props.description }</p>
             </aside>
           </div>
-          <HostsIndex hosts={ this.props.hosts } />
+          <HostsIndex hosts={ this.props.hosts } planet={ this.props.name } />
         </div>
       );
     } else {
