@@ -1,4 +1,5 @@
 import React from 'react';
+import HostsIndex from '../hosts/hosts_index';
 
 class PlanetShow extends React.Component {
 
@@ -8,13 +9,17 @@ class PlanetShow extends React.Component {
 
   render() {
     if (this.props.name) {
+      debugger;
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
-        <div className="planet-show" style={ background }>
-          <aside className="planet-info">
-            <h1>{ this.props.name }</h1>
-            <p>{ this.props.description }</p>
-          </aside>
+        <div>
+          <div className="planet-show" style={ background }>
+            <aside className="planet-info">
+              <h1>{ this.props.name }</h1>
+              <p>{ this.props.description }</p>
+            </aside>
+          </div>
+          <HostsIndex hosts={ this.props.hosts } />
         </div>
       );
     } else {

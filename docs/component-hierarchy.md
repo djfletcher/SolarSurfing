@@ -16,20 +16,17 @@ Component Hierarchy
 + **Search**
   + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
 + **OrbitalMap** (aka PlanetsIndex)
-  + props: planets; dispatch: requestAllPlanets, receiveAllPlanets
-  + **OrbitalMapItems** (aka PlanetsIndexItems)
-    + props: id, name, imageUrl; dispatch: requestSinglePlanet
-+ **BestHostsIndex**
-  + props: BestHostsIndexItems; dispatch: requestBestHosts, receiveBestHosts
-  + **BestHostsIndexItems**
-    + props: name, imageUrl; dispatch: requestSingleHost
+  + props: planets; dispatch: requestAllPlanets
+  + **OrbitalMapItem** (aka PlanetsIndexItem)
+    + props: id, name, imageUrl
+  + **HostsIndex** (list of 'top' hosts on splash page)
 
 #### PlanetShow
-+ props: name, description, imageUrl, hosts
++ props: name, id, description, imageUrl, hosts
 + **HostsIndex**
-  + props: HostsIndexItems; dispatch: requestHosts, receiveHosts
-  + **HostsIndexItems**
-    + props: name, imageUrl; dispatch: requestSingleHost
+  + props: hosts; dispatch: requestPlanetHosts, requestBestHosts
+  + **HostsIndexItem**
+    + props: name, id, imageUrl, router
 
 #### HostDetail
 + props: name, bio, imageUrl
