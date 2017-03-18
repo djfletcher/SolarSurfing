@@ -66,7 +66,7 @@
 #
 # Planet.create(
 #   name: 'Saturn',
-#   description: 'The photographers playground',
+#   description: 'The photographers' playground',
 #   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685017/Planets/saturn1_gbpbsq.jpg'
 # )
 #
