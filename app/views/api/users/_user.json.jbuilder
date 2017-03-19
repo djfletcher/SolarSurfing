@@ -1,1 +1,1 @@
-json.extract! user, :id, :username, :image_url, :planet_id
+json.extract! user, :id, :username, :bio, :image_url, :planet_id

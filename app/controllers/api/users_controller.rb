@@ -15,6 +15,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+
     if logged_in?
       render :show
     else

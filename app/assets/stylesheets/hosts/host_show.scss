@@ -1,0 +1,42 @@
+.book-host-container {
+  display: flex;
+  border: 2px solid green;
+}
+
+.host-show {
+  width: 70%;
+  border: 2px solid blue;
+  padding: 25px;
+}
+
+.host-profile-pic {
+  display: block;
+  float: left;
+
+  width: 200px;
+  height: 200px;
+
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 25px;
+}
+
+.host-username {
+  border: 2px solid red;
+  text-align: center;
+  margin: 0;
+}
+
+.host-bio {
+  border: 2px solid red;
+
+  font-size: 20px;
+  padding: 25px;
+}
+
+.clearfix:after {
+   content: "";
+   display: block;
+   clear: both;
+}

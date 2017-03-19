@@ -28,7 +28,7 @@ Component Hierarchy
   + **HostsIndexItem**
     + props: name, id, imageUrl, router
 
-#### HostDetail
+#### HostShow
 + props: name, bio, imageUrl
 + **RequestForm**
   + props: planetId, numTravelers, beginDate, endDate; dispatch: createRequest
