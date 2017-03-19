@@ -1,12 +1,23 @@
+@import 'color_palette';
+
 .book-host-container {
   display: flex;
   border: 2px solid green;
+
+  // overflow-y: hidden;
+  // max-height: 500px; /* approximate max height */
+  //
+  // transition-property: all;
+  // transition-duration: 3s;
+  // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 .host-show {
   width: 70%;
   border: 2px solid blue;
   padding: 25px;
+
+  background-color: $midnight-blue;
 }
 
 .host-profile-pic {
@@ -26,13 +37,20 @@
   border: 2px solid red;
   text-align: center;
   margin: 0;
+
+  color: $lime-white;
 }
 
 .host-bio {
-  border: 2px solid red;
+  border: 2px solid green;
 
+  color: $lime-white;
   font-size: 20px;
   padding: 25px;
+}
+
+.host-detail {
+  border: 2px solid blue;
 }
 
 .clearfix:after {

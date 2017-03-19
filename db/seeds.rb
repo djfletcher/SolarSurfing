@@ -27,11 +27,11 @@ BIOS = [
 
 PICTURES = [
   "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489774991/Hosts/host1_xxme8e.png",
-  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489878557/Hosts/host10_ourwns.jpg",
-  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489878557/Hosts/host11_scxdhs.jpg",
+  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489950942/Hosts/host10_ikakza.png",
+  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489950941/Hosts/host11_nbxiy1.png",
   "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489878557/Hosts/host12_ag9wmf.png",
-  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489774988/Hosts/host2_iatwgb.png",
-  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489774988/Hosts/host3_oufvli.png",
+  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489950738/Hosts/host2_mnygi6.png",
+  "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489950941/Hosts/host3_e1zkxi.png",
   "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489775443/Hosts/host4_ghsfsk.png",
   "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489878572/Hosts/host5_mtxk4p.png",
   "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489878567/Hosts/host6_y0rram.png",

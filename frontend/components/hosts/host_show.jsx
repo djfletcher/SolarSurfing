@@ -7,9 +7,7 @@ class HostShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // debugger;
     if (this.props.params.hostId !== nextProps.params.hostId) {
-      // debugger;
       this.props.requestHost(nextProps.params.hostId);
     }
   }
@@ -19,14 +17,19 @@ class HostShow extends React.Component {
 
     if (username) {
       return(
-        <div className="host-show clearfix">
-          <h1 className="host-username">Stay with { username }</h1>
-          <img
-            src={ imageUrl }
-            alt={ username }
-            className="host-profile-pic"
-          />
-          <p className="host-bio">{ bio }</p>
+        <div className="book-host-container">
+          <div className="host-show">
+            <h1 className="host-username">Stay with { username }</h1>
+            <div className="host-detail clearfix">
+              <img
+                src={ imageUrl }
+                alt={ username }
+                className="host-profile-pic"
+              />
+              <p className="host-bio">{ bio }</p>
+            </div>
+          </div>
+          <aside className="bookings-module">I AM BOOKINGS MODULE</aside>
         </div>
       );
     } else {

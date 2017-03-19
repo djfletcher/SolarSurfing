@@ -18,10 +18,7 @@ class PlanetShow extends React.Component {
               <p>{ this.props.description }</p>
             </aside>
           </div>
-          <div className="book-host-container">
-            { this.props.children }
-            <aside className="bookings-module">I AM BOOKINGS MODULE</aside>
-          </div>
+          { this.props.children }
           <HostsIndex hosts={ this.props.hosts } planet={ this.props.name } />
         </div>
       );
