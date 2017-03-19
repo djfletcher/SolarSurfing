@@ -3,19 +3,15 @@ import React from 'react';
 class HostShow extends React.Component {
 
   componentDidMount() {
-    this.props.requestHost();
+    this.props.requestHost(this.props.params.hostId);
   }
 
-  render() {
-    return(
-      <div className="host-show">
-        Name: { this.props.username }
-        Id: { this.props.id }
-        Bio: { this.props.bio }
-        ImageUrl: { this.props.imageUrl }
-        PlanetId: { this.props.planetId }
-      </div>
-    );
+  componentWillReceiveProps(nextProps) {
+    // debugger;
+    if (this.props.params.hostId !== nextProps.params.hostId) {
+      // debugger;
+      this.props.requestHost(nextProps.params.hostId);
+    }
   }
 
   render() {
