@@ -1,0 +1,9 @@
+@import 'color_palette';
+
+.reviews {
+  border: 2px solid red;
+  padding: 25px;
+
+  background-color: $midnight-blue;
+  color: $lime-white;
+}

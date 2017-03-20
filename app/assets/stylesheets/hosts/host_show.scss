@@ -1,5 +1,21 @@
 @import 'color_palette';
 
+.example-enter {
+  transform: translate(100%);
+}
+.example-enter.example-enter-active {
+  transform: translate(0%);
+  transition: transform 3000ms ease-in-out;
+}
+.example-leave {
+  transform: translate(0%);
+}
+.example-leave.example-leave-active {
+  transform: translate(-100%);
+  transition: transform 3000ms ease-in-out;
+}
+
+
 .book-host-container {
   display: flex;
   // border: 2px solid green;
