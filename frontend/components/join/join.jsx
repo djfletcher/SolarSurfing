@@ -246,13 +246,15 @@ class Join extends React.Component {
   }
 
   handleToggle() {
-    // debugger;
     this.closeModal();
     this.props.toggleModal("join");
   }
 
-  componentWillReceiveProps({ showModal }) {
-    this.setState({ showModal });
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    if (nextProps.showModal !== this.props.showModal) {
+      this.setState(nextProps.showModal);
+    }
   }
 
   render() {
