@@ -8,7 +8,8 @@ const mapStateToProps = ({ hostShow }) => ({
   username: hostShow.username,
   bio: hostShow.bio,
   imageUrl: hostShow.imageUrl,
-  planetId: hostShow.planetId
+  planetId: hostShow.planetId,
+  reviews: hostShow.reviews
 });
 
 const mapDispatchToProps = dispatch => ({

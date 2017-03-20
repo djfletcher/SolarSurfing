@@ -25,4 +25,12 @@ class Review < ApplicationRecord
     foreign_key: :author_id,
     primary_key: :id
 
+  def author_username
+    self.author.username
+  end
+
+  def author_image_url
+    self.author.image_url
+  end
+
 end

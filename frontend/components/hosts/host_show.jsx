@@ -1,4 +1,5 @@
 import React from 'react';
+import Reviews from '../reviews/reviews';
 // import ReactTransitionGroup from 'react-addons-transition-group';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -20,17 +21,16 @@ class HostShow extends React.Component {
     const hostShow = document.getElementById('book-host-reviews-container');
     const { top } = hostShow.getBoundingClientRect();
     window.scrollBy(0, -25);
-    // debugger;
     if (top < 0) {
-      // debugger;
       setTimeout(this.moveWindow.bind(this), 1);
     }
   }
 
   render() {
-    const { id, username, bio, imageUrl, planetId } = this.props;
+    const { id, username, bio, imageUrl, planetId, reviews } = this.props;
 
     if (username) {
+      // debugger;
       return(
         <div id="book-host-reviews-container">
           <div className="book-host-container">
@@ -47,7 +47,7 @@ class HostShow extends React.Component {
             </div>
             <aside className="bookings-module">I AM BOOKINGS MODULE</aside>
           </div>
-          <aside className="reviews">I AM REVIEWS</aside>
+          { Reviews(reviews) }
         </div>
       );
     } else {
