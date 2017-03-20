@@ -220,27 +220,27 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session-form">
-        <div className="header-buttons">
-          <Button
+        <ul className="header-buttons">
+          <li><Button
             className="login open-modal-button"
             onClick={ () => this.openModal("login") }
             bsStyle="primary"
           >
             Log In
-          </Button>
-          <Button
+          </Button></li>
+        <li><Button
             className="join open-modal-button"
             onClick={ () => this.openModal("join") }
             bsStyle="primary"
           >
             Join
-          </Button>
-          <Button
+          </Button></li>
+          <li><Button
             onClick={ this.handleDemoLogin }
             bsStyle="primary"
             >Demo
-          </Button>
-        </div>
+          </Button></li>
+        </ul>
         { joinModal }
         { loginModal }
       </div>
