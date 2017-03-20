@@ -5,13 +5,21 @@ import React from 'react';
 class HostShow extends React.Component {
 
   componentDidMount() {
-    this.props.requestHost(this.props.params.hostId);
+    this.props.requestHost(this.props.params.hostId)
+      .then(() => this.moveWindow());
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.hostId !== nextProps.params.hostId) {
-      this.props.requestHost(nextProps.params.hostId);
+      this.props.requestHost(nextProps.params.hostId)
+        .then(() => this.moveWindow());
     }
+  }
+
+  moveWindow() {
+    const hostShow = document.getElementById('book-host-reviews-container');
+    const { top, left } = hostShow.getBoundingClientRect();
+    window.scrollBy(left, top);
   }
 
   render() {
@@ -19,7 +27,7 @@ class HostShow extends React.Component {
 
     if (username) {
       return(
-        <div className="book-host-reviews-container">
+        <div id="book-host-reviews-container">
           <div className="book-host-container">
             <div className="host-show">
               <h1 className="host-username">Stay with { username }</h1>
@@ -38,7 +46,7 @@ class HostShow extends React.Component {
         </div>
       );
     } else {
-      return <div className="host-show"></div>;
+      return <div id="book-host-reviews-container"></div>;
     }
   }
 }
