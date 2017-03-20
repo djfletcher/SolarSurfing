@@ -101,19 +101,10 @@ class SessionForm extends React.Component {
     };
     if (formType === "login") {
       return toggle("join");
-      // toggle("join");
     } else if (formType === "join") {
       return toggle("login");
-      // toggle("login");
     }
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   debugger;
-  //   if (nextProps.showModal !== this.props.showModal) {
-  //     this.setState(nextProps.showModal);
-  //   }
-  // }
 
   render() {
     const joinModal = (
@@ -229,20 +220,27 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session-form">
-        <Button
-          className="login open-modal-button"
-          onClick={ () => this.openModal("login") }
-          bsStyle="primary"
-        >
-          Log In
-        </Button>
-        <Button
-          className="join open-modal-button"
-          onClick={ () => this.openModal("join") }
-          bsStyle="primary"
-        >
-          Join
-        </Button>
+        <div className="header-buttons">
+          <Button
+            className="login open-modal-button"
+            onClick={ () => this.openModal("login") }
+            bsStyle="primary"
+          >
+            Log In
+          </Button>
+          <Button
+            className="join open-modal-button"
+            onClick={ () => this.openModal("join") }
+            bsStyle="primary"
+          >
+            Join
+          </Button>
+          <Button
+            onClick={ this.handleDemoLogin }
+            bsStyle="primary"
+            >Demo
+          </Button>
+        </div>
         { joinModal }
         { loginModal }
       </div>
