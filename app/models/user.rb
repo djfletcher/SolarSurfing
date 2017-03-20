@@ -23,6 +23,16 @@ class User < ApplicationRecord
 
   belongs_to :planet
 
+  has_many :reviews_authored,
+    class_name: :Review,
+    foreign_key: :author_id,
+    primary_key: :id
+
+  has_many :reviews,
+    class_name: :Review,
+    foreign_key: :host_id,
+    primary_key: :id
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
