@@ -93,3 +93,9 @@
   position: absolute;
   right: 0;
 }
+
+.review-form-container > .form-errors {
+  display: flex;
+  padding-left: 50px;
+  flex-direction: column;
+}

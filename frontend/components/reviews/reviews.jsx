@@ -16,7 +16,7 @@ const Reviews = reviews => {
     const starRating = num => {
       const stars = [];
       for (let i = 0; i < num; i++) {
-        stars.push(<i key={ i } className="fa fa-star"></i>);
+        // stars.push(<i key={ i } className="fa fa-star"></i>);
       }
       return stars;
     };
@@ -30,7 +30,9 @@ const Reviews = reviews => {
             </Link>
           </li>
           <li className="review-body">{ body }</li>
-          <li className="review-rating">Rating: <i className="fa fa-star"></i></li>
+          <li className="review-rating">
+            <aside>Rating: { rating }</aside>
+          </li>
         </ul>
       </li>
     );

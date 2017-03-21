@@ -33,6 +33,17 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     primary_key: :id
 
+  has_many :requests_made,
+    class_name: :Request,
+    foreign_key: :guest_id,
+    primary_key: :id
+
+  has_many :requests_received,
+    class_name: :Request,
+    foreign_key: :host_id,
+    primary_key: :id
+    
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
