@@ -13,6 +13,14 @@ const Reviews = reviews => {
       authorPlanetId
     } = review;
 
+    const starRating = num => {
+      const stars = [];
+      for (let i = 0; i < num; i++) {
+        stars.push(<i key={ i } className="fa fa-star"></i>);
+      }
+      return stars;
+    };
+
     return(
       <li key={ index } className="reviews-index-item">
         <ul className="reviews-index-item-content">
@@ -22,7 +30,7 @@ const Reviews = reviews => {
             </Link>
           </li>
           <li className="review-body">{ body }</li>
-          <li className="review-rating clearfix">Rating: { rating }</li>
+          <li className="review-rating">Rating: <i className="fa fa-star"></i></li>
         </ul>
       </li>
     );

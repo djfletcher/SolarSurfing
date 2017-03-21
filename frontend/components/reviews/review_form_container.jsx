@@ -4,8 +4,9 @@ import { withRouter } from 'react-router';
 
 import ReviewForm from './review_form';
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session, hostShow }) => ({
   authorId: session.currentUser.id,
+  hostUsername: hostShow.username,
   errors: session.errors
 });
 

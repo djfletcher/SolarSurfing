@@ -1,5 +1,6 @@
 import React from 'react';
 import HostsIndex from '../hosts/hosts_index';
+import { Button } from 'react-bootstrap';
 
 class PlanetShow extends React.Component {
 
@@ -18,6 +19,12 @@ class PlanetShow extends React.Component {
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
         <div>
+          <Button
+            className="back-to-planets-index"
+            onClick={ () => this.props.router.push('dashboard') }
+            bsStyle="primary">
+            Back to All Planets
+          </Button>
           <div className="planet-show" style={ background }>
             <aside className="planet-info">
               <h1>{ this.props.name }</h1>
