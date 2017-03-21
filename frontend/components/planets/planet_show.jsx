@@ -4,18 +4,17 @@ import { Button } from 'react-bootstrap';
 
 class PlanetShow extends React.Component {
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.params.planetId !== nextProps.params.planetId) {
-  //     this.props.requestPlanet(nextProps.params.planetId);
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.planetId !== nextProps.params.planetId) {
+      this.props.requestPlanet(nextProps.params.planetId);
+    }
+  }
 
   componentDidMount() {
-    // this.props.requestPlanet(this.props.params.planetId);
+    this.props.requestPlanet(this.props.params.planetId);
   }
 
   render() {
-    if (this.props.name) {
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
         <div>
@@ -35,9 +34,6 @@ class PlanetShow extends React.Component {
           <HostsIndex hosts={ this.props.hosts } planet={ this.props.name } />
         </div>
       );
-    } else {
-      return <div className="planet-show"></div>;
-    }
   }
 }
 
