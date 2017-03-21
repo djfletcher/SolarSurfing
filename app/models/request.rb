@@ -15,11 +15,11 @@
 class Request < ApplicationRecord
 
   validates :guest_id, :host_id, :arrive_date, :depart_date, :num_travelers, presence: true
-  validate :in_the_future, :dates_in_order, :not_overlapping
+  validate :in_the_future, :dates_in_order, :not_overlapping, :guest_is_not_host
 
   belongs_to :guest,
     class_name: :User,
-    foreign_key: :user_id,
+    foreign_key: :guest_id,
     primary_key: :id
 
   belongs_to :host,
@@ -31,7 +31,7 @@ class Request < ApplicationRecord
   def in_the_future
     if arrive_date && depart_date
       if arrive_date <= Date.today
-        errors.add("Arrival date must be in the future")
+        errors.add(:arrive_date, "must be in the future")
       end
     end
   end
@@ -39,7 +39,7 @@ class Request < ApplicationRecord
   def dates_in_order
     if arrive_date && depart_date
       if arrive_date > depart_date
-        errors.add("Arrival date can't be after departure date")
+        errors.add(:arrive_date, "can't be after departure date")
       end
     end
   end
@@ -51,13 +51,19 @@ class Request < ApplicationRecord
         booked_arrive = request.arrive_date
         booked_depart = request.depart_date
         if arrive_date.between?(booked_arrive, booked_depart - 1)
-          errors.add("This spot has already been reserved from #{booked_arrive} to #{booked_depart}")
+          errors.add(:This, "spot has already been reserved from #{booked_arrive} to #{booked_depart}")
         elsif depart_date.between?(booked_arrive + 1, booked_depart)
-          errors.add("This spot has already been reserved from #{booked_arrive} to #{booked_depart}")
+          errors.add(:This, "spot has already been reserved from #{booked_arrive} to #{booked_depart}")
         elsif booked_arrive.between?(arrive_date, depart_date - 1)
-          errors.add("This spot has already been reserved from #{booked_arrive} to #{booked_depart}")
+          errors.add(:This, "spot has already been reserved from #{booked_arrive} to #{booked_depart}")
         end
       end
+    end
+  end
+
+  def guest_is_not_host
+    if guest_id == host_id
+      errors.add(:You, "can't stay at your own place!")
     end
   end
 

@@ -27,7 +27,7 @@
 ### Requests
 
 + `GET /api/requests`
-+ accepts guest_id or host_id as search params
+  + accepts guest_id or host_id as search params
 + `POST /api/requests`
 + `DELETE /api/requests/:request_id`
 

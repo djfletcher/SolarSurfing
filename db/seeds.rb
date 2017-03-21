@@ -205,3 +205,15 @@ REVIEWS = [
     rating: rand(1..5)
   )
 end
+
+
+# # REQUESTS
+# # ========
+#
+# a = Request.new(
+#   host_id: 8,
+#   guest_id: 8,
+#   arrive_date: Date.parse('2017-12-22'),
+#   depart_date: Date.parse('2017-12-29'),
+#   num_travelers: 4
+# )
