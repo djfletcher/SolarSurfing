@@ -13,10 +13,12 @@ const Reviews = reviews => {
       authorPlanetId
     } = review;
 
+    const starImage = 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1490127525/star_ygpdna.png';
+
     const starRating = num => {
       const stars = [];
       for (let i = 0; i < num; i++) {
-        // stars.push(<i key={ i } className="fa fa-star"></i>);
+        stars.push(<img key={ i } src={ starImage } />);
       }
       return stars;
     };
@@ -31,7 +33,7 @@ const Reviews = reviews => {
           </li>
           <li className="review-body">{ body }</li>
           <li className="review-rating">
-            <aside>Rating: { rating }</aside>
+            <aside>{ starRating(rating) }</aside>
           </li>
         </ul>
       </li>

@@ -211,8 +211,8 @@ end
 # # ========
 #
 # a = Request.new(
-#   host_id: 8,
-#   guest_id: 8,
+#   host_id: 9,
+#   guest_id: 65,
 #   arrive_date: Date.parse('2017-12-22'),
 #   depart_date: Date.parse('2017-12-29'),
 #   num_travelers: 4

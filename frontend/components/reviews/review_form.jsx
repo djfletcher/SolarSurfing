@@ -11,6 +11,13 @@ class ReviewForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  // componentWillReceiveProps(nextProps){
+  //   debugger;
+  //   if (this.props.hostUsername !== nextProps.hostUsername) {
+  //     this.setState({ body: "", rating: null, errors: [] });
+  //   }
+  // }
+
   updateBody(e) {
     e.preventDefault();
     this.setState({ body: e.target.value });
@@ -42,7 +49,6 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-
     return(
       <div className="review-form-container">
         <h2>Leave { this.props.hostUsername } a Review</h2>
