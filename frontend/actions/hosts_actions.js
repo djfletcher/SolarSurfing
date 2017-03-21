@@ -18,7 +18,7 @@ export const requestSingleHost = hostId => dispatch => {
     .then(host => dispatch(receiveSingleHost(host)));
 };
 
-export const createReview = review => dispatch => (
-  APIUtil.createReview(review)
-    .then(review => dispatch(receiveReview(review)))
-);
+export const createReview = review => dispatch => {
+  return APIUtil.createReview(review)
+    .then(review => dispatch(receiveReview(review)));
+};

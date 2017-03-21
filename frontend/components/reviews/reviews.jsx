@@ -33,8 +33,8 @@ const Reviews = reviews => {
       <h1>Reviews</h1>
       <ul className="reviews-index">
         { reviewsList }
+        <ReviewFormContainer />
       </ul>
-      <ReviewFormContainer />
     </div>
   );
 };
