@@ -27,8 +27,8 @@ class ReviewForm extends React.Component {
     review.author_id = this.props.authorId;
     review.host_id = this.props.params.hostId;
 
-    // debugger;
     this.props.createReview(review)
+      .then(() => this.setState({ body: "", rating: null, errors: [] }))
       .fail(r => this.setState({ errors: r.responseJSON }));
   }
 

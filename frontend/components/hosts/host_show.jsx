@@ -14,6 +14,8 @@ class HostShow extends React.Component {
     if (this.props.params.hostId !== nextProps.params.hostId) {
       this.props.requestHost(nextProps.params.hostId)
         .then(() => this.moveWindow());
+    } else if (this.props.reviews !== nextProps.reviews) {
+      this.props.requestHost(nextProps.params.hostId);
     }
   }
 
