@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ReviewFormContainer from './review_form_container';
 
 const Reviews = reviews => {
   const reviewsList = reviews.map((review, index) => {
@@ -33,6 +34,7 @@ const Reviews = reviews => {
       <ul className="reviews-index">
         { reviewsList }
       </ul>
+      <ReviewFormContainer />
     </div>
   );
 };

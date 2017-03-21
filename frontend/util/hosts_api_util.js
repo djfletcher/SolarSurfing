@@ -4,3 +4,11 @@ export const fetchSingleHost = hostId => (
     url: `/api/users/${hostId}`
   })
 );
+
+export const createReview = review => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    review
+  });
+};

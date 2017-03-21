@@ -12,8 +12,8 @@ const mapStateToProps = ({ planetShow }) => ({
   hosts: planetShow.hosts
 });
 
-const mapDispatchToProps = (dispatch, { params }) => ({
-  requestPlanet: () => dispatch(requestSinglePlanet(params.planetId))
+const mapDispatchToProps = dispatch => ({
+  requestPlanet: planetId => dispatch(requestSinglePlanet(planetId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PlanetShow));
