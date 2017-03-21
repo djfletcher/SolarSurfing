@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
 import Splash from './splash/splash';
-import Dashboard from './dashboard/dashboard';
+import DashboardContainer from './dashboard/dashboard_container';
 import PlanetShowContainer from './planets/planet_show_container';
 import HostShowContainer from './hosts/host_show_container';
 
@@ -16,7 +16,7 @@ const Root = ({ store }) => (
         <IndexRoute component={ Splash } onEnter={ _redirectIfLoggedIn } />
         <Route
           path='dashboard'
-          component={ Dashboard }
+          component={ DashboardContainer }
           onEnter={ _redirectIfLoggedOut }
         />
         <Route
