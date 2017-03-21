@@ -199,7 +199,7 @@ REVIEWS = [
   possible_authors = (1..num_users).reject { |num| num == host_id }
 
   Review.create!(
-    author_id: rand(possible_authors),
+    author_id: possible_authors.sample,
     host_id: host_id,
     body: REVIEWS.sample,
     rating: rand(1..5)

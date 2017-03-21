@@ -1,16 +1,31 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 
 const Reviews = reviews => {
-  debugger;
-  const reviewsList = reviews.map((review, index) => (
-    <li key={ index }>
-      <p>Review By: { review.author_id }</p>
-      <p>Review For: { review.host_id }</p>
-      <p>Body: { review.body }</p>
-      <p>Rating: { review.rating }</p>
-    </li>
-  ));
+  const reviewsList = reviews.map((review, index) => {
+    const {
+      body,
+      rating,
+      authorId,
+      authorUsername,
+      authorImageUrl,
+      authorPlanetId
+    } = review;
+
+    return(
+      <li key={ index } className="reviews-index-item">
+        <ul className="reviews-index-item-content">
+          <li>
+            <Link to={ `/planets/${authorPlanetId}/hosts/${authorId}` }>
+              <img src={ authorImageUrl } className="review-thumbnail" />
+            </Link>
+          </li>
+          <li className="review-body">{ body }</li>
+          <li className="review-rating clearfix">Rating: { rating }</li>
+        </ul>
+      </li>
+    );
+  });
 
   return(
     <div className="reviews-container">

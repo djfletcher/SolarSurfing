@@ -33,4 +33,8 @@ class Review < ApplicationRecord
     self.author.image_url
   end
 
+  def author_planet_id
+    self.author.planet_id
+  end
+
 end

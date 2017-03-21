@@ -1,9 +1,64 @@
 @import 'color_palette';
 
-.reviews {
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   border: 2px solid red;
   padding: 25px;
 
   background-color: $midnight-blue;
   color: $lime-white;
+}
+
+.reviews-container > h1 {
+  text-align: center;
+}
+
+.reviews-index {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.reviews-index-item {
+  padding: 30px;
+}
+
+.reviews-index-item:not(:first-child) {
+  border-top: 1px solid $gray;
+}
+
+.reviews-index-item-content {
+  display: flex;
+  position: relative;
+}
+
+.reviews-index-item-content > li {
+  margin: 0 20px;
+}
+
+.review-thumbnail {
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 10px;
+
+  width: 100px;
+  height: 100px;
+}
+
+.hosts-index-item-thumbnail:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.review-body {
+  text-align: left;
+}
+
+
+.review-rating {
+  position: absolute;
+  right: 0;
 }
