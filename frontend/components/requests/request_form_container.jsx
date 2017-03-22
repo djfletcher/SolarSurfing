@@ -6,6 +6,7 @@ import RequestForm from './request_form';
 const mapStateToProps = ({ session, hostShow }) => ({
   guestId: session.currentUser.id,
   hostId: hostShow.id,
+  hostName: hostShow.username,
   errors: session.errors
 });
 

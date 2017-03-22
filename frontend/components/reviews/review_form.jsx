@@ -42,7 +42,7 @@ class ReviewForm extends React.Component {
   renderErrors() {
     if (this.state.errors.length > 0) {
       const errors = this.state.errors.map((err, idx) => (
-        <li key={idx}>{err}</li>
+        <li key={idx}>{ err }</li>
       ));
       return <ul className="form-errors">{ errors }</ul>;
     }
