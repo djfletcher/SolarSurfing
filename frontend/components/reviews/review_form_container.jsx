@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ReviewForm));

@@ -12,7 +12,6 @@ class ReviewForm extends React.Component {
   }
 
   // componentWillReceiveProps(nextProps){
-  //   debugger;
   //   if (this.props.hostUsername !== nextProps.hostUsername) {
   //     this.setState({ body: "", rating: null, errors: [] });
   //   }
@@ -30,6 +29,7 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger;
     const review = this.state;
     review.author_id = this.props.authorId;
     review.host_id = this.props.params.hostId;

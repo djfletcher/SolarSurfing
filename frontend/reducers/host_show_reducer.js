@@ -12,7 +12,6 @@ const HostShowReducer = (state = {}, action) => {
       newState.reviews.push(action.review);
       return newState;
     case RECEIVE_REQUEST:
-      debugger;
       newState.requestsReceived.push(action.request);
       return newState;
     default:

@@ -1,16 +1,39 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { omit } from 'lodash';
+import { some } from 'lodash';
 
 class RequestForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { arriveDate: "", departDate: "", numTravelers: 1, errors: [] };
-    // this.updateBody = this.updateBody.bind(this);
-    // this.updateRating = this.updateRating.bind(this);
+    this.state = {
+      arriveDate: "",
+      departDate: "",
+      numTravelers: 1,
+      errors: [],
+      alreadyBooked: this.alreadyBooked(
+        this.props.currentUserRequestsMade,
+        this.props.hostId
+      )
+    };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.alreadyBooked = this.alreadyBooked.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.hostId !== nextProps.hostId) {
+      this.setState({ alreadyBooked: this.alreadyBooked(
+        nextProps.currentUserRequestsMade,
+        nextProps.hostId
+      ) });
+    }
+  }
+
+  alreadyBooked(requestsMade, hostId) {
+    return some(requestsMade, request => {
+      if (request.hostId === hostId) { return true; }
+    });
   }
 
   update(field) {
@@ -33,6 +56,7 @@ class RequestForm extends React.Component {
       .then(() => this.setState(
         { arriveDate: "", departDate: "", numTravelers: 1, errors: [] }
       ))
+      .then(req => this.setState({ alreadyBooked: true }))
       .fail(res => this.setState({ errors: res.responseJSON }));
   }
 
@@ -47,7 +71,13 @@ class RequestForm extends React.Component {
 
   render() {
 
-    return (
+    const confirmation = (
+      <div className="request-form-container">
+        <h2>Booking confirmed with { this.props.hostName }!</h2>
+      </div>
+    );
+
+    const form = (
       <div className="request-form-container">
         <h2>Send Request</h2>
         { this.renderErrors() }
@@ -93,6 +123,12 @@ class RequestForm extends React.Component {
         </form>
       </div>
     );
+
+    if (this.state.alreadyBooked) {
+      return confirmation;
+    } else {
+      return form;
+    }
   }
 }
 
