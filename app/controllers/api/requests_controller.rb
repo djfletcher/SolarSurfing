@@ -4,8 +4,7 @@ class Api::RequestsController < ApplicationController
     @request = Request.new(request_params)
 
     if @request.save
-      @requests = current_user.requests_made
-      render :index
+      render :show
     else
       render(
         json: @request.errors.full_messages,
