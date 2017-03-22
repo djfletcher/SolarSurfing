@@ -58,13 +58,12 @@ class SessionForm extends React.Component {
         action = this.props.signup;
         user = omit(this.state, ['showLogin'], ['showJoin']);
       }
-      action(user).then(() => this.props.router.push("dashboard"));
+      action(user);
     };
   }
 
   handleDemoLogin() {
-    return this.props.demoLogin()
-      .then(() => this.props.router.push("dashboard"));
+    return this.props.demoLogin();
   }
 
   renderErrors() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import SessionFormContainer from '../session_form/session_form_container';
@@ -14,12 +14,11 @@ class Header extends React.Component {
   }
 
   handleLogout() {
-    return this.props.logout()
-      .then(() => this.props.router.push('/'));
+    return this.props.logout();
   }
 
   goToMyRequests() {
-    return this.props.router.push('/requests');
+    return hashHistory.push('/requests');
   }
 
   render() {

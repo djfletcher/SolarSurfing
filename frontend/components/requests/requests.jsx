@@ -1,38 +1,58 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 import RequestsIndexItem from './requests_index_item';
 
 class Requests extends React.Component {
+
+  componentWillUpdate(nextProps) {
+    if (!nextProps.currentUser) {
+      hashHistory.push('/');
+    }
+  }
+
   render() {
-    const requestsMadeIndex = this.props.requestsMade.map(
-      (request, i) => <RequestsIndexItem key={ i } request={ request } type="guest" />
-    );
 
-    const requestsReceivedIndex = this.props.requestsReceived.map(
-      (request, i) => <RequestsIndexItem key={ i } request={ request } type="host" />
-    );
+    if (this.props.currentUser) {
+      const {
+        username,
+        imageUrl,
+        requestsMade,
+        requestsReceived
+      } = this.props.currentUser;
 
-    return(
-      <div className="requests-container">
-        <section className="requests-profile">
-          <img src={ this.props.imageUrl } />
-          <h1>{ this.props.username }</h1>
-        </section>
-        <section className="requests-index-container">
-          <section className="requests-made-index-container">
-            <h1 className="requests-made-header">My Travel Plans</h1>
-            <ul className="requests-made-index">
-              { requestsMadeIndex }
-            </ul>
+      const requestsMadeIndex = requestsMade.map(
+        (request, i) => <RequestsIndexItem key={ i } request={ request } type="guest" />
+      );
+
+        const requestsReceivedIndex = requestsReceived.map(
+          (request, i) => <RequestsIndexItem key={ i } request={ request } type="host" />
+      );
+
+      return(
+        <div className="requests-container">
+          <section className="requests-profile">
+            <img src={ imageUrl } />
+            <h1>{ username }</h1>
           </section>
-          <section className="requests-received-index-container">
-            <h1>My Guests</h1>
-            <ul className="requests-received-index">
-              { requestsReceivedIndex }
-            </ul>
+          <section className="requests-index-container">
+            <section className="requests-made-index-container">
+              <h1 className="requests-made-header">My Travel Plans</h1>
+              <ul className="requests-made-index">
+                { requestsMadeIndex }
+              </ul>
+            </section>
+            <section className="requests-received-index-container">
+              <h1>My Guests</h1>
+              <ul className="requests-received-index">
+                { requestsReceivedIndex }
+              </ul>
+            </section>
           </section>
-        </section>
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return <div className="requests-container"></div>;
+    }
   }
 
 }
