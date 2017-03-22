@@ -7,6 +7,7 @@ import Splash from './splash/splash';
 import Dashboard from './dashboard/dashboard';
 import PlanetShowContainer from './planets/planet_show_container';
 import HostShowContainer from './hosts/host_show_container';
+import RequestsContainer from './requests/requests_container';
 
 
 const Root = ({ store }) => (
@@ -31,6 +32,11 @@ const Root = ({ store }) => (
           />
         </Route>
       </Route>
+      <Route
+        path='requests'
+        component={ Requests }
+        onEnter={ _redirectIfLoggedOut }
+      />
     </Router>
   </Provider>
 );
