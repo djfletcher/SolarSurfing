@@ -13,11 +13,6 @@ class Api::RequestsController < ApplicationController
     end
   end
 
-  def index
-    @requests = current_user.requests_made
-    render :index
-  end
-
   def destroy
 
   end

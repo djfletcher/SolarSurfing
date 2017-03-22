@@ -1,1 +1,11 @@
-json.extract! request, :id, :guest_id, :host_id, :arrive_date, :depart_date, :num_travelers
+json.extract! request,
+  :id,
+  :guest_id,
+  :host_id,
+  :arrive_date,
+  :depart_date,
+  :num_travelers,
+  :planet_name,
+  :planet_image_url,
+  :host_name,
+  :host_image_url

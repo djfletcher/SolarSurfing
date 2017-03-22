@@ -27,6 +27,21 @@ class Request < ApplicationRecord
     foreign_key: :host_id,
     primary_key: :id
 
+  def planet_name
+    self.host.planet.name
+  end
+
+  def planet_image_url
+    self.host.planet.image_url
+  end
+
+  def host_name
+    self.host.username
+  end
+
+  def host_image_url
+    self.host.image_url
+  end
 
   def in_the_future
     if arrive_date && depart_date
