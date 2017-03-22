@@ -57,16 +57,53 @@
 
 .splash-background.middle > .content-box {
   margin-right: 40px;
+  height: initial;
 }
 
 .splash-background.bottom > .content-box {
   margin-left: 40px;
+  height: initial;
 }
 
 .splash-background > .image-content {
   width: 60%;
 }
 
-.connected-with {
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 50px;
+
+  color: $midnight-blue;
+}
+
+.testimonial-title {
+  margin-bottom: 15px;
+}
+
+.testimonial-images {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.testimonial-images > figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid $gray;
+}
+
+.testimonial-subtitle {
+  border-bottom: 4px solid $midnight-blue;
+  width: 35%;
+  padding: 15px;
+  text-align: center;
 }
