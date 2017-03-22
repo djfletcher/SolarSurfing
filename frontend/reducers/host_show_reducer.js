@@ -9,7 +9,6 @@ const HostShowReducer = (state = {}, action) => {
     case RECEIVE_SINGLE_HOST:
       return action.host;
     case RECEIVE_REVIEW:
-      debugger;
       newState.reviews.push(action.review);
       return newState;
     case RECEIVE_REQUEST:

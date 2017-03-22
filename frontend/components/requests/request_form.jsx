@@ -21,14 +21,16 @@ class RequestForm extends React.Component {
     this.alreadyBooked = this.alreadyBooked.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.hostId !== nextProps.hostId) {
-      this.setState({ alreadyBooked: this.alreadyBooked(
-        nextProps.currentUserRequestsMade,
-        nextProps.hostId
-      ) });
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.hostId !== nextProps.hostId) {
+  //     this.setState({
+  //       alreadyBooked: this.alreadyBooked(
+  //         nextProps.currentUserRequestsMade,
+  //         nextProps.hostId
+  //       )
+  //     });
+  //   }
+  // }
 
   alreadyBooked(requestsMade, hostId) {
     return some(requestsMade, request => {
@@ -53,9 +55,6 @@ class RequestForm extends React.Component {
       num_travelers: this.state.numTravelers
     };
     this.props.createRequest(request)
-      .then(() => this.setState(
-        { arriveDate: "", departDate: "", numTravelers: 1, errors: [] }
-      ))
       .then(req => this.setState({ alreadyBooked: true }))
       .fail(res => this.setState({ errors: res.responseJSON }));
   }
