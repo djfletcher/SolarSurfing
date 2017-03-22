@@ -20,7 +20,7 @@ class PlanetShow extends React.Component {
   }
 
   componentWillUnmount() {
-    // clear background image
+    // clear background image 
   }
 
   render() {

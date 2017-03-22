@@ -20,11 +20,10 @@ class PlanetShow extends React.Component {
   }
 
   componentWillUnmount() {
-    // clear background image
+    // clear background image 
   }
 
   render() {
-    if (this.props.name) {
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
         <div>
@@ -44,10 +43,13 @@ class PlanetShow extends React.Component {
           <HostsIndex hosts={ this.props.hosts } planet={ this.props.name } />
         </div>
       );
+<<<<<<< HEAD
+=======
     } else {
       // const blankBackground = { backgroundColor: 'black' };
       return <div className="planet-show"></div>;
     }
+>>>>>>> fetch-as-you-go
   }
 }
 
