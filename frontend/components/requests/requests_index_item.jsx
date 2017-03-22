@@ -5,6 +5,8 @@ class RequestsIndexItem extends React.Component {
   render() {
     const request = this.props.request;
     const bookingDates = `${request.arriveDate} to ${request.departDate}`;
+    const title = this.props.type === "host" ?
+      `Guest: ${request.guestName}` : `Host: ${request.hostName}`;
 
     return(
       <li className="requests-index-item">
@@ -16,7 +18,7 @@ class RequestsIndexItem extends React.Component {
             <p>{ request.planetName }</p>
           </div>
           <div className="requests-index-item-username">
-            <p>Host: { request.hostName }</p>
+            <p>{ title }</p>
           </div>
           <div className="requests-index-item-booking-dates">
             <p>{ bookingDates }</p>

@@ -8,4 +8,5 @@ json.extract! request,
   :planet_name,
   :planet_image_url,
   :host_name,
-  :host_image_url
+  :host_image_url,
+  :guest_name

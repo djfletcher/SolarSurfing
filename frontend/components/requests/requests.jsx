@@ -4,11 +4,11 @@ import RequestsIndexItem from './requests_index_item';
 class Requests extends React.Component {
   render() {
     const requestsMadeIndex = this.props.requestsMade.map(
-      (request, i) => <RequestsIndexItem key={ i } request={ request } />
+      (request, i) => <RequestsIndexItem key={ i } request={ request } type="guest" />
     );
 
     const requestsReceivedIndex = this.props.requestsReceived.map(
-      (request, i) => <RequestsIndexItem key={ i } request={ request } />
+      (request, i) => <RequestsIndexItem key={ i } request={ request } type="host" />
     );
 
     return(

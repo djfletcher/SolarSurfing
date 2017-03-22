@@ -9,11 +9,16 @@ class Header extends React.Component {
     super(props);
     this.logo = <a className="logo">SolarSurfing</a>;
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleMyRequests = this.handleMyRequests.bind(this);
   }
 
   handleLogout() {
     return this.props.logout()
       .then(() => this.props.router.push('/'));
+  }
+
+  handleMyRequests() {
+    return this.props.router.push('/requests');
   }
 
   render() {
@@ -23,7 +28,18 @@ class Header extends React.Component {
           { this.logo }
           <ul className="header-buttons">
             <li>Hello, { this.props.currentUser.username }!</li>
-            <li><Button onClick={ this.handleLogout } bsStyle="primary">Log Out</Button></li>
+            <li>
+              <Button
+                onClick={ this.handleMyRequests }
+                bsStyle="primary"
+              >My Requests</Button>
+            </li>
+            <li>
+              <Button
+                onClick={ this.handleLogout }
+                bsStyle="primary"
+              >Log Out</Button>
+            </li>
           </ul>
         </nav>
       );

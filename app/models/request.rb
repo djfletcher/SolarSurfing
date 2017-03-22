@@ -43,6 +43,10 @@ class Request < ApplicationRecord
     self.host.image_url
   end
 
+  def guest_name
+    self.guest.username
+  end
+
   def in_the_future
     if arrive_date && depart_date
       if arrive_date <= Date.today
