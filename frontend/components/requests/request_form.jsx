@@ -21,16 +21,17 @@ class RequestForm extends React.Component {
     this.alreadyBooked = this.alreadyBooked.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.hostId !== nextProps.hostId) {
-  //     this.setState({
-  //       alreadyBooked: this.alreadyBooked(
-  //         nextProps.currentUserRequestsMade,
-  //         nextProps.hostId
-  //       )
-  //     });
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.hostId !== nextProps.hostId) {
+      this.setState({
+        alreadyBooked: this.alreadyBooked(
+          nextProps.currentUserRequestsMade,
+          nextProps.hostId
+        ),
+        errors: []
+      });
+    }
+  }
 
   alreadyBooked(requestsMade, hostId) {
     return some(requestsMade, request => {

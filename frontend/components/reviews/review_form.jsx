@@ -11,11 +11,11 @@ class ReviewForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   if (this.props.hostUsername !== nextProps.hostUsername) {
-  //     this.setState({ body: "", rating: null, errors: [] });
-  //   }
-  // }
+  componentWillReceiveProps(nextProps){
+    if (this.props.hostUsername !== nextProps.hostUsername) {
+      this.setState({ body: "", rating: null, errors: [] });
+    }
+  }
 
   updateBody(e) {
     e.preventDefault();
