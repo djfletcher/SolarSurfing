@@ -3,6 +3,10 @@ import HostsIndex from '../hosts/hosts_index';
 import { Button } from 'react-bootstrap';
 
 class PlanetShow extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { backgroundImage: `url(${this.props.imageUrl})` };
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.planetId !== nextProps.params.planetId) {
@@ -12,6 +16,11 @@ class PlanetShow extends React.Component {
 
   componentDidMount() {
     this.props.requestPlanet(this.props.params.planetId);
+      // .then(planet => this.setState({ backgroundImage: planet.imageUrl }));
+  }
+
+  componentWillUnmount() {
+    // clear background image 
   }
 
   render() {
@@ -36,6 +45,7 @@ class PlanetShow extends React.Component {
         </div>
       );
     } else {
+      // const blankBackground = { backgroundColor: 'black' };
       return <div className="planet-show"></div>;
     }
   }

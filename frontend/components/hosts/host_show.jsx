@@ -1,5 +1,6 @@
 import React from 'react';
 import Reviews from '../reviews/reviews';
+import RequestFormContainer from '../requests/request_form_container';
 // import ReactTransitionGroup from 'react-addons-transition-group';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -14,8 +15,6 @@ class HostShow extends React.Component {
     if (this.props.params.hostId !== nextProps.params.hostId) {
       this.props.requestHost(nextProps.params.hostId)
         .then(() => this.moveWindow());
-    } else if (this.props.reviews !== nextProps.reviews) {
-      this.props.requestHost(nextProps.params.hostId);
     }
   }
 
@@ -47,7 +46,7 @@ class HostShow extends React.Component {
                 <p className="host-bio">{ bio }</p>
               </div>
             </div>
-            <aside className="bookings-module">I AM BOOKINGS MODULE</aside>
+            <RequestFormContainer />
           </div>
           { Reviews(reviews) }
         </div>
