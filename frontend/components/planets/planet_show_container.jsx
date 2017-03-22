@@ -5,12 +5,19 @@ import PlanetShow from './planet_show';
 
 
 const mapStateToProps = ({ planetShow }) => ({
-  id: planetShow.id,
-  name: planetShow.name,
-  description: planetShow.description,
-  imageUrl: planetShow.imageUrl,
-  hosts: planetShow.hosts
+    id: planetShow.id,
+    name: planetShow.name,
+    description: planetShow.description,
+    imageUrl: planetShow.imageUrl,
+    hosts: planetShow.hosts
 });
+
+//
+// const mapStateToProps = ({ planetsIndex }, { params }) => {
+//   const { id, name, description, imageUrl, hosts } = planetsIndex[params.planetId];
+//   return ({ id, name, description, imageUrl, hosts });
+// };
+
 
 const mapDispatchToProps = dispatch => ({
   requestPlanet: planetId => dispatch(requestSinglePlanet(planetId))
