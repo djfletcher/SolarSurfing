@@ -29,7 +29,11 @@ class RequestForm extends React.Component {
       depart_date: this.state.departDate,
       num_travelers: this.state.numTravelers
     };
-    this.props.createRequest(request);
+    this.props.createRequest(request)
+      .then(() => this.setState(
+        { arriveDate: "", departDate: "", numTravelers: 1, errors: [] }
+      ))
+      .fail(res => this.setState({ errors: res.responseJSON }));
   }
 
   renderErrors() {

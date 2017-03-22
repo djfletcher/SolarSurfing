@@ -36,7 +36,7 @@ class ReviewForm extends React.Component {
 
     this.props.createReview(review)
       .then(() => this.setState({ body: "", rating: null, errors: [] }))
-      .fail(r => this.setState({ errors: r.responseJSON }));
+      .fail(res => this.setState({ errors: res.responseJSON }));
   }
 
   renderErrors() {

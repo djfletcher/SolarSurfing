@@ -19,6 +19,13 @@
   justify-content: space-around;
 }
 
+.request-form-container .form-errors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .request-dates {
   display: flex;
   flex-direction: column;
