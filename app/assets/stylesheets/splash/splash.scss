@@ -1,0 +1,72 @@
+@import 'color_palette';
+
+.splash-background {
+  height: 600px;
+  // background-position: 0 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-origin: border-box;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-background:not(:first-child) {
+  border-top: 2px solid $light-blue;
+  display: flex;
+  flex-direction: row;
+}
+
+.splash-background.top {
+  background-image: url(https://res.cloudinary.com/dmgrq5xrb/image/upload/v1490208847/Splash/splash1_daizw1.jpg);
+}
+
+.splash-background.middle {
+  background-image: url(https://res.cloudinary.com/dmgrq5xrb/image/upload/v1490208848/Splash/splash5_j8fu11.jpg);
+}
+
+.splash-background.bottom {
+  background-image: url(https://res.cloudinary.com/dmgrq5xrb/image/upload/v1490208847/Splash/splash3_usrupu.jpg);
+}
+
+.splash-background > .image-content {
+  color: white;
+  text-shadow: -1px 0 #2D3B60, 0 1px #2D3B60, 1px 0 #2D3B60, 0 -1px #2D3B60;
+  font-family: 'Lato', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    width: 170px;
+  }
+}
+
+.splash-background > .content-box {
+  background-color: white;
+  color: black;
+  width: 40%;
+  height: 90%;
+  border: 2px solid $gray;
+}
+
+.splash-background.middle > .content-box {
+  margin-right: 40px;
+}
+
+.splash-background.bottom > .content-box {
+  margin-left: 40px;
+}
+
+.splash-background > .image-content {
+  width: 60%;
+}
+
+.connected-with {
+  padding: 50px;
+}
