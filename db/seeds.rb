@@ -209,11 +209,24 @@ end
 
 # # REQUESTS
 # # ========
-#
-# a = Request.new(
-#   host_id: 9,
-#   guest_id: 65,
-#   arrive_date: Date.parse('2017-12-22'),
-#   depart_date: Date.parse('2017-12-29'),
-#   num_travelers: 4
-# )
+num_users = User.all.count
+
+num_users.times do |i|
+  host_id = (i % num_users) + 1
+  possible_guests = (1..num_users).reject { |num| num == host_id }
+
+  arrive_month = (i % 12) + 1
+  arrive_day = (i % 25) + 1
+  depart_month = ((arrive_month + 1) % 12) + 1
+  depart_day = ((arrive_day + 7) % 28)
+  arrive_date = "2019-#{arrive_month}-#{arrive_day}"
+  depart_date = "2020-#{depart_month}-#{depart_day}"
+
+  Request.create!(
+    host_id: host_id,
+    guest_id: possible_guests.sample,
+    arrive_date: Date.parse(arrive_date),
+    depart_date: Date.parse(depart_date),
+    num_travelers: rand(1..10)
+  )
+end
