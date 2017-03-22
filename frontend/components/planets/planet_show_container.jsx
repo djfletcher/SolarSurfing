@@ -4,16 +4,13 @@ import { requestSinglePlanet } from '../../actions/planets_actions';
 import PlanetShow from './planet_show';
 
 
-const mapStateToProps = ({ planetShow }) => {
-  debugger;
-  return({
+const mapStateToProps = ({ planetShow }) => ({
     id: planetShow.id,
     name: planetShow.name,
     description: planetShow.description,
     imageUrl: planetShow.imageUrl,
     hosts: planetShow.hosts
-  });
-};
+});
 
 //
 // const mapStateToProps = ({ planetsIndex }, { params }) => {
