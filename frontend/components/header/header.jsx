@@ -7,9 +7,10 @@ import SessionFormContainer from '../session_form/session_form_container';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.logo = <a className="logo">SolarSurfing</a>;
+    // this.logo = <a className="logo">SolarSurfing</a>;
+    this.logo = <Link to='/dashboard' className="logo">SolarSurfing</Link>;
     this.handleLogout = this.handleLogout.bind(this);
-    this.handleMyRequests = this.handleMyRequests.bind(this);
+    this.goToMyRequests = this.goToMyRequests.bind(this);
   }
 
   handleLogout() {
@@ -17,7 +18,7 @@ class Header extends React.Component {
       .then(() => this.props.router.push('/'));
   }
 
-  handleMyRequests() {
+  goToMyRequests() {
     return this.props.router.push('/requests');
   }
 
@@ -30,7 +31,7 @@ class Header extends React.Component {
             <li>Hello, { this.props.currentUser.username }!</li>
             <li>
               <Button
-                onClick={ this.handleMyRequests }
+                onClick={ this.goToMyRequests }
                 bsStyle="primary"
               >My Requests</Button>
             </li>

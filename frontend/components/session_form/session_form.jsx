@@ -235,11 +235,6 @@ class SessionForm extends React.Component {
           >
             Join
           </Button></li>
-          <li><Button
-            onClick={ this.handleDemoLogin }
-            bsStyle="primary"
-            >Demo
-          </Button></li>
         </ul>
         { joinModal }
         { loginModal }

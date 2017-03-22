@@ -54,14 +54,3 @@ const _redirectIfLoggedOut = (nextState, replace) => {
 };
 
 export default Root;
-
-
-// const Root = ({ store }) => (
-//   <Provider store={ store }>
-//     <Router history={ hashHistory }>
-//       <Route component={ App }>
-//         <Route path="/" component={ Home } />
-//       </Route>
-//     </Router>
-//   </Provider>
-// );

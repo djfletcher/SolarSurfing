@@ -17,6 +17,7 @@ class RequestForm extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.goToMyRequests = this.goToMyRequests.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.alreadyBooked = this.alreadyBooked.bind(this);
   }
@@ -60,6 +61,10 @@ class RequestForm extends React.Component {
       .fail(res => this.setState({ errors: res.responseJSON }));
   }
 
+  goToMyRequests() {
+    return this.props.router.push('/requests');
+  }
+
   renderErrors() {
     if (this.state.errors.length > 0) {
       const errors = this.state.errors.map((err, idx) => (
@@ -74,6 +79,10 @@ class RequestForm extends React.Component {
     const confirmation = (
       <div className="request-form-container">
         <h2>Booking confirmed with { this.props.hostName }!</h2>
+          <Button
+            onClick={ this.goToMyRequests }
+            bsStyle="primary"
+          >Go to My Requests</Button>
       </div>
     );
 
