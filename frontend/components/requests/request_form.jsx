@@ -39,24 +39,43 @@ class RequestForm extends React.Component {
         <h2>Request to Stay with { this.props.hostName }</h2>
         { this.renderErrors() }
         <form className="request-form" onSubmit={ this.handleSubmit }>
-          <input
-            type="date"
-            onChange={ this.update('arriveDate') }
-            value={ this.state.arriveDate }
-            className="request-date"
-          />
-          <input
-            type="date"
-            onChange={ this.update('departDate') }
-            value={ this.state.departDate }
-            className="request-date"
-          />
-          <input
-            type="number"
-            onChange={ this.update('numTravelers') }
-            value={ this.state.numTravelers }
-            className="request-num-travelers"
-          />
+          <div className="request-dates">
+            <label>Arrive
+              <input
+                type="date"
+                onChange={ this.update('arriveDate') }
+                value={ this.state.arriveDate }
+                className="request-dates"
+              />
+            </label>
+            <label>Depart
+              <input
+                type="date"
+                onChange={ this.update('departDate') }
+                value={ this.state.departDate }
+                className="request-dates"
+              />
+            </label>
+          </div>
+          <label className="request-num-travelers">Number of Travelers
+            <select
+              value={this.state.numTravelers}
+              onChange={this.update('numTravelers')}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </label>
           <Button type="submit" bsStyle="primary">Submit</Button>
         </form>
       </div>
