@@ -19,7 +19,7 @@ class Requests extends React.Component {
         </section>
         <section className="requests-index-container">
           <section className="requests-made-index-container">
-            <h1>My Travel Plans</h1>
+            <h1 className="requests-made-header">My Travel Plans</h1>
             <ul className="requests-made-index">
               { requestsMadeIndex }
             </ul>
