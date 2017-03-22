@@ -5,11 +5,18 @@ export const fetchSingleHost = hostId => (
   })
 );
 
-export const createReview = review => {
-  // debugger;
-  return $.ajax({
+export const createReview = review => (
+  $.ajax({
     method: 'POST',
     url: 'api/reviews',
     data: { review }
-  });
-};
+  })
+);
+
+export const createRequest = request => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/requests',
+    data: { request }
+  })
+);

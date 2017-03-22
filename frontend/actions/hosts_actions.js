@@ -2,6 +2,7 @@ import * as APIUtil from '../util/hosts_api_util';
 
 export const RECEIVE_SINGLE_HOST = 'RECEIVE_SINGLE_HOST';
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+export const RECEIVE_REQUEST = "RECEIVE_REQUEST";
 
 export const receiveSingleHost = host => ({
   type: RECEIVE_SINGLE_HOST,
@@ -13,6 +14,11 @@ export const receiveReview = review => ({
   review
 });
 
+export const receiveRequest = request => ({
+  type: RECEIVE_REQUEST,
+  request
+});
+
 export const requestSingleHost = hostId => dispatch => {
   return APIUtil.fetchSingleHost(hostId)
     .then(host => dispatch(receiveSingleHost(host)));
@@ -21,4 +27,9 @@ export const requestSingleHost = hostId => dispatch => {
 export const createReview = review => dispatch => {
   return APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review)));
+};
+
+export const createRequest = request => dispatch => {
+  return APIUtil.createRequest(request)
+    .then(request => dispatch(receiveRequest(request)));
 };

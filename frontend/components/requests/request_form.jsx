@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { omit } from 'lodash';
 
 class RequestForm extends React.Component {
   constructor(props) {
@@ -7,7 +8,8 @@ class RequestForm extends React.Component {
     this.state = { arriveDate: "", departDate: "", numTravelers: 1, errors: [] };
     // this.updateBody = this.updateBody.bind(this);
     // this.updateRating = this.updateRating.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -20,7 +22,14 @@ class RequestForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.createRequest(this.state);
+    const request = {
+      guest_id: this.props.guestId,
+      host_id: this.props.hostId,
+      arrive_date: this.state.arriveDate,
+      depart_date: this.state.departDate,
+      num_travelers: this.state.numTravelers
+    };
+    this.props.createRequest(request);
   }
 
   renderErrors() {
@@ -36,7 +45,7 @@ class RequestForm extends React.Component {
 
     return (
       <div className="request-form-container">
-        <h2>Request to Stay with { this.props.hostName }</h2>
+        <h2>Send Request</h2>
         { this.renderErrors() }
         <form className="request-form" onSubmit={ this.handleSubmit }>
           <div className="request-dates">
