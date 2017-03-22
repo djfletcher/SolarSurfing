@@ -1,4 +1,5 @@
 import React from 'react';
+import RequestsIndexItem from './requests_index_item';
 
 class Requests extends React.Component {
   render() {

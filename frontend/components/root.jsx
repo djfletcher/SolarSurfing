@@ -34,7 +34,7 @@ const Root = ({ store }) => (
       </Route>
       <Route
         path='requests'
-        component={ Requests }
+        component={ RequestsContainer }
         onEnter={ _redirectIfLoggedOut }
       />
     </Router>
