@@ -11,3 +11,24 @@ const App = ({ children }) => (
 );
 
 export default App;
+
+//
+// const App = ({ children }) => (
+//
+//   const toggleModal = () => {
+//     this.setState({modalOpen: !this.state.modalOpen})
+//   };
+//
+//   <div className="app">
+//     <HeaderContainer
+//       onClickLogin={toggleModal}
+//       />
+//     <SessionFormContainer
+//       open={this.state.modalOpen}
+//       />
+//     { children }
+//     <FooterContainer />
+//   </div>
+// );
+//
+// export default App;

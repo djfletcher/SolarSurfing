@@ -21,8 +21,11 @@ class HostShow extends React.Component {
   moveWindow() {
     const hostShow = document.getElementById('book-host-reviews-container');
     const { top } = hostShow.getBoundingClientRect();
-    window.scrollBy(0, -25);
-    if (top < 0) {
+    if (top < -25) {
+      window.scrollBy(0, -20);
+      setTimeout(this.moveWindow.bind(this), 1);
+    } else if (top > 25) {
+      window.scrollBy(0, 20);
       setTimeout(this.moveWindow.bind(this), 1);
     }
   }
