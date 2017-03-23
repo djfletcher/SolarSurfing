@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const Splash = ({ children }) => (
+const Splash = () => (
   <div className="splash-container">
     <div className="splash-background top">
       <aside className="image-content">

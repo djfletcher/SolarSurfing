@@ -7,7 +7,6 @@ import SessionFormContainer from '../session_form/session_form_container';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    // this.logo = <a className="logo">SolarSurfing</a>;
     this.logo = <Link to='/dashboard' className="logo">SolarSurfing</Link>;
     this.handleLogout = this.handleLogout.bind(this);
     this.goToMyRequests = this.goToMyRequests.bind(this);

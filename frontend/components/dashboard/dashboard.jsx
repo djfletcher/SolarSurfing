@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
+import OrbitalMap from '../orbital_map/orbital_map';
 
 const Dashboard = ({ children }) => (
-  <div>
-    I AM DASHBOARD
+  <div className="dashboard">
+    { OrbitalMap() }
     <ul>
       <li><Link to={ '/planets/1' }>Mercury</Link></li>
       <li><Link to={ '/planets/2' }>Venus</Link></li>
