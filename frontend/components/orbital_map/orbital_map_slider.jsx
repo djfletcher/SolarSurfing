@@ -5,7 +5,7 @@ import Rheostat from 'rheostat';
 class OrbitalMapSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 0 };
+    this.state = { value: 0, rotationAmount: 0 };
     this.highlightPlanet = this.highlightPlanet.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onValuesUpdated = this.onValuesUpdated.bind(this);
@@ -35,17 +35,59 @@ class OrbitalMapSlider extends React.Component {
   // }
 
   onChange(sliderState) {
-    window.alert(sliderState.values[0]);
+    // window.alert(sliderState.values[0]);
   }
 
+  // orbitalPeriod(planet, rotationAmount) {
+  //   const orbitalPeriods = {
+  //     mercury: 0.241,
+  //     venus: 0.616,
+  //     earth: 1.000,
+  //     mars: 1.882,
+  //     jupiter: ‎11.862,
+  //     saturn: 29.457,
+  //     uranus: 84.021,
+  //     neptune: 164.882
+  //   };
+  //
+  //   return ({
+  //     transform: `rotate(${orbitalPeriods[planet] * rotationAmount}deg)`
+  //   });
+  // }
+
   onValuesUpdated(sliderState) {
-    this.setState({ value: sliderState.values[0] });
+    const value = sliderState.values[0];
+    this.setState({
+      value: value,
+      rotationAmount: value * 100
+    });
+
   }
 
   render() {
     const min = 0;
-    const max = 100;
-    const { value } = this.state;
+    const max = 400;
+    const { value, rotationAmount } = this.state;
+
+    const orbitalPeriod = planet => {
+      const orbitalPeriods = {
+        mercury: 5,
+        venus: 8,
+        earth: 12,
+        moon: 2,
+        mars: 20,
+        jupiter: 30,
+        saturn: 60,
+        uranus: 70,
+        neptune: 100
+      };
+
+      return ({
+        transform: `rotate(${rotationAmount / orbitalPeriods[planet]}deg)`
+        // WebkitAnimationDuration: '1s',
+        // MozAnimationDuration: '1s'
+      });
+    };
 
     return (
       <div>
@@ -67,31 +109,31 @@ class OrbitalMapSlider extends React.Component {
           <li className="sun-orbit">
             <a href="#sun"><span id="sun"></span></a>
           </li>
-          <li className="mercury-orbit">
+          <li className="mercury-orbit" style={ orbitalPeriod("mercury") }>
             <a href="#mercury"><span id="mercury"></span></a>
           </li>
-          <li className="venus-orbit">
+          <li className="venus-orbit" style={ orbitalPeriod("venus") }>
             <a href="#venus"><span id="venus"></span></a>
           </li>
-          <li className="earth-orbit">
+          <li className="earth-orbit" style={ orbitalPeriod("earth") }>
             <a href="#earth"><span id="earth">
-              <span className="moon"></span>
+              <span className="moon" style={ orbitalPeriod("moon") }></span>
             </span></a>
           </li>
-          <li className="mars-orbit">
+          <li className="mars-orbit" style={ orbitalPeriod("mars") }>
             <a href="#mars"><span id="mars"></span></a>
           </li>
-          <li className="jupiter-orbit">
+          <li className="jupiter-orbit" style={ orbitalPeriod("jupiter") }>
             <a href="#jupiter"><span id="jupiter"></span></a>
           </li>
-          <li className="saturn-orbit">
+          <li className="saturn-orbit" style={ orbitalPeriod("saturn") }>
             <a href="#saturn"><span id="saturn"></span>
             <span className="ring"></span></a>
           </li>
-          <li className="uranus-orbit">
+          <li className="uranus-orbit" style={ orbitalPeriod("uranus") }>
             <a href="#uranus"><span id="uranus"></span></a>
           </li>
-          <li className="neptune-orbit">
+          <li className="neptune-orbit" style={ orbitalPeriod("neptune") }>
             <a href="#neptune"><span id="neptune"></span></a>
           </li>
         </ul>
