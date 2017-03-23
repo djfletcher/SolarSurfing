@@ -131,19 +131,17 @@ class OrbitalMapSlider extends React.Component {
               <Button bsStyle="primary" onClick={ this.handleSearch }>Search</Button>
             </li>
           </ul>
-          <div className="travel-dates">
-            <div>
-              <p>Year of Travel: { value }</p>
-            </div>
-            <div className="rheostat-container">
-              <Rheostat
-                min={ min }
-                max={ max }
-                values={ [value] }
-                onChange={ this.onChange }
-                onValuesUpdated={ this.onValuesUpdated }
-              />
-            </div>
+          <div className="travel-year">
+            <p>Year of Travel: { value }</p>
+          </div>
+          <div className="rheostat-container">
+            <Rheostat
+              min={ min }
+              max={ max }
+              values={ [value] }
+              onChange={ this.onChange }
+              onValuesUpdated={ this.onValuesUpdated }
+            />
           </div>
         </section>
         <section className="orbital-map-container">

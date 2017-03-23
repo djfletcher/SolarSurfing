@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   margin: 0 10%;
+  background: white;
 }
 
 .explore-and-num-travelers-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px;
 }
 
 .explore-and-num-travelers-container > li {
@@ -36,6 +38,9 @@
 
 .btn-group > .btn:first-child {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .react-numeric-input > b {
@@ -50,6 +55,23 @@
   width: 50px;
   padding: 5px 15px 5px 0 !important;
   border: none !important;
+}
+
+.travel-year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+
+  width: 150px;
+  padding: 6px;
+  margin: 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.travel-year > p {
+  margin: 0;
 }
 
 
