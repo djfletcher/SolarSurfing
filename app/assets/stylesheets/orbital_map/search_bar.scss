@@ -1,9 +1,42 @@
-.search-bar-num-travelers {
-  border-radius: 4px;
-  border: 1px solid gray;
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10%;
 }
 
+.explore-and-num-travelers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.explore-and-num-travelers-container > li {
+  margin: 10px 20px;
+  display: flex;
+  width: 150px;
+  justify-content: center;
+}
+
+.num-travelers {
+  display: flex;
+  align-items: center;
+
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 3px;
+}
+
+.num-travelers > p {
+  margin: 0;
+}
+
+.explore-and-num-travelers-container > li > button, div.dropdown.btn-group {
+  width: 100%;
+}
+
+.btn-group > .btn:first-child {
+  width: 100%;
+}
 
 .react-numeric-input > b {
   left: 2px;
@@ -16,8 +49,7 @@
   text-align: right;
   width: 50px;
   padding: 5px 15px 5px 0 !important;
-
-  border: none;
+  border: none !important;
 }
 
 
