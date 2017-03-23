@@ -1,5 +1,15 @@
 @import 'color_palette';
 
+.rheostat-container {
+  height: 60px;
+  margin: 0 50px;
+}
+
+// .rheostat-container:hover {
+//   -webkit-animation-play-state: paused;
+//   -moz-animation-play-state: paused;
+// }
+
 .rheostat {
   overflow: visible;
 }

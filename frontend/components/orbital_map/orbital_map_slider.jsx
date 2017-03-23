@@ -1,14 +1,16 @@
 import React from 'react';
 // import ReactBootstrapSlider from 'react-bootstrap-slider';
 import Rheostat from 'rheostat';
+import NumericInput from 'react-numeric-input';
 
 class OrbitalMapSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 0, rotationAmount: 0 };
+    this.state = { value: 0, rotationAmount: 0, numTravelers: 1 };
     this.highlightPlanet = this.highlightPlanet.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onValuesUpdated = this.onValuesUpdated.bind(this);
+    this.handleNumTravelers = this.handleNumTravelers.bind(this);
   }
 
   highlightPlanet(e) {
@@ -64,6 +66,10 @@ class OrbitalMapSlider extends React.Component {
 
   }
 
+  handleNumTravelers(valueAsNumber) {
+    this.setState({ numTravelers: valueAsNumber });
+  }
+
   render() {
     const min = 0;
     const max = 400;
@@ -90,18 +96,26 @@ class OrbitalMapSlider extends React.Component {
     };
 
     return (
-      <div>
+      <div className="search-bar-container">
+        <div className="search-bar-num-travelers">
+          <p>Travelers:</p>
+          <NumericInput
+            min={ 1 }
+            max={ 12 }
+            value={ this.state.numTravelers }
+            onChange={ this.handleNumTravelers } />
+        </div>
         <div>
+          <p>Year of Travel: { value }</p>
+        </div>
+        <div className="rheostat-container">
           <Rheostat
-            min={min}
-            max={max}
-            values={[value]}
-            onChange={this.onChange}
-            onValuesUpdated={this.onValuesUpdated}
+            min={ min }
+            max={ max }
+            values={ [value] }
+            onChange={ this.onChange }
+            onValuesUpdated={ this.onValuesUpdated }
           />
-          <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <div>{value}</div>
-          </div>
         </div>
       <section className="orbital-map-container">
 
