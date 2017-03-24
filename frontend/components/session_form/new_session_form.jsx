@@ -8,12 +8,13 @@ class SessionForm extends React.Component {
     super(props);
 
     this.state = {
-      showLogin: this.props.showLogin,
-      showJoin: this.props.showJoin,
+      showLogin: props.showLogin,
+      showJoin: props.showJoin,
       username: "",
       password: "",
       bio: "",
-      planet_id: 3
+      planet_id: 3,
+      errors: props.errors
     };
 
     this.update = this.update.bind(this);
@@ -35,9 +36,18 @@ class SessionForm extends React.Component {
   //   }
   // }
 
-  componentWillReceiveProps({ showLogin, showJoin }) {
-    if (showLogin !== this.state.showLogin || showJoin !== this.state.showJoin) {
-      this.setState({ showLogin, showJoin });
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    if (
+      nextProps.howLogin !== this.state.showLogin ||
+        nextProps.howJoin !== this.state.showJoin
+    ) {
+      this.setState({
+        showLogin: nextProps.showLogin,
+        showJoin: nextProps.showJoin
+      });
+    } else if (nextProps.errors.responseJSON) {
+      this.setState({ errors: nextProps.errors });
     }
   }
 
@@ -74,8 +84,8 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors.responseJSON) {
-      const errors = this.props.errors.responseJSON.map((err, idx) => (
+    if (this.state.errors.responseJSON) {
+      const errors = this.state.errors.responseJSON.map((err, idx) => (
         <li key={idx}>{err}</li>
       ));
       return <ul className="form-errors">{ errors }</ul>;

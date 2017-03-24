@@ -54,3 +54,56 @@ const _redirectIfLoggedOut = (nextState, replace) => {
 };
 
 export default Root;
+
+
+// const Root = ({ store }) => (
+//   <Provider store={ store }>
+//     <Router history={ hashHistory }>
+//       <Route path="/" component={ App } openJoin={ openJoin }>
+//         <IndexRoute
+//           component={ Splash }
+//           onEnter={ _redirectIfLoggedIn }
+//           openJoin={ triggerOpenJoin } />
+//         <Route
+//           path='dashboard'
+//           component={ Dashboard }
+//           onEnter={ _redirectIfLoggedOut } />
+//         <Route
+//           path='planets/:planetId'
+//           component={ PlanetShowContainer }
+//           onEnter={ _redirectIfLoggedOut } >
+//           <Route
+//             path='hosts/:hostId'
+//             component={ HostShowContainer }
+//             onEnter={ _redirectIfLoggedOut } />
+//         </Route>
+//         <Route
+//           path='requests'
+//           component={ RequestsContainer }
+//           onEnter={ _redirectIfLoggedOut } />
+//     </Route>
+//     </Router>
+//   </Provider>
+// );
+//
+// const _redirectIfLoggedIn = (nextState, replace) => {
+//   if (store.getState().session.currentUser) {
+//     replace('/dashboard');
+//   }
+// };
+//
+// const _redirectIfLoggedOut = (nextState, replace) => {
+//   if (store.getState().session.currentUser === null) {
+//     replace('/');
+//   }
+// };
+//
+// const triggerOpenJoin = () => {
+//   openJoin();
+// };
+//
+// const openJoin = () => {
+//   return { showJoin: true };
+// };
+//
+// export default Root;
