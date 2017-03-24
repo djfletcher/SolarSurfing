@@ -1,10 +1,11 @@
 import React from 'react';
-// import ReactBootstrapSlider from 'react-bootstrap-slider';
+import { hashHistory } from 'react-router';
 import Rheostat from 'rheostat';
 import NumericInput from 'react-numeric-input';
 import { Button, DropdownButton, MenuItem } from 'react-bootstrap';
 
-class OrbitalMapSlider extends React.Component {
+
+class OrbitalMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,15 +79,21 @@ class OrbitalMapSlider extends React.Component {
 
   handleSearch(e) {
     const planetIds = {
-      "mercury": 1,
-      "venus": 2,
-      "earth": 3,
-      "mars": 4,
-      "jupiter": 5,
-      "saturn": 6,
-      "uranus": 7,
-      "neptune": 8
+      mercury: 1,
+      venus: 2,
+      earth: 3,
+      mars: 4,
+      jupiter: 5,
+      saturn: 6,
+      uranus: 7,
+      neptune: 8
     };
+
+    const { numTravelers, year } = this.state;
+    const searchParams = { numTravelers, arriveYear: year };
+    this.props.search(searchParams);
+    const planetId = planetIds[this.state.planet];
+    hashHistory.push(`/planets/${planetId}`);
   }
 
   alert(eventKey) {
@@ -211,7 +218,7 @@ class OrbitalMapSlider extends React.Component {
 }
 
 
-export default OrbitalMapSlider;
+export default OrbitalMap;
 
 
 

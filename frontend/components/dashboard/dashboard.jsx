@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { search } from '../../actions/search_actions';
 // import OrbitalMap from '../orbital_map/orbital_map';
 // import OrbitalMapAutoAnimate from '../orbital_map/orbital_map_auto_animate';
-import OrbitalMapSlider from '../orbital_map/orbital_map_slider';
+import OrbitalMapContainer from '../orbital_map/orbital_map_container';
 
 const Dashboard = ({ children }) => (
   <div className="dashboard">
-    <OrbitalMapSlider />
+    <OrbitalMapContainer />
     <ul>
       <li><Link to={ '/planets/1' }>Mercury</Link></li>
       <li><Link to={ '/planets/2' }>Venus</Link></li>
