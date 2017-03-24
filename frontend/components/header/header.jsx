@@ -29,6 +29,14 @@ class Header extends React.Component {
             <li>Hello, { this.props.currentUser.username }!</li>
             <li>
               <Button
+                className="back-to-planets-index"
+                onClick={ () => hashHistory.push('/dashboard') }
+                bsStyle="primary">
+                Solar System Map
+              </Button>
+            </li>
+            <li>
+              <Button
                 onClick={ this.goToMyRequests }
                 bsStyle="primary"
               >My Requests</Button>

@@ -28,12 +28,6 @@ class PlanetShow extends React.Component {
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
         <div className="planet-show-container">
-          <Button
-            className="back-to-planets-index"
-            onClick={ () => this.props.router.push('dashboard') }
-            bsStyle="primary">
-            Back to All Planets
-          </Button>
           <div className="planet-show" style={ background }>
             <aside className="planet-info">
               <h1>{ this.props.name }</h1>
