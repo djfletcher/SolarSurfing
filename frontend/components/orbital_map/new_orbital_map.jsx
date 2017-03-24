@@ -13,51 +13,53 @@ class OrbitalMap extends React.Component {
       rotationAmount: 0,
       numTravelers: 1,
       planet: "",
-      interactive: false,
+      autoOrbiting: false,
       searchEnabled: false,
-      sliderShowing: false
+      sliderShowing: false,
+      sliderUsed: false
       // sliderHandleBouncing: false
     };
-    this.makeInteractive = this.makeInteractive.bind(this);
-    this.highlightPlanet = this.highlightPlanet.bind(this);
-    this.enableSearch = this.enableSearch.bind(this);
+    this.orbitPlanets = this.orbitPlanets.bind(this);
+    this.sliderUsed = this.sliderUsed.bind(this);
     this.onValuesUpdated = this.onValuesUpdated.bind(this);
     this.handleNumTravelers = this.handleNumTravelers.bind(this);
     this.selectPlanet = this.selectPlanet.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    // this.bounceSliderHandle = this.bounceSliderHandle.bind(this);
+    this.toggleSlider = this.toggleSlider.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
-  makeInteractive() {
-    $("ul.solarsystem").find("li").removeClass("orbiting");
-    $("ul.solarsystem li.earth-orbit").find("span").removeClass("orbiting");
-    this.setState({ interactive: true });
-  }
-
-  highlightPlanet(planet) {
-    if (this.state.planet) {
-      const oldPlanet = $(`#${this.state.planet}`);
-      oldPlanet.removeClass("animated pulse infinite");
-      oldPlanet.css("transform", "none");
+  componentDidUpdate(nextProps, nextState) {
+    if (this.state.planet !== nextState.planet && nextState.sliderUsed) {
+      this.setState({ searchEnabled: true });
+    } else if ((this.state.sliderUsed !== nextState.sliderUsed) &&
+        this.state.planet) {
+      this.setState({ searchEnabled: true });    
     }
-    const newPlanet = $(`#${planet}`);
-    newPlanet.addClass("animated pulse infinite");
-    newPlanet.css("transform", "scale(2)");
   }
 
+  orbitPlanets() {
+    if (this.state.autoOrbiting) {
+      $("ul.solarsystem").find("li").removeClass("orbiting");
+      $("ul.solarsystem li.earth-orbit").find("span").removeClass("orbiting");
+    } else if (!this.state.autoOrbiting) {
+      $("ul.solarsystem").find("li").addClass("orbiting");
+      $("ul.solarsystem li.earth-orbit").find("span").addClass("orbiting");
+    }
+  }
+
+  toggleSlider() {
+    this.setState({ sliderShowing: !this.state.sliderShowing });
+    this.setState({ autoOrbiting: !this.state.autoOrbiting });
+  }
 
   selectPlanet(planet) {
-    // this.highlightPlanet(planet);
     this.setState({ planet });
+    // this.enableSearch();
   }
 
-  enableSearch(sliderState) {
-    this.setState({ searchEnabled: true });
-    // $(".rheostat-handle").removeClass("animated");
+  sliderUsed(sliderState) {
+    this.setState({ sliderUsed: true });
+    // this.enableSearch();
   }
 
   onValuesUpdated(sliderState) {
@@ -71,7 +73,6 @@ class OrbitalMap extends React.Component {
   handleNumTravelers(valueAsNumber) {
     this.setState({ numTravelers: valueAsNumber });
   }
-
 
   handleSearch(e) {
     const planetIds = {
@@ -96,18 +97,10 @@ class OrbitalMap extends React.Component {
     }
   }
 
-  // bounceSliderHandle() {
-  //   if ($(".rheostat-handle").length > 0 && !this.state.searchEnabled) {
-  //     $(".rheostat-handle").addClass("animated");
-  //     $(".rheostat-handle").addClass("bounce");
-  //     this.setState({ sliderHandleBouncing: true });
-  //   }
-  // }
-
   render() {
+    const { year, rotationAmount, planet } = this.state;
     const min = 2017;
     const max = 2417;
-    const { year, rotationAmount, planet } = this.state;
 
     const orbitalPeriod = planetName => {
       const orbitalPeriods = {
@@ -124,70 +117,52 @@ class OrbitalMap extends React.Component {
 
       return ({
         transform: `rotate(${rotationAmount / orbitalPeriods[planetName]}deg)`
-        // WebkitAnimationDuration: '1s',
-        // MozAnimationDuration: '1s'
       });
     };
 
     const planetTitle = planet.charAt(0).toUpperCase() + planet.slice(1);
 
-    const interactionButton = () => {
-      if (this.state.interactive) {
-        const buttonText = this.state.searchEnabled ? "Search" : "Slide Timeline";
-        return(
-          <Button
-            bsStyle="primary"
-            onClick={ this.handleSearch }
-            disabled={ !this.state.searchEnabled }
-            >{ buttonText }</Button>
-        );
-      } else {
-        return(
-          <DropdownButton
-            title={ "When" }
-            id="select-travel-year"
-            onClick={ this.makeInteractive } />
-        );
-      }
-    };
-
     const whenButton = () => {
-      if (this.state.sliderShowing || this.state.searchEnabled) {
-        return (
-          <div className="travel-year">
-            <p>Year of Travel: { year }</p>
-          </div>
-        );
-      } else {
-        return(
-          <DropdownButton
-            title={ "When" }
-            id="select-travel-year"
-            onClick={ this.makeInteractive } />
-        );
-      }
+      const buttonText = (this.state.sliderShowing || this.state.searchEnabled) ?
+        `Year of Travel: ${year}` : `When`;
+      const dropup = this.state.sliderShowing;
+      return(
+        <DropdownButton
+          dropup={ dropup }
+          title={ buttonText }
+          id="select-travel-year"
+          onClick={ this.toggleSlider } />
+      );
     };
 
     const slider = () => {
-      if (this.state.interactive) {
+      if (this.state.sliderShowing) {
         return(
-          <div className="travel-year-container">
-            <div className="travel-year">
-              <p>Year of Travel: { year }</p>
-            </div>
-            <div className="rheostat-container">
-              <Rheostat
-                min={ min }
-                max={ max }
-                values={ [year] }
-                onChange={ this.enableSearch }
-                onValuesUpdated={ this.onValuesUpdated }
-                />
-            </div>
+          <div className="rheostat-container">
+            <Rheostat
+              min={ min }
+              max={ max }
+              values={ [year] }
+              onChange={ this.sliderUsed }
+              onValuesUpdated={ this.onValuesUpdated }
+              />
           </div>
         );
       }
     };
+
+    const searchButton = () => {
+      if (this.state.searchEnabled) {
+        return(
+          <Button
+            bsStyle="primary"
+            onClick={ this.handleSearch }>Search
+          </Button>
+        );
+      }
+    };
+
+    this.orbitPlanets();
 
     return (
       <div className="orbital-map-and-search-container">
@@ -219,6 +194,7 @@ class OrbitalMap extends React.Component {
             </li>
           </ul>
           { slider() }
+          { searchButton() }
         </section>
         <section className="orbital-map-container">
 
