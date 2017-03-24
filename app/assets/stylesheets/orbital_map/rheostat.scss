@@ -16,7 +16,7 @@
   position: relative;
 
   animation-name: sliderExpand;
-  animation-duration: 1s;
+  animation-duration: 750ms;
 }
 
 .rheostat-progress {
@@ -48,6 +48,10 @@
 
 @keyframes sliderExpand {
   0% {
+    transform: scaleX(0);
+  }
+
+  33% {
     transform: scaleX(0);
   }
 

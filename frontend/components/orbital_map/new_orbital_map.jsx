@@ -165,9 +165,25 @@ class OrbitalMap extends React.Component {
 
     this.orbitPlanets();
 
+    const searchContainerHeight = () => {
+      if (!this.state.sliderShowing && !this.state.searchEnabled) {
+        return '65px';
+      } else if (this.state.sliderShowing && !this.state.searchEnabled) {
+        return '130px';
+      } else if (!this.state.sliderShowing && this.state.searchEnabled) {
+        return '120px';
+      } else if (this.state.sliderShowing && this.state.searchEnabled) {
+        return '175px';
+      }
+    };
+
+    const searchContainerStyle = { height: searchContainerHeight() };
+
     return (
       <div className="orbital-map-and-search-container">
-        <section className="search-container">
+        <section
+          className="search-container"
+          style={ searchContainerStyle }>
           <ul className="explore-and-num-travelers-container">
             <li className="search-where">
               <DropdownButton
