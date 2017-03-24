@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 const Splash = () => (
@@ -11,7 +12,10 @@ const Splash = () => (
     <div className="splash-background middle">
       <aside className="image-content">
         <h1>Explore the Solar System</h1>
-        <Button bsStyle="primary">How It Works</Button>
+        <Button
+          onClick={ () => hashHistory.push('/howitworks') }
+          bsStyle="primary">How It Works
+        </Button>
       </aside>
       <article className="content-box">
         <div className="testimonial">
@@ -67,7 +71,10 @@ const Splash = () => (
       </article>
       <aside className="image-content">
         <h1>Meet Groovy Extraterrestrials</h1>
-        <Button bsStyle="primary">Safety First</Button>
+        <Button
+          onClick={ () => hashHistory.push('/safety') }
+          bsStyle="primary">Safety First
+        </Button>
       </aside>
     </div>
   </div>

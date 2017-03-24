@@ -1,7 +1,21 @@
+@import 'color_palette';
+
+.site-info-container {
+  display: flex;
+}
+
 .about-container, .howitworks-container, .safety-container {
   display: flex;
   flex-direction: column;
 
+  width: 80%;
+
   background-color: white;
   padding: 40px;
+}
+
+.site-info-navbar {
+  width: 20%;
+  border-right: 1px solid $mid-blue;
+  border-radius: 5px;
 }
