@@ -12,13 +12,13 @@ class OrbitalMap extends React.Component {
       year: 2017,
       rotationAmount: 0,
       numTravelers: 1,
-      planet: ""
-      // autoScroll: true
+      planet: "",
+      interactive: false,
+      searchEnabled: false
     };
-    this.stopAnimation = this.stopAnimation.bind(this);
-    this.autoScroll = this.autoScroll.bind(this);
+    this.makeInteractive = this.makeInteractive.bind(this);
     this.highlightPlanet = this.highlightPlanet.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.enableSearch = this.enableSearch.bind(this);
     this.onValuesUpdated = this.onValuesUpdated.bind(this);
     this.handleNumTravelers = this.handleNumTravelers.bind(this);
     this.selectPlanet = this.selectPlanet.bind(this);
@@ -26,28 +26,13 @@ class OrbitalMap extends React.Component {
   }
 
   componentDidMount() {
-    // this.autoScroll();
+
   }
 
-  stopAnimation() {
-    $("ul.solarsystem").find("li").toggleClass("animated");
-    $("ul.solarsystem li.earth-orbit").find("span").toggleClass("animated");
-  }
-
-  autoScroll() {
-    // if (this.state.autoScroll) {
-    if (this.state.year > 400) {
-      this.setState({
-        year: 0
-      });
-      setTimeout(this.autoScroll, 100);
-    } else {
-      this.setState({
-        rotationAmount: this.state.year * 100,
-        year: this.state.year + 1
-      });
-      setTimeout(this.autoScroll, 100);
-    }
+  makeInteractive() {
+    $("ul.solarsystem").find("li").removeClass("animated");
+    $("ul.solarsystem li.earth-orbit").find("span").removeClass("animated");
+    this.setState({ interactive: true });
   }
 
   highlightPlanet(planet) {
@@ -65,8 +50,8 @@ class OrbitalMap extends React.Component {
     this.setState({ planet });
   }
 
-  onChange(sliderState) {
-    // window.alert(sliderState.values[0]);
+  enableSearch(sliderState) {
+    this.setState({ searchEnabled: true });
   }
 
   onValuesUpdated(sliderState) {
@@ -137,10 +122,46 @@ class OrbitalMap extends React.Component {
 
     const planetTitle = planet.charAt(0).toUpperCase() + planet.slice(1);
 
-    // const mars = document.getElementById("mars");
-    // if (mars) {
-    //   mars.style.border = "4px solid yellow";
-    // }
+    const interactionButton = () => {
+      if (this.state.interactive) {
+        const buttonText = this.state.searchEnabled ? "Search" : "Move Time";
+        return(
+          <Button
+            bsStyle="primary"
+            onClick={ this.handleSearch }
+            disabled={ !this.state.searchEnabled }
+            >{ buttonText }</Button>
+        );
+      } else {
+        return(
+          <DropdownButton
+            title={ "Choose Travel Year" }
+            id="2"
+            onClick={ this.makeInteractive } />
+        );
+      }
+    };
+
+    const slider = () => {
+      if (this.state.interactive) {
+        return(
+          <div className="travel-year-container">
+            <div className="travel-year">
+              <p>Year of Travel: { year }</p>
+            </div>
+            <div className="rheostat-container">
+              <Rheostat
+                min={ min }
+                max={ max }
+                values={ [year] }
+                onChange={ this.enableSearch }
+                onValuesUpdated={ this.onValuesUpdated }
+                />
+            </div>
+          </div>
+        );
+      }
+    };
 
     return (
       <div className="orbital-map-and-search-container">
@@ -169,25 +190,9 @@ class OrbitalMap extends React.Component {
                 value={ this.state.numTravelers }
                 onChange={ this.handleNumTravelers } />
             </li>
-            <li>
-              <Button bsStyle="primary" onClick={ this.handleSearch }>Search</Button>
-            </li>
-            <li>
-              <Button bsStyle="primary" onClick={ this.stopAnimation }>Click Me</Button>
-            </li>
+            <li>{ interactionButton() }</li>
           </ul>
-          <div className="travel-year">
-            <p>Year of Travel: { year }</p>
-          </div>
-          <div className="rheostat-container">
-            <Rheostat
-              min={ min }
-              max={ max }
-              values={ [year] }
-              onChange={ this.onChange }
-              onValuesUpdated={ this.onValuesUpdated }
-            />
-          </div>
+          { slider() }
         </section>
         <section className="orbital-map-container">
 
