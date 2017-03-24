@@ -89,11 +89,15 @@ class OrbitalMap extends React.Component {
       neptune: 8
     };
 
-    const { numTravelers, year } = this.state;
-    const searchParams = { numTravelers, arriveYear: year };
-    this.props.search(searchParams);
-    const planetId = planetIds[this.state.planet];
-    hashHistory.push(`/planets/${planetId}`);
+    const { numTravelers, year, planet } = this.state;
+    if (planet && year) {
+      const searchParams = { numTravelers, arriveYear: year };
+      this.props.search(searchParams);
+      const planetId = planetIds[planet];
+      hashHistory.push(`/planets/${planetId}`);
+    } else {
+      window.alert("You must select a planet and a year.");
+    }
   }
 
   alert(eventKey) {
