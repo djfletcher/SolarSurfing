@@ -14,7 +14,11 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @user = @review.host
+    @review.destroy
 
+    render "api/users/show"
   end
 
   private

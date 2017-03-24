@@ -41,7 +41,6 @@ class HostShow extends React.Component {
     const { id, username, bio, imageUrl, planetId, reviews } = this.props;
 
     if (username) {
-      // debugger;
       return(
         <div id="book-host-reviews-container">
           <div className="book-host-container">
@@ -58,7 +57,12 @@ class HostShow extends React.Component {
             </div>
             <RequestFormContainer />
           </div>
-          { Reviews(reviews) }
+          { Reviews(
+              reviews,
+              this.props.removeReview.bind(this),
+              this.props.currentUser.id
+            )
+          }
         </div>
       );
     } else {

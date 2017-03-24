@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { requestSingleHost } from '../../actions/hosts_actions';
+import { requestSingleHost, removeReview } from '../../actions/hosts_actions';
 import HostShow from './host_show';
 
 const mapStateToProps = ({ hostShow, session }) => ({
@@ -14,7 +14,8 @@ const mapStateToProps = ({ hostShow, session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestHost: hostId => dispatch(requestSingleHost(hostId))
+  requestHost: hostId => dispatch(requestSingleHost(hostId)),
+  removeReview: reviewId => dispatch(removeReview(reviewId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HostShow));

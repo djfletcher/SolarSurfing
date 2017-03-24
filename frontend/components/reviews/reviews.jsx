@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Button } from 'react-bootstrap';
 import ReviewFormContainer from './review_form_container';
 
-const Reviews = reviews => {
+const Reviews = (reviews, removeReview, currentUserId) => {
   const reviewsList = reviews.map((review, index) => {
+
     const {
+      id,
       body,
       rating,
       authorId,
@@ -23,6 +26,18 @@ const Reviews = reviews => {
       return stars;
     };
 
+    const deleteButton = () => {
+      if (authorId === currentUserId) {
+        return (
+          <Button
+            bsSize="small"
+            bsStyle="danger"
+            onClick={ () => removeReview(id) }>Delete
+          </Button>
+        );
+      }
+    };
+
     return(
       <li key={ index } className="reviews-index-item">
         <ul className="reviews-index-item-content">
@@ -31,7 +46,10 @@ const Reviews = reviews => {
               <img src={ authorImageUrl } className="review-thumbnail" />
             </Link>
           </li>
-          <li className="review-body">{ body }</li>
+          <li className="review-body">
+            <p>{ body }</p>
+            { deleteButton() }
+          </li>
           <li className="review-rating">
             <aside>{ starRating(rating) }</aside>
           </li>

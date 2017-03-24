@@ -28,3 +28,8 @@ export const createReview = review => dispatch => {
   return APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review)));
 };
+
+export const removeReview = reviewId => dispatch => {
+  return APIUtil.deleteReview(reviewId)
+    .then(host => dispatch(receiveSingleHost(host)));
+};
