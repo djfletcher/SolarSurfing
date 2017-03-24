@@ -9,12 +9,13 @@ class OrbitalMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      year: 2017,
+      year: 2210,
       rotationAmount: 0,
       numTravelers: 1,
       planet: "",
       interactive: false,
       searchEnabled: false
+      // sliderHandleBouncing: false
     };
     this.makeInteractive = this.makeInteractive.bind(this);
     this.highlightPlanet = this.highlightPlanet.bind(this);
@@ -23,6 +24,7 @@ class OrbitalMap extends React.Component {
     this.handleNumTravelers = this.handleNumTravelers.bind(this);
     this.selectPlanet = this.selectPlanet.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    // this.bounceSliderHandle = this.bounceSliderHandle.bind(this);
   }
 
   componentDidMount() {
@@ -30,8 +32,8 @@ class OrbitalMap extends React.Component {
   }
 
   makeInteractive() {
-    $("ul.solarsystem").find("li").removeClass("animated");
-    $("ul.solarsystem li.earth-orbit").find("span").removeClass("animated");
+    $("ul.solarsystem").find("li").removeClass("orbiting");
+    $("ul.solarsystem li.earth-orbit").find("span").removeClass("orbiting");
     this.setState({ interactive: true });
   }
 
@@ -52,15 +54,15 @@ class OrbitalMap extends React.Component {
 
   enableSearch(sliderState) {
     this.setState({ searchEnabled: true });
+    // $(".rheostat-handle").removeClass("animated");
   }
 
   onValuesUpdated(sliderState) {
     const year = sliderState.values[0];
     this.setState({
       year: year,
-      rotationAmount: (year - 2017) * 100
+      rotationAmount: (year - 2210) * 100
     });
-
   }
 
   handleNumTravelers(valueAsNumber) {
@@ -91,9 +93,13 @@ class OrbitalMap extends React.Component {
     }
   }
 
-  alert(eventKey) {
-    window.alert(eventKey);
-  }
+  // bounceSliderHandle() {
+  //   if ($(".rheostat-handle").length > 0 && !this.state.searchEnabled) {
+  //     $(".rheostat-handle").addClass("animated");
+  //     $(".rheostat-handle").addClass("bounce");
+  //     this.setState({ sliderHandleBouncing: true });
+  //   }
+  // }
 
   render() {
     const min = 2017;
@@ -124,7 +130,7 @@ class OrbitalMap extends React.Component {
 
     const interactionButton = () => {
       if (this.state.interactive) {
-        const buttonText = this.state.searchEnabled ? "Search" : "Move Time";
+        const buttonText = this.state.searchEnabled ? "Search" : "Slide Timeline";
         return(
           <Button
             bsStyle="primary"
@@ -136,7 +142,7 @@ class OrbitalMap extends React.Component {
         return(
           <DropdownButton
             title={ "Choose Travel Year" }
-            id="2"
+            id="select-travel-year"
             onClick={ this.makeInteractive } />
         );
       }
@@ -197,34 +203,34 @@ class OrbitalMap extends React.Component {
         <section className="orbital-map-container">
 
           <ul className="solarsystem">
-            <li className="sun-orbit animated">
+            <li className="sun-orbit orbiting">
               <span id="sun"></span>
             </li>
-            <li className="mercury-orbit animated" style={ orbitalPeriod("mercury") }>
+            <li className="mercury-orbit orbiting" style={ orbitalPeriod("mercury") }>
               <span id="mercury"></span>
             </li>
-            <li className="venus-orbit animated" style={ orbitalPeriod("venus") }>
+            <li className="venus-orbit orbiting" style={ orbitalPeriod("venus") }>
               <span id="venus"></span>
             </li>
-            <li className="earth-orbit animated" style={ orbitalPeriod("earth") }>
-              <span id="earth" className="animated">
+            <li className="earth-orbit orbiting" style={ orbitalPeriod("earth") }>
+              <span id="earth" className="orbiting">
                 <span className="moon" style={ orbitalPeriod("moon") }></span>
               </span>
             </li>
-            <li className="mars-orbit animated" style={ orbitalPeriod("mars") }>
+            <li className="mars-orbit orbiting" style={ orbitalPeriod("mars") }>
               <span id="mars"></span>
             </li>
-            <li className="jupiter-orbit animated" style={ orbitalPeriod("jupiter") }>
+            <li className="jupiter-orbit orbiting" style={ orbitalPeriod("jupiter") }>
               <span id="jupiter"></span>
             </li>
-            <li className="saturn-orbit animated" style={ orbitalPeriod("saturn") }>
+            <li className="saturn-orbit orbiting" style={ orbitalPeriod("saturn") }>
               <span id="saturn"></span>
               <span id="saturn-ring" className="ring"></span>
             </li>
-            <li className="uranus-orbit animated" style={ orbitalPeriod("uranus") }>
+            <li className="uranus-orbit orbiting" style={ orbitalPeriod("uranus") }>
               <span id="uranus"></span>
             </li>
-            <li className="neptune-orbit animated" style={ orbitalPeriod("neptune") }>
+            <li className="neptune-orbit orbiting" style={ orbitalPeriod("neptune") }>
               <span id="neptune"></span>
             </li>
           </ul>

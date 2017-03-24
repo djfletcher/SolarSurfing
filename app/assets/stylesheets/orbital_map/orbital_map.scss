@@ -248,7 +248,7 @@ ul.solarsystem li.neptune-orbit span {
 }
 
 /* CSS3 Animations */
-ul.solarsystem li.animated {
+ul.solarsystem li.orbiting {
     -webkit-animation-iteration-count:infinite;
     -webkit-animation-timing-function:linear;
     -webkit-animation-name:orbit;
@@ -257,7 +257,7 @@ ul.solarsystem li.animated {
     -moz-animation-timing-function:linear;
     -moz-animation-name:orbit;
 }
-ul.solarsystem li.earth-orbit span.animated {
+ul.solarsystem li.earth-orbit span.orbiting {
     -webkit-animation-iteration-count:infinite;
     -webkit-animation-timing-function:linear;
     -webkit-animation-name:moon;
