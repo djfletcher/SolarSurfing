@@ -4,10 +4,11 @@ import { createRequest } from '../../actions/hosts_actions';
 
 import RequestForm from './request_form';
 
-const mapStateToProps = ({ session, hostShow }) => ({
+const mapStateToProps = ({ session, hostShow, searchParams }) => ({
   guestId: session.currentUser.id,
   hostId: hostShow.id,
   hostName: hostShow.username,
+  searchParams: searchParams,
   errors: session.errors,
   currentUserRequestsMade: session.currentUser.requestsMade,
   currentUserRequestsReceived: session.currentUser.requestsReceived
