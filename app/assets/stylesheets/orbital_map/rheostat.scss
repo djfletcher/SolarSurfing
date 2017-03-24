@@ -14,6 +14,9 @@
   border: 4px solid $light-blue;
   border-radius: 10px;
   position: relative;
+
+  animation-name: sliderExpand;
+  animation-duration: 1s;
 }
 
 .rheostat-progress {
@@ -40,4 +43,15 @@
   display: block;
   position: absolute;
   background-color: #dadfe8;
+}
+
+
+@keyframes sliderExpand {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
 }
