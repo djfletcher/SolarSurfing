@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
     super(props);
 
     this.state = {
-      showLogin: false,
-      showJoin: false,
+      showLogin: this.props.showLogin,
+      showJoin: this.props.showJoin,
       username: "",
       password: "",
       bio: "",
@@ -34,6 +34,12 @@ class SessionForm extends React.Component {
   //     this.props.router.push("/");
   //   }
   // }
+
+  componentWillReceiveProps({ showLogin, showJoin }) {
+    if (showLogin !== this.state.showLogin || showJoin !== this.state.showJoin) {
+      this.setState({ showLogin, showJoin });
+    }
+  }
 
   componentWillUnmount() {
     this.closeModal();
@@ -79,18 +85,23 @@ class SessionForm extends React.Component {
   openModal(formType) {
     if (formType === "login") {
       this.setState({ showLogin: true });
+      this.props.openLogin();
     } else if (formType === "join") {
       this.setState({ showJoin: true });
+      this.props.openJoin();
     }
   }
 
   closeModal(formType) {
     if (formType === "login") {
       this.setState({ showLogin: false });
+      this.props.closeLogin();
     } else if (formType === "join") {
       this.setState({ showJoin: false });
+      this.props.closeJoin();
     } else {
       this.setState({ showLogin: false, showJoin: false });
+      this.props.closeBoth();
     }
   }
 
@@ -213,23 +224,7 @@ class SessionForm extends React.Component {
 
 
     return(
-      <div className="session-form">
-        <ul className="header-buttons">
-          <li><Button
-            className="login open-modal-button"
-            onClick={ () => this.openModal("login") }
-            bsStyle="primary"
-          >
-            Log In
-          </Button></li>
-        <li><Button
-            className="join open-modal-button"
-            onClick={ () => this.openModal("join") }
-            bsStyle="primary"
-          >
-            Join
-          </Button></li>
-        </ul>
+      <div>
         { joinModal }
         { loginModal }
       </div>
