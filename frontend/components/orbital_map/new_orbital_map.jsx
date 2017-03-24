@@ -48,18 +48,19 @@ class OrbitalMap extends React.Component {
   }
 
   toggleSlider() {
+    // if (this.state.sliderShowing) {
+    //   $("div.rheostat-background").css("animation-name", "sliderShrink");
+    // }
     this.setState({ sliderShowing: !this.state.sliderShowing });
     this.setState({ autoOrbiting: !this.state.autoOrbiting });
   }
 
   selectPlanet(planet) {
     this.setState({ planet });
-    // this.enableSearch();
   }
 
   sliderUsed(sliderState) {
     this.setState({ sliderUsed: true });
-    // this.enableSearch();
   }
 
   onValuesUpdated(sliderState) {
