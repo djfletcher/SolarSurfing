@@ -15,6 +15,7 @@ class OrbitalMap extends React.Component {
       planet: ""
       // autoScroll: true
     };
+    this.stopAnimation = this.stopAnimation.bind(this);
     this.autoScroll = this.autoScroll.bind(this);
     this.highlightPlanet = this.highlightPlanet.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -26,6 +27,11 @@ class OrbitalMap extends React.Component {
 
   componentDidMount() {
     // this.autoScroll();
+  }
+
+  stopAnimation() {
+    $("ul.solarsystem").find("li").toggleClass("animated");
+    $("ul.solarsystem li.earth-orbit").find("span").toggleClass("animated");
   }
 
   autoScroll() {
@@ -166,6 +172,9 @@ class OrbitalMap extends React.Component {
             <li>
               <Button bsStyle="primary" onClick={ this.handleSearch }>Search</Button>
             </li>
+            <li>
+              <Button bsStyle="primary" onClick={ this.stopAnimation }>Click Me</Button>
+            </li>
           </ul>
           <div className="travel-year">
             <p>Year of Travel: { year }</p>
@@ -183,34 +192,34 @@ class OrbitalMap extends React.Component {
         <section className="orbital-map-container">
 
           <ul className="solarsystem">
-            <li className="sun-orbit">
+            <li className="sun-orbit animated">
               <span id="sun"></span>
             </li>
-            <li className="mercury-orbit" style={ orbitalPeriod("mercury") }>
+            <li className="mercury-orbit animated" style={ orbitalPeriod("mercury") }>
               <span id="mercury"></span>
             </li>
-            <li className="venus-orbit" style={ orbitalPeriod("venus") }>
+            <li className="venus-orbit animated" style={ orbitalPeriod("venus") }>
               <span id="venus"></span>
             </li>
-            <li className="earth-orbit" style={ orbitalPeriod("earth") }>
-              <span id="earth">
+            <li className="earth-orbit animated" style={ orbitalPeriod("earth") }>
+              <span id="earth" className="animated">
                 <span className="moon" style={ orbitalPeriod("moon") }></span>
               </span>
             </li>
-            <li className="mars-orbit" style={ orbitalPeriod("mars") }>
+            <li className="mars-orbit animated" style={ orbitalPeriod("mars") }>
               <span id="mars"></span>
             </li>
-            <li className="jupiter-orbit" style={ orbitalPeriod("jupiter") }>
+            <li className="jupiter-orbit animated" style={ orbitalPeriod("jupiter") }>
               <span id="jupiter"></span>
             </li>
-            <li className="saturn-orbit" style={ orbitalPeriod("saturn") }>
+            <li className="saturn-orbit animated" style={ orbitalPeriod("saturn") }>
               <span id="saturn"></span>
               <span id="saturn-ring" className="ring"></span>
             </li>
-            <li className="uranus-orbit" style={ orbitalPeriod("uranus") }>
+            <li className="uranus-orbit animated" style={ orbitalPeriod("uranus") }>
               <span id="uranus"></span>
             </li>
-            <li className="neptune-orbit" style={ orbitalPeriod("neptune") }>
+            <li className="neptune-orbit animated" style={ orbitalPeriod("neptune") }>
               <span id="neptune"></span>
             </li>
           </ul>
@@ -224,8 +233,8 @@ class OrbitalMap extends React.Component {
 
 export default OrbitalMap;
 
-
-
+  //
+  //
   // orbitalPeriod(planet, rotationAmount) {
   //   const orbitalPeriods = {
   //     mercury: 0.241,
