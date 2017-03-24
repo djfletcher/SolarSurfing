@@ -6,31 +6,21 @@
   background-color: $light-blue;
 }
 
-.requests-container img {
-  // width: 100px;
-  // height: 100px;
-}
-
 .requests-profile {
   display: flex;
   flex-direction: column;
-  width: 40%;
   align-items: center;
 
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  margin-top: 25px;
-  border-radius: 5px;
-  background-color: white;
-  border: 2px solid $gray;
-  /* position: relative; */
-  /* width: 25%; */
-  padding: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
+  width: 40%;
   height: 20%;
   min-width: 200px;
+
+  padding: 25px;
+  border: 2px solid $gray;
+  border-radius: 5px;
+  margin: 25px;
+
+  background-color: white;
 }
 
 .requests-profile img {

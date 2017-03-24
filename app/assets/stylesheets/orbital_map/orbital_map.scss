@@ -10,17 +10,6 @@
 //   -webkit-animation-play-state: paused;
 // }
 
-
-// ELLIPTICAL ORBITS
-
-ul.solarsystem {
-  // transform: scaleX(1.5) scaleY(0.8);
-}
-
-// li[class^="orbit"] {
-//   border-radius: 50%;
-// }
-
 ul.solarsystem {
   position: relative;
   height: 650px;
@@ -266,35 +255,6 @@ ul.solarsystem li.earth-orbit span.orbiting {
     -moz-animation-timing-function:linear;
     -moz-animation-name:moon;
 }
-
-// ul.solarsystem li {
-//     -webkit-animation-iteration-count:infinite;
-//     -webkit-animation-timing-function:linear;
-//     -webkit-animation-name:orbit;
-//
-//     -moz-animation-iteration-count:infinite;
-//     -moz-animation-timing-function:linear;
-//     -moz-animation-name:orbit;
-// }
-// ul.solarsystem li.earth-orbit span {
-//     -webkit-animation-iteration-count:infinite;
-//     -webkit-animation-timing-function:linear;
-//     -webkit-animation-name:moon;
-//
-//     -moz-animation-iteration-count:infinite;
-//     -moz-animation-timing-function:linear;
-//     -moz-animation-name:moon;
-// }
-
-// ul.solarsystem li.mercury-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.venus-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.earth-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.earth-orbit span {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.mars-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.jupiter-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.saturn-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.uranus-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.neptune-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
 
 ul.solarsystem li.mercury-orbit {-webkit-animation-duration:5s; -moz-animation-duration:5s;}
 ul.solarsystem li.venus-orbit {-webkit-animation-duration:8s; -moz-animation-duration:8s;}
