@@ -2,7 +2,7 @@
 
 [SolarSurfing][solarsurfing] is is a full-stack web application inspired by Couchsurfing. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux implementation of Flux architecture on the frontend.
 
-![splash-photo]
+![Splash page][splash-photo]
 
 ## Features
 
@@ -12,7 +12,7 @@
 + Booking requests based on location, host, and date of travel
 + Host profiles and reviews
 
-![orbital-map-photo]
+![Interactive orbital map of our solar system][orbital-map-photo]
 
 ## Project Design
 
@@ -22,7 +22,7 @@ A [proposal][proposal] was drafted to help provide an implementation timeline du
 
 Alongside the design proposal, I prepared a [database schema][schema], [component hierarchy][components], and a series of [wireframes][wireframes] for the user interface.
 
-![hosts-photo]
+![Hosts available at a searchable location][hosts-photo]
 
 ## Technology
 
