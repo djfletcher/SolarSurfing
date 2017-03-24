@@ -23,7 +23,6 @@ class ReviewForm extends React.Component {
   }
 
   updateRating(e) {
-    // e.preventDefault();
     this.setState({ rating: e.target.value });
   }
 

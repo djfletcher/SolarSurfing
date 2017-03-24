@@ -24,16 +24,6 @@ class SessionForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
   }
-  //
-  // componentDidUpdate() {
-  //   this.redirectIfLoggedIn();
-  // }
-  //
-  // redirectIfLoggedIn() {
-  //   if (this.props.loggedIn) {
-  //     this.props.router.push("/");
-  //   }
-  // }
 
   componentWillUnmount() {
     this.closeModal();

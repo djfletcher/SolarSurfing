@@ -11,7 +11,6 @@ class Requests extends React.Component {
   }
 
   render() {
-    // debugger;
     if (this.props.currentUser) {
       const {
         username,
