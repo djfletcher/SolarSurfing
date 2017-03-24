@@ -85,7 +85,7 @@ class RequestForm extends React.Component {
 
     const confirmation = (
       <div className="request-form-container">
-        <h2>Booking confirmed with { this.props.hostName }!</h2>
+        <h2>Booking request sent to { this.props.hostName }!</h2>
           <Button
             onClick={ this.goToMyRequests }
             bsStyle="primary"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 import Reviews from '../reviews/reviews';
 import RequestFormContainer from '../requests/request_form_container';
 // import ReactTransitionGroup from 'react-addons-transition-group';
@@ -17,6 +18,12 @@ class HostShow extends React.Component {
         .then(() => this.moveWindow());
     }
   }
+
+  // componentWillUpdate(nextProps) {
+  //   if (!nextProps.username) {
+  //     hashHistory.push('/');
+  //   }
+  // }
 
   moveWindow() {
     const hostShow = document.getElementById('book-host-reviews-container');
