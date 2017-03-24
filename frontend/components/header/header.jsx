@@ -23,7 +23,7 @@ class Header extends React.Component {
   render() {
     if (this.props.currentUser) {
       return(
-        <nav className="header">
+        <nav className="header" id="nav-header">
           { this.logo }
           <ul className="header-buttons">
             <li>Hello, { this.props.currentUser.username }!</li>

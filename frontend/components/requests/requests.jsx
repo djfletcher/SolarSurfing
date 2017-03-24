@@ -3,6 +3,9 @@ import { hashHistory } from 'react-router';
 import RequestsIndexItem from './requests_index_item';
 
 class Requests extends React.Component {
+  componentDidMount() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 
   componentWillUpdate(nextProps) {
     if (!nextProps.currentUser) {
