@@ -8,13 +8,16 @@ class RequestForm extends React.Component {
     super(props);
 
     this.state = {
-      arriveDate: this.parseArriveDate(props.arriveYear),
-      departDate: "",
-      numTravelers: 1,
+      arriveDate: props.searchParams.arriveYear ?
+        `${props.searchParams.arriveYear}-01-01` : "",
+      departDate: props.searchParams.arriveYear ?
+        `${props.searchParams.arriveYear + 1}-01-01`: "",
+      numTravelers: props.searchParams.numTravelers ?
+        props.searchParams.numTravelers : 1,
       errors: [],
       alreadyBooked: this.alreadyBooked(
-        this.props.currentUserRequestsMade,
-        this.props.hostId
+        props.currentUserRequestsMade,
+        props.hostId
       )
     };
     this.update = this.update.bind(this);
@@ -22,7 +25,6 @@ class RequestForm extends React.Component {
     this.goToMyRequests = this.goToMyRequests.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.alreadyBooked = this.alreadyBooked.bind(this);
-    this.parseArriveDate = this.parseArriveDate.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,10 +37,6 @@ class RequestForm extends React.Component {
         errors: []
       });
     }
-  }
-
-  parseArriveDate(year) {
-    return "";
   }
 
   alreadyBooked(requestsMade, hostId) {
@@ -82,7 +80,6 @@ class RequestForm extends React.Component {
   }
 
   render() {
-
     const confirmation = (
       <div className="request-form-container">
         <h2>Booking request sent to { this.props.hostName }!</h2>
