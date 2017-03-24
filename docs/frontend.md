@@ -24,13 +24,10 @@ Site layout and styling are done with Sass and Bootstrap. React Bootstrap expedi
 
 ## Others
 
-Other frontend dependencies are:
+Other frontend dependencies include:
 
 - React DOM
 - React Router
 - React History to manipulating the browser history
 - Babel for transpiling JSX into JavaScript.
-+ Credit to Alex Girón for the HTML and CSS skeleton used to build out the interactive [Orbital Map][orbital-map] found on SolarSurfing's dashboard page.
-
-
-[orbital-map]: [http://neography.com/journal/our-solar-system-in-css3/]
++ Credit to Alex Girón for the HTML and CSS skeleton used to build out the interactive [Orbital Map](http://neography.com/journal/our-solar-system-in-css3/) found on SolarSurfing's dashboard page.
