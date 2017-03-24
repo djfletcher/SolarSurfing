@@ -23,12 +23,13 @@ ul.solarsystem {
 
 ul.solarsystem {
   position: relative;
-  height: 640px;
+  height: 650px;
   list-style: none;
   overflow: hidden;
 
   animation-name: loadSolarSystem;
   animation-duration: 4s;
+  margin: 0;
 }
 
 ul.solarsystem li {

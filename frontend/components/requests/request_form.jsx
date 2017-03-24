@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { some } from 'lodash';
+import { hashHistory } from 'react-router';
 
 class RequestForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      arriveDate: "",
+      arriveDate: this.parseArriveDate(props.arriveYear),
       departDate: "",
       numTravelers: 1,
       errors: [],
@@ -20,6 +22,7 @@ class RequestForm extends React.Component {
     this.goToMyRequests = this.goToMyRequests.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.alreadyBooked = this.alreadyBooked.bind(this);
+    this.parseArriveDate = this.parseArriveDate.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,6 +35,10 @@ class RequestForm extends React.Component {
         errors: []
       });
     }
+  }
+
+  parseArriveDate(year) {
+    return "";
   }
 
   alreadyBooked(requestsMade, hostId) {
@@ -62,7 +69,7 @@ class RequestForm extends React.Component {
   }
 
   goToMyRequests() {
-    return this.props.router.push('/requests');
+    hashHistory.push('/requests');
   }
 
   renderErrors() {

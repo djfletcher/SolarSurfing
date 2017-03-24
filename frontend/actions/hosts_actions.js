@@ -28,8 +28,3 @@ export const createReview = review => dispatch => {
   return APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review)));
 };
-
-export const createRequest = request => dispatch => {
-  return APIUtil.createRequest(request)
-    .then(request => dispatch(receiveRequest(request)));
-};

@@ -1,4 +1,5 @@
-import { RECEIVE_SINGLE_HOST, RECEIVE_REVIEW, RECEIVE_REQUEST } from '../actions/hosts_actions';
+import { RECEIVE_SINGLE_HOST, RECEIVE_REVIEW } from '../actions/hosts_actions';
+import { RECEIVE_REQUEST } from '../actions/requests_actions';
 import { merge } from 'lodash';
 
 const HostShowReducer = (state = {}, action) => {

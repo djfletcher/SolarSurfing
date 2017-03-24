@@ -12,11 +12,3 @@ export const createReview = review => (
     data: { review }
   })
 );
-
-export const createRequest = request => (
-  $.ajax({
-    method: 'POST',
-    url: 'api/requests',
-    data: { request }
-  })
-);

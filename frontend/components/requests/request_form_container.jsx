@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { createRequest } from '../../actions/hosts_actions';
+import { createRequest } from '../../actions/requests_actions';
 
 import RequestForm from './request_form';
 
@@ -18,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
   createRequest: request => dispatch(createRequest(request))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(RequestForm));
+export default connect(mapStateToProps, mapDispatchToProps)(RequestForm);

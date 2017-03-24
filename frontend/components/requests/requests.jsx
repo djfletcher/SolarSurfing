@@ -11,7 +11,7 @@ class Requests extends React.Component {
   }
 
   render() {
-
+    // debugger;
     if (this.props.currentUser) {
       const {
         username,
@@ -20,11 +20,11 @@ class Requests extends React.Component {
         requestsReceived
       } = this.props.currentUser;
 
-      const requestsMadeIndex = requestsMade.map(
+      const requestsMadeIndex = requestsMade.slice().reverse().map(
         (request, i) => <RequestsIndexItem key={ i } request={ request } type="guest" />
       );
 
-        const requestsReceivedIndex = requestsReceived.map(
+        const requestsReceivedIndex = requestsReceived.slice().reverse().map(
           (request, i) => <RequestsIndexItem key={ i } request={ request } type="host" />
       );
 
