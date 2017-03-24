@@ -2,13 +2,14 @@
 
 .site-info-container {
   display: flex;
+  justify-content: flex-start;
 }
 
 .about-container, .howitworks-container, .safety-container {
   display: flex;
   flex-direction: column;
 
-  width: 80%;
+  width: 72%;
 
   background-color: white;
   padding: 40px;
@@ -18,4 +19,35 @@
   width: 20%;
   border-right: 1px solid $mid-blue;
   border-radius: 5px;
+}
+
+.site-info-container h1, .site-info-container h2, .site-info-container p {
+  font-family: 'Lato', sans-serif;
+}
+
+.site-info-container h1, .site-info-container h2 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-weight: bold;
+}
+
+.site-info-container h1 {
+  font-size: 36px;
+  color: $logo-orange;
+
+  border-bottom: 1px solid $gray;
+  padding-bottom: 13px;
+}
+
+.site-info-container h2 {
+  font-size: 24px;
+  color: $gray;
+}
+
+.site-info-container p {
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  font-size: 14px;
+  color: $midnight-blue;
 }
