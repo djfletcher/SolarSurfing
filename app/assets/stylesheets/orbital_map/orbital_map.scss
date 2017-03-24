@@ -4,20 +4,14 @@
   background: black;
 }
 
-.orbital-map-slider {
-  // width: 800px;
-  // height: 100px;
-  // background-color: white;
-}
-
 // PAUSE
 // ul.solarsystem li {-webkit-animation-play-state: paused;}
 
 // ELLIPTICAL ORBITS
 
-// ul.solarsystem {
-//   transform: scaley(0.5);
-// }
+ul.solarsystem {
+  // transform: scaleX(1.5) scaleY(0.8);
+}
 
 // li[class^="orbit"] {
 //   border-radius: 50%;

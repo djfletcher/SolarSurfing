@@ -7,63 +7,66 @@ import { Button, DropdownButton, MenuItem } from 'react-bootstrap';
 class OrbitalMapSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 0, rotationAmount: 0, numTravelers: 1 };
+    this.state = {
+      year: 2017,
+      rotationAmount: 0,
+      numTravelers: 1,
+      planet: ""
+      // autoScroll: true
+    };
+    this.autoScroll = this.autoScroll.bind(this);
     this.highlightPlanet = this.highlightPlanet.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onValuesUpdated = this.onValuesUpdated.bind(this);
     this.handleNumTravelers = this.handleNumTravelers.bind(this);
+    this.selectPlanet = this.selectPlanet.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  highlightPlanet(e) {
-    e.preventDefault();
-    debugger;
-    const oldPlanet = document.getElementById(this.state.planetName);
-    this.setState({ planetName: e.target.value });
-    const newPlanet = document.getElementById(this.state.planetName);
-    oldPlanet.style = { border: "none" };
-    newPlanet.style = { border: "4px solid yellow" };
+  componentDidMount() {
+    // this.autoScroll();
+  }
+
+  autoScroll() {
+    // if (this.state.autoScroll) {
+    if (this.state.year > 400) {
+      this.setState({
+        year: 0
+      });
+      setTimeout(this.autoScroll, 100);
+    } else {
+      this.setState({
+        rotationAmount: this.state.year * 100,
+        year: this.state.year + 1
+      });
+      setTimeout(this.autoScroll, 100);
+    }
+  }
+
+  highlightPlanet(planet) {
+    if (this.state.planet) {
+      const oldPlanet = document.getElementById(this.state.planet);
+      oldPlanet.style.border = "none";
+    }
+    const newPlanet = document.getElementById(planet);
+    newPlanet.style.border = "2px solid yellow";
   }
 
 
-  // highlightPlanet(e) {
-  //   e.preventDefault();
-  //   if (this.state.planetName) {
-  //     const oldPlanet = document.getElementById(this.state.planetName);
-  //     oldPlanet.style = { border: "none" };
-  //   }
-  //   debugger;
-  //   this.setState({ planetName: e.target.value });
-  //   const newPlanet = document.getElementById(e.target.value);
-  //   newPlanet.style = { border: "4px solid yellow" };
-  // }
+  selectPlanet(planet) {
+    this.highlightPlanet(planet);
+    this.setState({ planet });
+  }
 
   onChange(sliderState) {
     // window.alert(sliderState.values[0]);
   }
 
-  // orbitalPeriod(planet, rotationAmount) {
-  //   const orbitalPeriods = {
-  //     mercury: 0.241,
-  //     venus: 0.616,
-  //     earth: 1.000,
-  //     mars: 1.882,
-  //     jupiter: ‎11.862,
-  //     saturn: 29.457,
-  //     uranus: 84.021,
-  //     neptune: 164.882
-  //   };
-  //
-  //   return ({
-  //     transform: `rotate(${orbitalPeriods[planet] * rotationAmount}deg)`
-  //   });
-  // }
-
   onValuesUpdated(sliderState) {
-    const value = sliderState.values[0];
+    const year = sliderState.values[0];
     this.setState({
-      value: value,
-      rotationAmount: value * 100
+      year: year,
+      rotationAmount: (year - 2017) * 100
     });
 
   }
@@ -72,16 +75,30 @@ class OrbitalMapSlider extends React.Component {
     this.setState({ numTravelers: valueAsNumber });
   }
 
-  handleSearch() {
 
+  handleSearch(e) {
+    const planetIds = {
+      "mercury": 1,
+      "venus": 2,
+      "earth": 3,
+      "mars": 4,
+      "jupiter": 5,
+      "saturn": 6,
+      "uranus": 7,
+      "neptune": 8
+    };
+  }
+
+  alert(eventKey) {
+    window.alert(eventKey);
   }
 
   render() {
-    const min = 0;
-    const max = 400;
-    const { value, rotationAmount } = this.state;
+    const min = 2017;
+    const max = 2417;
+    const { year, rotationAmount, planet } = this.state;
 
-    const orbitalPeriod = planet => {
+    const orbitalPeriod = planetName => {
       const orbitalPeriods = {
         mercury: 5,
         venus: 8,
@@ -95,11 +112,18 @@ class OrbitalMapSlider extends React.Component {
       };
 
       return ({
-        transform: `rotate(${rotationAmount / orbitalPeriods[planet]}deg)`
+        transform: `rotate(${rotationAmount / orbitalPeriods[planetName]}deg)`
         // WebkitAnimationDuration: '1s',
         // MozAnimationDuration: '1s'
       });
     };
+
+    const planetTitle = planet.charAt(0).toUpperCase() + planet.slice(1);
+
+    // const mars = document.getElementById("mars");
+    // if (mars) {
+    //   mars.style.border = "4px solid yellow";
+    // }
 
     return (
       <div className="orbital-map-and-search-container">
@@ -107,8 +131,9 @@ class OrbitalMapSlider extends React.Component {
           <ul className="explore-and-num-travelers-container">
             <li className="explore">
               <DropdownButton
-                title="Explore"
-                id="1">
+                title={ planetTitle || "Explore" }
+                id="1"
+                onSelect={ this.selectPlanet }>
                 <MenuItem eventKey="mercury">Mercury</MenuItem>
                 <MenuItem eventKey="venus">Venus</MenuItem>
                 <MenuItem eventKey="earth">Earth</MenuItem>
@@ -132,13 +157,13 @@ class OrbitalMapSlider extends React.Component {
             </li>
           </ul>
           <div className="travel-year">
-            <p>Year of Travel: { value }</p>
+            <p>Year of Travel: { year }</p>
           </div>
           <div className="rheostat-container">
             <Rheostat
               min={ min }
               max={ max }
-              values={ [value] }
+              values={ [year] }
               onChange={ this.onChange }
               onValuesUpdated={ this.onValuesUpdated }
             />
@@ -187,3 +212,22 @@ class OrbitalMapSlider extends React.Component {
 
 
 export default OrbitalMapSlider;
+
+
+
+  // orbitalPeriod(planet, rotationAmount) {
+  //   const orbitalPeriods = {
+  //     mercury: 0.241,
+  //     venus: 0.616,
+  //     earth: 1.000,
+  //     mars: 1.882,
+  //     jupiter: ‎11.862,
+  //     saturn: 29.457,
+  //     uranus: 84.021,
+  //     neptune: 164.882
+  //   };
+  //
+  //   return ({
+  //     transform: `rotate(${orbitalPeriods[planet] * rotationAmount}deg)`
+  //   });
+  // }
