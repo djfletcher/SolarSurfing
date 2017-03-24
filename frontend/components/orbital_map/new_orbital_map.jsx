@@ -155,6 +155,7 @@ class OrbitalMap extends React.Component {
       if (this.state.searchEnabled) {
         return(
           <Button
+            id="search-button"
             bsStyle="primary"
             onClick={ this.handleSearch }>Search
           </Button>
