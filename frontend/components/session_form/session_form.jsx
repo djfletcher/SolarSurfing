@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
       showJoin: false,
       username: "",
       password: "",
-      image_url: "",
       bio: "",
       planet_id: 3
     };
@@ -57,6 +56,7 @@ class SessionForm extends React.Component {
       } else if (formType === "join") {
         action = this.props.signup;
         user = omit(this.state, ['showLogin'], ['showJoin']);
+        user.image_url = 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489881450/Hosts/host13.png';
       }
       action(user);
     };
@@ -134,12 +134,6 @@ class SessionForm extends React.Component {
               value={ this.state.password }
               placeholder='Password'
               onChange={ this.update("password") }
-            />
-            <input
-              type="text"
-              value={ this.state.image_url }
-              placeholder="Paste profile picture url"
-              onChange={ this.update("image_url") }
             />
             <textarea
               value={this.state.bio}
