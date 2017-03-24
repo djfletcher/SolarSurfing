@@ -19,6 +19,14 @@
   justify-content: center;
 }
 
+li.search-when {
+  width: 175px;
+}
+
+li.search-when > div {
+  width: 100%;
+}
+
 .num-travelers {
   display: flex;
   align-items: center;
@@ -57,6 +65,10 @@
   border: none !important;
 }
 
+#select-travel-year + ul.dropdown-menu {
+  display: none;
+}
+
 .travel-year {
   display: flex;
   align-items: center;
@@ -77,8 +89,4 @@
 .travel-year-container {
   display: flex;
   flex-direction: column;
-}
-
-#select-travel-year + ul.dropdown-menu {
-  display: none;
 }

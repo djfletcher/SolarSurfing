@@ -33,7 +33,7 @@ class OrbitalMap extends React.Component {
       this.setState({ searchEnabled: true });
     } else if ((this.state.sliderUsed !== nextState.sliderUsed) &&
         this.state.planet) {
-      this.setState({ searchEnabled: true });    
+      this.setState({ searchEnabled: true });
     }
   }
 
@@ -168,7 +168,7 @@ class OrbitalMap extends React.Component {
       <div className="orbital-map-and-search-container">
         <section className="search-container">
           <ul className="explore-and-num-travelers-container">
-            <li className="explore">
+            <li className="search-where">
               <DropdownButton
                 title={ planetTitle || "Where" }
                 id="1"
@@ -183,7 +183,7 @@ class OrbitalMap extends React.Component {
                 <MenuItem eventKey="neptune">Neptune</MenuItem>
               </DropdownButton>
             </li>
-            <li>{ whenButton() }</li>
+            <li className="search-when">{ whenButton() }</li>
             <li className="num-travelers">
               <p>Travelers:</p>
               <NumericInput
