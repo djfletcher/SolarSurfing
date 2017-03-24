@@ -6,7 +6,6 @@ const Splash = () => (
     <div className="splash-background top">
       <aside className="image-content">
         <h1>Stay with Locals and Meet Travelers</h1>
-        <Button bsStyle="primary">Start Exploring</Button>
       </aside>
     </div>
     <div className="splash-background middle">

@@ -229,6 +229,11 @@ class SessionForm extends React.Component {
           >
             Join
           </Button></li>
+          <Button
+            id="start-exploring"
+            onClick={ () => this.openModal("join") }
+            bsStyle="primary"
+          >Start Exploring</Button>
         </ul>
         { joinModal }
         { loginModal }
