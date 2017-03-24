@@ -7,7 +7,8 @@ import ReviewForm from './review_form';
 const mapStateToProps = ({ session, hostShow }) => ({
   authorId: session.currentUser.id,
   hostUsername: hostShow.username,
-  errors: session.errors
+  errors: session.errors,
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -19,11 +19,11 @@ class HostShow extends React.Component {
     }
   }
 
-  // componentWillUpdate(nextProps) {
-  //   if (!nextProps.username) {
-  //     hashHistory.push('/');
-  //   }
-  // }
+  componentWillUpdate(nextProps) {
+    if (!nextProps.currentUser) {
+      hashHistory.push('/');
+    }
+  }
 
   moveWindow() {
     const hostShow = document.getElementById('book-host-reviews-container');

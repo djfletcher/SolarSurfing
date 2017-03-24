@@ -3,13 +3,14 @@ import { withRouter } from 'react-router';
 import { requestSingleHost } from '../../actions/hosts_actions';
 import HostShow from './host_show';
 
-const mapStateToProps = ({ hostShow }) => ({
+const mapStateToProps = ({ hostShow, session }) => ({
   id: hostShow.id,
   username: hostShow.username,
   bio: hostShow.bio,
   imageUrl: hostShow.imageUrl,
   planetId: hostShow.planetId,
-  reviews: hostShow.reviews
+  reviews: hostShow.reviews,
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
