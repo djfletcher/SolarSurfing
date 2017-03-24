@@ -1,8 +1,8 @@
 # SolarSurfing
 
-[SolarSurfing][solarsurfing] is is a full-stack web application inspired by Couchsurfing. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+[SolarSurfing][solarsurfing] is is a full-stack web application inspired by Couchsurfing. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux implementation of Flux architecture on the frontend.
 
-SolarSurfing is created by me, Daniel Fletcher, as an exercise in React, Redux, and Rails. The project was motivated, at some level, by a desire to go to space; but since I can't do that quite yet I decided to make this groovy site instead.
+![splash-photo]
 
 ## Features
 
@@ -12,21 +12,30 @@ SolarSurfing is created by me, Daniel Fletcher, as an exercise in React, Redux, 
 + Booking requests based on location, host, and date of travel
 + Host profiles and reviews
 
+![orbital-map-photo]
+
 ## Project Design
 
-SolarSurfing was designed and built in two weeks.
+SolarSurfing was designed and built in two weeks by me, Daniel Fletcher.
 
 A [proposal][proposal] was drafted to help provide an implementation timeline during the development process.
 
 Alongside the design proposal, I prepared a [database schema][schema], [component hierarchy][components], and a series of [wireframes][wireframes] for the user interface.
 
+![hosts-photo]
+
 ## Technology
 
-SolarSurfing uses React and Redux to asynchronously send and receive HTTP requests and re-render affected components as needed, for a smooth user experience.
+SolarSurfing is a single-page application built on Rails and React.js.
+
++ [Backend technology][backend]
++ [Frontend technology][frontend]
 
 ## Future Implementations
 
 + Display realtime information on planets, such as current distance from Earth, and atmospheric conditions using NASA's Horizons API.
++ Allow users to submit new planets to the database, pending approval by minimum number of other users.
++ Add dynamic list of "popular hosts" to the dashboard.
 
 
 [solarsurfing]: https://solarsurfing.herokuapp.com
@@ -34,7 +43,9 @@ SolarSurfing uses React and Redux to asynchronously send and receive HTTP reques
 [schema]: ./docs/schema.md
 [components]: ./docs/component-hierarchy.md
 [wireframes]: ./docs/wireframes
-[splash-photo]: ./app/assets/images/splash.png
-[orbital-map-photo]: ./app/assets/images/orbital_map.png
-[hosts-photo]: ./app/assets/images/hosts.png
-[host-detail-photo]: ./app/assets/images/host_detail.png
+[backend]: ./docs/backend.md
+[frontend]: ./docs/frontend.md
+[splash-photo]: ./docs/screenshots/splash.png
+[orbital-map-photo]: ./docs/screenshots/orbital_map.png
+[hosts-photo]: ./docs/screenshots/hosts.png
+[host-detail-photo]: ./docs/screenshots/host_detail.png
