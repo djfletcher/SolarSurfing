@@ -4,21 +4,17 @@ Component Hierarchy
 #### Splash
 
 #### Header
-+ props: currentUser; dispatch: logoutUser, guestLogin
-+ **Join**
-  + props: currentUser; dispatch: signupUser, guestLogin
-+ **Login**
-  + props: currentUser; dispatch: loginUser, guestLogin
++ props: currentUser; dispatch: logout, demoLogin
++ **SessionForm**
+  + props: currentUser; dispatch: signup, login, demoLogin
 
 #### Footer
 
 #### Dashboard
 + **Search**
   + props: planetId, numTravelers, beginDate, endDate; dispatch: requestHosts
-+ **OrbitalMap** (aka PlanetsIndex)
++ **OrbitalMap**
   + props: planets; dispatch: requestAllPlanets
-  + **OrbitalMapItem** (aka PlanetsIndexItem)
-    + props: id, name, imageUrl
   + **HostsIndex** (list of 'top' hosts on splash page)
 
 #### PlanetShow
