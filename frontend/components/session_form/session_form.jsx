@@ -97,6 +97,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+
     const joinModal = (
       <Modal
         className="join modal"
@@ -201,6 +202,17 @@ class SessionForm extends React.Component {
       </Modal>
     );
 
+    const startExploringButton = () => {
+      if (this.props.location.pathname === "/") {
+        return(
+          <Button
+            id="start-exploring"
+            onClick={ () => this.openModal("join") }
+            bsStyle="primary"
+          >Start Exploring</Button>
+        );
+      }
+    };
 
     return(
       <div className="session-form">
@@ -219,11 +231,7 @@ class SessionForm extends React.Component {
           >
             Join
           </Button></li>
-          <Button
-            id="start-exploring"
-            onClick={ () => this.openModal("join") }
-            bsStyle="primary"
-          >Start Exploring</Button>
+        { startExploringButton() }
         </ul>
         { joinModal }
         { loginModal }

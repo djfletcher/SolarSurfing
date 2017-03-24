@@ -8,6 +8,9 @@ import Dashboard from './dashboard/dashboard';
 import PlanetShowContainer from './planets/planet_show_container';
 import HostShowContainer from './hosts/host_show_container';
 import RequestsContainer from './requests/requests_container';
+import About from './about/about';
+import HowItWorks from './about/how_it_works';
+import Safety from './about/safety';
 
 
 const Root = ({ store }) => (
