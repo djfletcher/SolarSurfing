@@ -32,6 +32,15 @@ const Root = ({ store }) => (
           path='requests'
           component={ RequestsContainer }
           onEnter={ _redirectIfLoggedOut } />
+        <Route
+          path='about'
+          component={ About } />
+        <Route
+          path='howitworks'
+          component={ HowItWorks } />
+        <Route
+          path='safety'
+          component={ Safety } />
     </Route>
     </Router>
   </Provider>
