@@ -20,14 +20,14 @@ class PlanetShow extends React.Component {
   }
 
   componentWillUnmount() {
-    // clear background image 
+    // clear background image
   }
 
   render() {
     if (this.props.name) {
       const background = { backgroundImage: `url(${this.props.imageUrl})` };
       return(
-        <div>
+        <div className="planet-show-container">
           <Button
             className="back-to-planets-index"
             onClick={ () => this.props.router.push('dashboard') }

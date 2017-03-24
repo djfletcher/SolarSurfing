@@ -49,7 +49,7 @@ class OrbitalMapSlider extends React.Component {
       oldPlanet.style.border = "none";
     }
     const newPlanet = document.getElementById(planet);
-    newPlanet.style.border = "4px solid gold";
+    newPlanet.style.border = "6px solid gold";
   }
 
 

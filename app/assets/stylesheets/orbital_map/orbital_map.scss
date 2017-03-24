@@ -6,9 +6,9 @@
 
 // PAUSE
 // ul.solarsystem li {-webkit-animation-play-state: paused;}
-.search-container:hover ~ .orbital-map-container ul.solarsystem li {
-  -webkit-animation-play-state: paused;
-}
+// .search-container:hover ~ .orbital-map-container ul.solarsystem li {
+//   -webkit-animation-play-state: paused;
+// }
 
 
 // ELLIPTICAL ORBITS
@@ -26,6 +26,9 @@ ul.solarsystem {
   height: 640px;
   list-style: none;
   overflow: hidden;
+
+  animation-name: loadSolarSystem;
+  animation-duration: 4s;
 }
 
 ul.solarsystem li {
@@ -228,48 +231,63 @@ ul.solarsystem li.neptune-orbit span {
     left: 200px;
 }
 
+@keyframes loadSolarSystem {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* CSS3 Animations */
-ul.solarsystem li {
-    -webkit-animation-iteration-count:infinite;
-    -webkit-animation-timing-function:linear;
-    -webkit-animation-name:orbit;
-
-    -moz-animation-iteration-count:infinite;
-    -moz-animation-timing-function:linear;
-    -moz-animation-name:orbit;
-}
-ul.solarsystem li.earth-orbit span {
-    -webkit-animation-iteration-count:infinite;
-    -webkit-animation-timing-function:linear;
-    -webkit-animation-name:moon;
-
-    -moz-animation-iteration-count:infinite;
-    -moz-animation-timing-function:linear;
-    -moz-animation-name:moon;
-}
-
-// ul.solarsystem li.mercury-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.venus-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.earth-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.earth-orbit span {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.mars-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.jupiter-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.saturn-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.uranus-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-// ul.solarsystem li.neptune-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
-
-ul.solarsystem li.mercury-orbit {-webkit-animation-duration:5s; -moz-animation-duration:5s;}
-ul.solarsystem li.venus-orbit {-webkit-animation-duration:8s; -moz-animation-duration:8s;}
-ul.solarsystem li.earth-orbit {-webkit-animation-duration:12s; -moz-animation-duration:12s;}
-ul.solarsystem li.earth-orbit span {-webkit-animation-duration:2s; -moz-animation-duration:2s;}
-ul.solarsystem li.mars-orbit {-webkit-animation-duration:20s; -moz-animation-duration:20s;}
-ul.solarsystem li.jupiter-orbit {-webkit-animation-duration:30s; -moz-animation-duration:30s;}
-ul.solarsystem li.saturn-orbit {-webkit-animation-duration:60s; -moz-animation-duration:60s;}
-ul.solarsystem li.uranus-orbit {-webkit-animation-duration:70s; -moz-animation-duration:70s;}
-ul.solarsystem li.neptune-orbit {-webkit-animation-duration:100s; -moz-animation-duration:100s;}
-
-@-webkit-keyframes orbit { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
-@-webkit-keyframes moon { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
-
-// @-moz-keyframes orbit { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }
-@-moz-keyframes moon { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }
+// ul.solarsystem li {
+//     -webkit-animation-iteration-count:infinite;
+//     -webkit-animation-timing-function:linear;
+//     -webkit-animation-name:orbit;
+//
+//     -moz-animation-iteration-count:infinite;
+//     -moz-animation-timing-function:linear;
+//     -moz-animation-name:orbit;
+// }
+// ul.solarsystem li.earth-orbit span {
+//     -webkit-animation-iteration-count:infinite;
+//     -webkit-animation-timing-function:linear;
+//     -webkit-animation-name:moon;
+//
+//     -moz-animation-iteration-count:infinite;
+//     -moz-animation-timing-function:linear;
+//     -moz-animation-name:moon;
+// }
+//
+// // ul.solarsystem li.mercury-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.venus-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.earth-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.earth-orbit span {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.mars-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.jupiter-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.saturn-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.uranus-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+// // ul.solarsystem li.neptune-orbit {-webkit-animation-duration:1s; -moz-animation-duration:1s;}
+//
+// ul.solarsystem li.mercury-orbit {-webkit-animation-duration:5s; -moz-animation-duration:5s;}
+// ul.solarsystem li.venus-orbit {-webkit-animation-duration:8s; -moz-animation-duration:8s;}
+// ul.solarsystem li.earth-orbit {-webkit-animation-duration:12s; -moz-animation-duration:12s;}
+// ul.solarsystem li.earth-orbit span {-webkit-animation-duration:2s; -moz-animation-duration:2s;}
+// ul.solarsystem li.mars-orbit {-webkit-animation-duration:20s; -moz-animation-duration:20s;}
+// ul.solarsystem li.jupiter-orbit {-webkit-animation-duration:30s; -moz-animation-duration:30s;}
+// ul.solarsystem li.saturn-orbit {-webkit-animation-duration:60s; -moz-animation-duration:60s;}
+// ul.solarsystem li.uranus-orbit {-webkit-animation-duration:70s; -moz-animation-duration:70s;}
+// ul.solarsystem li.neptune-orbit {-webkit-animation-duration:100s; -moz-animation-duration:100s;}
+//
+// @-webkit-keyframes orbit { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
+// @-webkit-keyframes moon { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
+//
+// // @-moz-keyframes orbit { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }
+// @-moz-keyframes moon { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }

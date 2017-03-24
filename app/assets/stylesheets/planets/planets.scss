@@ -1,5 +1,9 @@
 @import 'color_palette';
 
+.planet-show-container {
+  background-color: black;
+}
+
 .planet-show {
   height: 600px;
   background-position: 0 60px;
@@ -7,7 +11,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-origin: border-box;
-  background-color: black;
 
   display: flex;
   flex-direction: column;
@@ -15,6 +18,9 @@
   align-items: flex-end;
 
   border-bottom: 2px solid $light-blue;
+
+  animation-name: loadPlanetImage;
+  animation-duration: 2s;
 }
 
 .planet-info {
@@ -52,4 +58,19 @@ button.back-to-planets-index {
   position: absolute;
   top: 65px;
   left: 5px;
+}
+
+@keyframes loadPlanetImage {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
