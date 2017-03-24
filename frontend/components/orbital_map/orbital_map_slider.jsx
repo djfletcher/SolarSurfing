@@ -49,7 +49,7 @@ class OrbitalMapSlider extends React.Component {
       oldPlanet.style.border = "none";
     }
     const newPlanet = document.getElementById(planet);
-    newPlanet.style.border = "2px solid yellow";
+    newPlanet.style.border = "4px solid gold";
   }
 
 
@@ -173,34 +173,34 @@ class OrbitalMapSlider extends React.Component {
 
           <ul className="solarsystem">
             <li className="sun-orbit">
-              <a href="#sun"><span id="sun"></span></a>
+              <span id="sun"></span>
             </li>
             <li className="mercury-orbit" style={ orbitalPeriod("mercury") }>
-              <a href="#mercury"><span id="mercury"></span></a>
+              <span id="mercury"></span>
             </li>
             <li className="venus-orbit" style={ orbitalPeriod("venus") }>
-              <a href="#venus"><span id="venus"></span></a>
+              <span id="venus"></span>
             </li>
             <li className="earth-orbit" style={ orbitalPeriod("earth") }>
-              <a href="#earth"><span id="earth">
+              <span id="earth">
                 <span className="moon" style={ orbitalPeriod("moon") }></span>
-              </span></a>
+              </span>
             </li>
             <li className="mars-orbit" style={ orbitalPeriod("mars") }>
-              <a href="#mars"><span id="mars"></span></a>
+              <span id="mars"></span>
             </li>
             <li className="jupiter-orbit" style={ orbitalPeriod("jupiter") }>
-              <a href="#jupiter"><span id="jupiter"></span></a>
+              <span id="jupiter"></span>
             </li>
             <li className="saturn-orbit" style={ orbitalPeriod("saturn") }>
-              <a href="#saturn"><span id="saturn"></span>
-              <span className="ring"></span></a>
+              <span id="saturn"></span>
+              <span id="saturn-ring" className="ring"></span>
             </li>
             <li className="uranus-orbit" style={ orbitalPeriod("uranus") }>
-              <a href="#uranus"><span id="uranus"></span></a>
+              <span id="uranus"></span>
             </li>
             <li className="neptune-orbit" style={ orbitalPeriod("neptune") }>
-              <a href="#neptune"><span id="neptune"></span></a>
+              <span id="neptune"></span>
             </li>
           </ul>
 
