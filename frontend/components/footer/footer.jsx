@@ -9,12 +9,12 @@ const Footer = () => {
 
   return(
     <nav className="footer">
-      <div>
+      <div className="footer-about">
         <Link to={ `/about` }>ABOUT</Link>
         <Link to={ `/howitworks` }>HOW IT WORKS</Link>
         <Link to={ `/safety` }>SAFETY</Link>
       </div>
-      <div>
+      <div className="footer-links">
         <a href="https://github.com/djfletcher/SolarSurfing" target="_blank" >
           <img src="https://res.cloudinary.com/dmgrq5xrb/image/upload/v1490396415/git_bsw1do.png" alt="github"/>
         </a>

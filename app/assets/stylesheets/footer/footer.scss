@@ -9,19 +9,28 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+   justify-content: center;
 }
 
 .footer > div {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  margin: 8px 0;
+}
 
-  margin-top: 5px;
+.footer-about {
+  width: 50%;
+  justify-content: space-around;
+}
+
+.footer-links {
+  width: 32%;
+  justify-content: center;
 }
 
 .footer a {
-  margin: 10px 40px;
-  font-size: 20px;
+  margin: 0 15px;
+  font-size: 16px;
 }
 
 .footer img {
@@ -31,5 +40,5 @@
 
 .footer p {
   margin: 0;
-  padding: 6px;
+  // padding: 6px;
 }
