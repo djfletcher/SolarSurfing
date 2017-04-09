@@ -1,6 +1,6 @@
 # SolarSurfing
 
-[SolarSurfing][solarsurfing] is is a full-stack web application inspired by Couchsurfing. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux implementation of Flux architecture on the frontend.
+[SolarSurfing][solarsurfing] is a full-stack web application inspired by Couchsurfing. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux implementation of Flux architecture on the frontend.
 
 ![Splash page][splash-photo]
 
