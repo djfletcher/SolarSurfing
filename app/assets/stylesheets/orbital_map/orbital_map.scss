@@ -40,6 +40,10 @@ ul.solarsystem li span {
     border-radius: 5px;
 }
 
+ul.solarsystem li span.highlighted {
+  box-shadow: 0 0 35px 24px orangered;
+}
+
 ul.solarsystem li.sun-orbit {
     width: 40px;
     height: 40px;

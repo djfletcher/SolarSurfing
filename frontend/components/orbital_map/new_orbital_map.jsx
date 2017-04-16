@@ -17,15 +17,15 @@ class OrbitalMap extends React.Component {
       searchEnabled: false,
       sliderShowing: false,
       sliderUsed: false
-      // sliderHandleBouncing: false
     };
     this.orbitPlanets = this.orbitPlanets.bind(this);
+    this.toggleSlider = this.toggleSlider.bind(this);
+    this.selectPlanet = this.selectPlanet.bind(this);
+    this.highlightPlanet = this.highlightPlanet.bind(this);
     this.sliderUsed = this.sliderUsed.bind(this);
     this.onValuesUpdated = this.onValuesUpdated.bind(this);
     this.handleNumTravelers = this.handleNumTravelers.bind(this);
-    this.selectPlanet = this.selectPlanet.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    this.toggleSlider = this.toggleSlider.bind(this);
   }
 
   componentDidUpdate(nextProps, nextState) {
@@ -56,7 +56,17 @@ class OrbitalMap extends React.Component {
   }
 
   selectPlanet(planet) {
+    this.highlightPlanet(planet);
     this.setState({ planet });
+  }
+
+  highlightPlanet(planet) {
+    if (this.state.planet) {
+      const oldPlanet = $(`#${this.state.planet}`);
+      oldPlanet.removeClass("highlighted");
+    }
+    const newPlanet = $(`#${planet}`);
+    newPlanet.addClass("highlighted");
   }
 
   sliderUsed(sliderState) {
@@ -257,22 +267,3 @@ class OrbitalMap extends React.Component {
 
 
 export default OrbitalMap;
-
-  //
-  //
-  // orbitalPeriod(planet, rotationAmount) {
-  //   const orbitalPeriods = {
-  //     mercury: 0.241,
-  //     venus: 0.616,
-  //     earth: 1.000,
-  //     mars: 1.882,
-  //     jupiter: ‎11.862,
-  //     saturn: 29.457,
-  //     uranus: 84.021,
-  //     neptune: 164.882
-  //   };
-  //
-  //   return ({
-  //     transform: `rotate(${orbitalPeriods[planet] * rotationAmount}deg)`
-  //   });
-  // }
