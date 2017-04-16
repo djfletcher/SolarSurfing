@@ -41,9 +41,9 @@ ul.solarsystem li span {
     position: absolute;
     width: 10px;
     height: 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 ul.solarsystem li span:hover {
@@ -59,9 +59,9 @@ ul.solarsystem li span.highlighted {
 ul.solarsystem li.sun-orbit {
     width: 40px;
     height: 40px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     background: #fc3;
     background-image: -webkit-gradient(
         linear,
@@ -86,9 +86,9 @@ ul.solarsystem li.sun-orbit {
 ul.solarsystem li.sun-orbit span {
     width: 60px;
     height: 60px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 ul.solarsystem li.sun-orbit span:hover {
   cursor: default;
@@ -96,9 +96,9 @@ ul.solarsystem li.sun-orbit span:hover {
 ul.solarsystem li.mercury-orbit {
     width: 100px;
     height: 100px;
-    -webkit-border-radius: 52px;
-    -moz-border-radius: 52px;
-    border-radius: 52px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 270px;
     left: 430px;
     z-index: 99;
@@ -111,9 +111,9 @@ ul.solarsystem li.mercury-orbit span {
 ul.solarsystem li.venus-orbit {
     width: 160px;
     height: 160px;
-    -webkit-border-radius: 82px;
-    -moz-border-radius: 82px;
-    border-radius: 82px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 240px;
     left: 400px;
     z-index: 98;
@@ -126,9 +126,9 @@ ul.solarsystem li.venus-orbit span {
 ul.solarsystem li.earth-orbit {
     width: 220px;
     height: 220px;
-    -webkit-border-radius: 112px;
-    -moz-border-radius: 112px;
-    border-radius: 112px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 210px;
     left: 370px;
     z-index: 97;
@@ -141,9 +141,9 @@ ul.solarsystem li.earth-orbit span {
 ul.solarsystem li.earth-orbit span.moon {
     width: 4px;
     height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     background: #ccc;
     top: 12px;
     left: 12px;
@@ -151,9 +151,9 @@ ul.solarsystem li.earth-orbit span.moon {
 ul.solarsystem li.mars-orbit {
     width: 280px;
     height: 280px;
-    -webkit-border-radius: 142px;
-    -moz-border-radius: 142px;
-    border-radius: 142px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 180px;
     left: 340px;
     z-index: 96;
@@ -167,9 +167,9 @@ ul.solarsystem li.mars-orbit span {
 ul.solarsystem li.jupiter-orbit {
     width: 340px;
     height: 340px;
-    -webkit-border-radius: 172px;
-    -moz-border-radius: 172px;
-    border-radius: 172px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 150px;
     left: 310px;
     z-index: 95;
@@ -182,9 +182,9 @@ ul.solarsystem li.jupiter-orbit span {
 ul.solarsystem li.saturn-orbit {
     width: 400px;
     height: 400px;
-    -webkit-border-radius: 202px;
-    -moz-border-radius: 202px;
-    border-radius: 202px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 120px;
     left: 280px;
     z-index: 94;
@@ -197,9 +197,9 @@ ul.solarsystem li.saturn-orbit span {
 ul.solarsystem li.saturn-orbit span.ring {
     width: 12px;
     height: 12px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     background: none;
     border: 2px solid #5a4e34;
     // left: -3px;
@@ -212,9 +212,9 @@ ul.solarsystem li.saturn-orbit span.ring {
 ul.solarsystem li.uranus-orbit {
     width: 460px;
     height: 460px;
-    -webkit-border-radius: 232px;
-    -moz-border-radius: 232px;
-    border-radius: 232px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 90px;
     left: 250px;
     z-index: 93;
@@ -227,9 +227,9 @@ ul.solarsystem li.uranus-orbit span {
 ul.solarsystem li.neptune-orbit {
     width: 520px;
     height: 520px;
-    -webkit-border-radius: 262px;
-    -moz-border-radius: 262px;
-    border-radius: 262px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     top: 60px;
     left: 220px;
     z-index: 92;
