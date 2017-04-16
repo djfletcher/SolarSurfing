@@ -27,6 +27,12 @@ ul.solarsystem li {
   border: 2px solid $gray;
 }
 
+ul.solarsystem li:hover {
+  box-shadow:
+    inset 0 0 30px 8px blueviolet,
+    0 0 30px 8px blueviolet;
+  cursor: pointer;
+}
 
 /* Solar System Styles */
 
@@ -40,8 +46,14 @@ ul.solarsystem li span {
     border-radius: 5px;
 }
 
+ul.solarsystem li span:hover {
+  cursor: pointer;
+}
+
 ul.solarsystem li span.highlighted {
-  box-shadow: 0 0 35px 24px orangered;
+  box-shadow: 0 0 35px 24px blueviolet;
+  -webkit-box-shadow: 0 0 35px 24px blueviolet;
+  -moz-box-shadow: 0 0 35px 24px blueviolet;
 }
 
 ul.solarsystem li.sun-orbit {
@@ -77,6 +89,9 @@ ul.solarsystem li.sun-orbit span {
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
+}
+ul.solarsystem li.sun-orbit span:hover {
+  cursor: default;
 }
 ul.solarsystem li.mercury-orbit {
     width: 100px;

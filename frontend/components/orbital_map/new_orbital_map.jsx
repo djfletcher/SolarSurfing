@@ -224,45 +224,74 @@ class OrbitalMap extends React.Component {
           { slider() }
           { searchButton() }
         </section>
-        <section className="orbital-map-container">
 
+        <section className="orbital-map-container">
           <ul className="solarsystem">
+
             <li className="sun-orbit orbiting">
               <span id="sun"></span>
             </li>
-            <li className="mercury-orbit orbiting" style={ orbitalPeriod("mercury") }>
+
+            <li
+              className="mercury-orbit orbiting"
+              style={ orbitalPeriod("mercury") }
+              onClick={ () => this.selectPlanet("mercury") }>
               <span
                 id="mercury"
                 onClick={ () => this.selectPlanet("mercury") }>
               </span>
             </li>
-            <li className="venus-orbit orbiting" style={ orbitalPeriod("venus") }>
+
+            <li
+              className="venus-orbit orbiting"
+              style={ orbitalPeriod("venus") }
+              onClick={ () => this.selectPlanet("venus") }>
               <span
                 id="venus"
                 onClick={ () => this.selectPlanet("venus") }>
               </span>
             </li>
-            <li className="earth-orbit orbiting" style={ orbitalPeriod("earth") }>
+
+            <li
+              className="earth-orbit orbiting"
+              style={ orbitalPeriod("earth") }
+              onClick={ () => this.selectPlanet("earth") }>
               <span
                 id="earth"
                 className="orbiting"
                 onClick={ () => this.selectPlanet("earth") }>
-                <span className="moon" style={ orbitalPeriod("moon") }></span>
+                <span
+                  className="moon"
+                  style={ orbitalPeriod("moon") }
+                  onClick={ () => this.selectPlanet("earth") }>
+                </span>
               </span>
             </li>
-            <li className="mars-orbit orbiting" style={ orbitalPeriod("mars") }>
+
+            <li
+              className="mars-orbit orbiting"
+              style={ orbitalPeriod("mars") }
+              onClick={ () => this.selectPlanet("mars") }>
               <span
                 id="mars"
                 onClick={ () => this.selectPlanet("mars") }>
               </span>
             </li>
-            <li className="jupiter-orbit orbiting" style={ orbitalPeriod("jupiter") }>
+
+            <li
+              className="jupiter-orbit orbiting"
+              style={ orbitalPeriod("jupiter") }
+              onClick={ () => this.selectPlanet("jupiter") }>
               <span
                 id="jupiter"
                 onClick={ () => this.selectPlanet("jupiter") }>
               </span>
             </li>
-            <li className="saturn-orbit orbiting" style={ orbitalPeriod("saturn") }>
+
+            <li
+              className="saturn-orbit orbiting"
+              style={ orbitalPeriod("saturn") }
+              onClick={ () => this.selectPlanet("saturn") }>
               <span
                 id="saturn"
                 onClick={ () => this.selectPlanet("saturn") }>
@@ -273,20 +302,28 @@ class OrbitalMap extends React.Component {
                 onClick={ () => this.selectPlanet("saturn") }>
               </span>
             </li>
-            <li className="uranus-orbit orbiting" style={ orbitalPeriod("uranus") }>
+
+            <li
+              className="uranus-orbit orbiting"
+              style={ orbitalPeriod("uranus") }
+              onClick={ () => this.selectPlanet("uranus") }>
               <span
                 id="uranus"
                 onClick={ () => this.selectPlanet("uranus") }>
               </span>
             </li>
-            <li className="neptune-orbit orbiting" style={ orbitalPeriod("neptune") }>
+
+            <li
+              className="neptune-orbit orbiting"
+              style={ orbitalPeriod("neptune") }
+              onClick={ () => this.selectPlanet("neptune") }>
               <span
                 id="neptune"
                 onClick={ () => this.selectPlanet("neptune") }>
               </span>
             </li>
-          </ul>
 
+          </ul>
         </section>
       </div>
     );
