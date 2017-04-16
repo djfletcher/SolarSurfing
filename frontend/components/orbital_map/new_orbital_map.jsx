@@ -231,31 +231,59 @@ class OrbitalMap extends React.Component {
               <span id="sun"></span>
             </li>
             <li className="mercury-orbit orbiting" style={ orbitalPeriod("mercury") }>
-              <span id="mercury"></span>
+              <span
+                id="mercury"
+                onClick={ () => this.selectPlanet("mercury") }>
+              </span>
             </li>
             <li className="venus-orbit orbiting" style={ orbitalPeriod("venus") }>
-              <span id="venus"></span>
+              <span
+                id="venus"
+                onClick={ () => this.selectPlanet("venus") }>
+              </span>
             </li>
             <li className="earth-orbit orbiting" style={ orbitalPeriod("earth") }>
-              <span id="earth" className="orbiting">
+              <span
+                id="earth"
+                className="orbiting"
+                onClick={ () => this.selectPlanet("earth") }>
                 <span className="moon" style={ orbitalPeriod("moon") }></span>
               </span>
             </li>
             <li className="mars-orbit orbiting" style={ orbitalPeriod("mars") }>
-              <span id="mars"></span>
+              <span
+                id="mars"
+                onClick={ () => this.selectPlanet("mars") }>
+              </span>
             </li>
             <li className="jupiter-orbit orbiting" style={ orbitalPeriod("jupiter") }>
-              <span id="jupiter"></span>
+              <span
+                id="jupiter"
+                onClick={ () => this.selectPlanet("jupiter") }>
+              </span>
             </li>
             <li className="saturn-orbit orbiting" style={ orbitalPeriod("saturn") }>
-              <span id="saturn"></span>
-              <span id="saturn-ring" className="ring"></span>
+              <span
+                id="saturn"
+                onClick={ () => this.selectPlanet("saturn") }>
+              </span>
+              <span
+                id="saturn-ring"
+                className="ring"
+                onClick={ () => this.selectPlanet("saturn") }>
+              </span>
             </li>
             <li className="uranus-orbit orbiting" style={ orbitalPeriod("uranus") }>
-              <span id="uranus"></span>
+              <span
+                id="uranus"
+                onClick={ () => this.selectPlanet("uranus") }>
+              </span>
             </li>
             <li className="neptune-orbit orbiting" style={ orbitalPeriod("neptune") }>
-              <span id="neptune"></span>
+              <span
+                id="neptune"
+                onClick={ () => this.selectPlanet("neptune") }>
+              </span>
             </li>
           </ul>
 
