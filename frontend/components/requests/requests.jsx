@@ -44,7 +44,7 @@ class Requests extends React.Component {
               </ul>
             </section>
             <section className="requests-received-index-container">
-              <h1>My Guests</h1>
+              <h1 className="requests-received-header">My Guests</h1>
               <ul className="requests-received-index">
                 { requestsReceivedIndex }
               </ul>

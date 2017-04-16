@@ -3,7 +3,7 @@
 .requests-container {
   display: flex;
   padding: 10px 25px;
-  background-color: $light-blue;
+  background-color: $midnight-blue;
 }
 
 .requests-profile {
@@ -20,7 +20,11 @@
   border-radius: 5px;
   margin: 25px;
 
-  background-color: white;
+  background-color: $gray;
+
+  h1 {
+    color: black;
+  }
 }
 
 .requests-profile img {
@@ -34,20 +38,26 @@
   width: 60%;
 }
 
-.requests-made-header {
+.requests-made-header, .requests-received-header {
   border-bottom: 2px solid $gray;
   padding: 10px 20px;
   text-transform: uppercase;
   font-weight: bold;
+  color: $lime-white;
+}
+
+.requests-made-index, .requests-received-index {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .requests-index-item {
   display: flex;
 
-  background-color: white;
+  background-color: $gray;
   padding: 20px;
-  margin: 20px auto;
-  width: 80%;
+  margin: 20px 0 auto;
   border-radius: 5px;
   border-bottom: 2px solid $gray;
   min-width: 550px;
@@ -59,10 +69,18 @@
   font-weight: bold;
 }
 
-.requests-index-item-planet-thumbnail > img {
-  max-width: 250px;
-  max-height: 200px;
+.requests-index-item-planet-thumbnail {
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
   border-radius: 4px;
+}
+
+.requests-index-item-planet-thumbnail > img {
+  min-height: 150px;
+  max-height: 200px;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 .requests-index-item-content {
@@ -73,5 +91,6 @@
 
   p {
     margin-bottom: 18px;
+    color: black;
   }
 }
