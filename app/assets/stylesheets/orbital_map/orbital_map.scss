@@ -25,6 +25,9 @@ ul.solarsystem li {
   display: block;
   position: absolute;
   border: 2px solid $gray;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 ul.solarsystem li:hover {
@@ -76,7 +79,7 @@ ul.solarsystem li.sun-orbit {
         rgb(255,219,112) 100%
     );
     top: 302px;
-    left: 462px;
+    // left: 462px;
     border: none;
     -webkit-box-shadow: 0 0 50px #c90;
     -moz-box-shadow: 0 0 50px #c90;
@@ -100,7 +103,7 @@ ul.solarsystem li.mercury-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 270px;
-    left: 430px;
+    // left: 430px;
     z-index: 99;
 }
 ul.solarsystem li.mercury-orbit span {
@@ -115,7 +118,7 @@ ul.solarsystem li.venus-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 240px;
-    left: 400px;
+    // left: 400px;
     z-index: 98;
 }
 ul.solarsystem li.venus-orbit span {
@@ -130,7 +133,7 @@ ul.solarsystem li.earth-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 210px;
-    left: 370px;
+    // left: 370px;
     z-index: 97;
 }
 ul.solarsystem li.earth-orbit span {
@@ -155,7 +158,7 @@ ul.solarsystem li.mars-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 180px;
-    left: 340px;
+    // left: 340px;
     z-index: 96;
 }
 ul.solarsystem li.mars-orbit span {
@@ -171,7 +174,7 @@ ul.solarsystem li.jupiter-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 150px;
-    left: 310px;
+    // left: 310px;
     z-index: 95;
 }
 ul.solarsystem li.jupiter-orbit span {
@@ -186,7 +189,7 @@ ul.solarsystem li.saturn-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 120px;
-    left: 280px;
+    // left: 280px;
     z-index: 94;
 }
 ul.solarsystem li.saturn-orbit span {
@@ -216,7 +219,7 @@ ul.solarsystem li.uranus-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 90px;
-    left: 250px;
+    // left: 250px;
     z-index: 93;
 }
 ul.solarsystem li.uranus-orbit span {
@@ -231,7 +234,7 @@ ul.solarsystem li.neptune-orbit {
     -moz-border-radius: 50%;
     border-radius: 50%;
     top: 60px;
-    left: 220px;
+    // left: 220px;
     z-index: 92;
 }
 ul.solarsystem li.neptune-orbit span {
