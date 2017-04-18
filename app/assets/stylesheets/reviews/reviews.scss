@@ -18,7 +18,6 @@
 }
 
 .review-form-container > h2 {
-  width: 75%;
   text-align: center;
   padding-top: 30px;
   margin: 0;
@@ -27,20 +26,27 @@
 
 .review-form {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-
+  align-items: center;
   padding: 15px 30px 0 30px;
 }
 
 .review-form-body {
   min-height: 80px;
-  max-width: 600px;
+  max-width: 46%;
   padding: 15px;
 }
 
 .review-form-radio-group {
   display: flex;
   min-width: 100px;
+  margin: 10px 0 16px;
+}
+
+.review-form-radio-group > input[type=radio] {
+  position: relative;
+  left: 13px;
 }
 
 .review-form-radio-group-and-submit {
@@ -48,7 +54,6 @@
   flex-direction: column;
   justify-content: space-around;
   width: 25%;
-  padding-left: inherit;
 }
 
 .reviews-index {
