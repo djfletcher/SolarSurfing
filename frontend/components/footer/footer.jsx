@@ -15,7 +15,7 @@ const Footer = () => {
         <Link to={ `/safety` }>SAFETY</Link>
       </div>
       <div className="footer-links">
-        <a href="https://github.com/djfletcher/SolarSurfing" target="_blank" >
+        <a href="https://github.com/djfletcher/SolarSurfing#solarsurfing" target="_blank" >
           <img src="https://res.cloudinary.com/dmgrq5xrb/image/upload/v1490396415/git_bsw1do.png" alt="github"/>
         </a>
         <a href="https://www.linkedin.com/in/daniel-fletcher-525727119/" target="_blank" >
