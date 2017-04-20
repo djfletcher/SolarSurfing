@@ -28,7 +28,7 @@ const Safety = ({ location }) => (
         <h1>Safety</h1>
       </div>
       <div>
-        <h2>Review Profiles and Reviews Carefully</h2>
+        <h2>Read Profiles and Reviews Carefully</h2>
         <p>Take the time to carefully review member profiles. Read what members say about themselves and what other members have said about them. Give yourself the time to thoroughly read through all the information available and don’t compromise. If you’re uncomfortable, keep looking. But please don't judge hosts by their profile pictures. You'll be surprised how kind of a host a pile of goop can be.</p>
       </div>
       <div>
