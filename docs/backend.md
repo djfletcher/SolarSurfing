@@ -4,9 +4,7 @@ SolarSurfing is built using Ruby on Rails and is hosted on Heroku. The backend p
 
 ## Heroku
 
-NewRelic application performance management (APM) is used to automatically ping the Heroku dyno, keeping it awake for faster client response.
-
-NewRelic also keeps tracks of any server-side error logs.
+Heroku Scheduler is used to automatically ping the Heroku dyno every 10 minutes, keeping it awake for faster client response.
 
 ## Database
 
