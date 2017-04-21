@@ -12,7 +12,7 @@
 + Booking requests based on location, host, and date of travel
 + Host profiles and reviews
 
-![Interactive orbital map of our solar system][orbital-map-photo]
+![Interactive orbital map of our solar system][orbital-map-gif]
 
 ## Project Design
 
@@ -46,6 +46,6 @@ SolarSurfing is a single-page application built on Rails and React.js.
 [backend]: ./docs/backend.md
 [frontend]: ./docs/frontend.md
 [splash-photo]: ./docs/screenshots/splash.png
-[orbital-map-photo]: ./docs/screenshots/orbital_map.png
+[orbital-map-gif]: ./docs/screenshots/orbital_map1.gif
 [hosts-photo]: ./docs/screenshots/hosts.png
 [host-detail-photo]: ./docs/screenshots/host_detail.png
