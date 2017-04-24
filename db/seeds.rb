@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 # USERS
 # =====
 
@@ -14,7 +5,14 @@ NAMES = ['Globxor', 'Grup-Grup', 'Floobzoid', 'Nomryls', 'Snert the Snoot', 'Esi
   'Bawbaw-8', 'Uisqp', 'Cecil-9000', 'Klawg', 'Eoj', 'Haras T\'seirg', 'Rrrrrrrrr', 'Shpazzaqe',
   'Blorg the Unconquerable', 'Kork', 'King Kang', 'Blim Blam the Klorblok', 'ET-D2',
   'Purmeot', 'Nox', 'Cloumz', 'Cecil-8080', 'Monarg', 'Blogarp', 'Dynash', 'Rakshoosa',
-  'Wyrg', 'Fuiglox', 'Florqgq', 'Quixlox', 'Albaxore', 'Hortituminax', 'Xalfa']
+  'Wyrg', 'Fuiglox', 'Florqgq', 'Quixlox', 'Albaxore', 'Hortituminax', 'Xalfa',
+  'Cal Ha-Rmbaba', 'Jobatron “Jo” Steiner', 'Ouiamaana', 'Crinkle the Pentahorn',
+  'Qristy', 'Phlegomon', 'Gnossien', 'Snorrel Hubbensnatcher', 'Casimir Zacc’uana',
+  'Uquurian', 'Edric the Effervescent', 'Omnipresent We', 'Glorpikins', 'High-Pitched Squunk',
+  'Torvalds the Tugboat', 'Dr. X.', 'Tammaflimflom', 'Sentient Ficus', 'Shimmer Seafarer',
+  'Wumpus of Proon', 'Ylinnua, E.D.S.-B.B.D.', 'HRH President Toaster', 'Ipiniqizzi',
+  'THE OMNISCIENT ZOR-EYE', 'Macronimus Macronimus', 'Septimus, Regent of Doylches',
+  'Truman the Human', 'Sylvia Suncrusher', 'Brer Rabinowitz', 'The Federator']
 
 BIOS = [
   "Hi there, friend. I like to asteroid hop as far as my bezooks dollars will take me, and then hitchhike back to the Oort Cloud and rest at home when I need a break. If you're ever in the neighborhood give me a holler!",
@@ -40,18 +38,23 @@ PICTURES = [
   "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489878558/Hosts/host9_qk0jr4.png"
 ]
 
+64.times do |i|
+  User.create!(
+    username: NAMES[i % 64],
+    password: "alien1",
+    bio: BIOS[i % 6],
+    image_url: PICTURES.sample,
+    planet_id: (i % 8) + 1
+  )
+end
 
-# User.create(
-#   username: 'dan',
-#   password: 'danny',
-#   image_url: '[image url goes here]',
-#   bio: "Hi, I'm Dan. I suppose you could call me an earthling, though I'd rather if you didn't.",
-#   planet_id: 3
-# )
-
-
-# dan = User.find(1)
-# demo = User.find_by_username("earthling")
+User.create!(
+  username: 'Earthling',
+  password: 'earthling1',
+  image_url: "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489881450/Hosts/host13.png",
+  bio: "I'm an earthling. It's a great place to grow up, but I'm ready to check out some other planets.",
+  planet_id: 3
+)
 
 
 # PLANETS
@@ -104,85 +107,10 @@ Planet.create(
   description: 'The ultimate road trip',
   image_url: 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489685012/Planets/neptune1_r3htld.jpg'
 )
-#
-# mercury = Planet.find(1)
-# venus = Planet.find(2)
-# earth = Planet.find(3)
-# mars = Planet.find(4)
-# jupiter = Planet.find(5)
-# saturn = Planet.find(6)
-# uranus = Planet.find(7)
-# neptune = Planet.find(8)
-#
-#
-# mercury.update(
-#   description: 'For sun lovers'
-# )
-#
-# venus.update(
-#   description: 'The morning star'
-# )
-#
-# earth.update(
-#   description: 'So much more than a pale blue dot'
-# )
-#
-# mars.update(
-#   description: 'Your weekend getaway'
-# )
-#
-# jupiter.update(
-#   description: 'Big skies, ancient storms, and a Great Red Spot'
-# )
-#
-# saturn.update(
-#   description: 'The photographers playground'
-# )
-#
-# uranus.update(
-#   description: 'Guaranteed to lift your spirits'
-# )
-#
-# neptune.update(
-#   description: 'The ultimate road trip'
-# )
-
-# User.all.each do |host|
-#   if host.id % 3 == 0
-#     host.image_url = 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489774988/Hosts/host3_oufvli.png'
-#   elsif host.id % 2 == 0
-#     host.image_url = 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489775443/Hosts/host4_ghsfsk.png'
-#   else
-#     host.image_url = 'https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489774988/Hosts/host2_iatwgb.png'
-#   end
-#   host.save!
-# end
 
 
-64.times do |i|
-  if i < 33
-    name = NAMES[i % 34]
-  else
-    name = NAMES[i % 34] + '-2.0'
-  end
-
-  User.create!(
-    username: name,
-    password: "alien1",
-    bio: BIOS[i % 6],
-    image_url: PICTURES.sample,
-    planet_id: (i % 8) + 1
-  )
-end
-
-User.create!(
-  username: 'Earthling',
-  password: 'earthling1',
-  image_url: "https://res.cloudinary.com/dmgrq5xrb/image/upload/v1489881450/Hosts/host13.png",
-  bio: "I'm an earthling. It's a great place to grow up, but I'm ready to check out some other planets.",
-  planet_id: 3
-)
-
+# REVIEWS
+# =======
 
 REVIEWS = [
   "Good spot. A bit remote, but you can't beat the solitude.",
@@ -207,8 +135,9 @@ REVIEWS = [
 end
 
 
-# # REQUESTS
-# # ========
+# REQUESTS
+# ========
+
 num_users = User.all.count
 
 num_users.times do |i|
@@ -222,7 +151,7 @@ num_users.times do |i|
   arrive_date = "2019-#{arrive_month}-#{arrive_day}"
   depart_date = "2020-#{depart_month}-#{depart_day}"
 
-  Request.create!(
+  Request.create(
     host_id: host_id,
     guest_id: possible_guests.sample,
     arrive_date: Date.parse(arrive_date),
