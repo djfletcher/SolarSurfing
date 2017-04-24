@@ -45,7 +45,10 @@ class ReviewForm extends React.Component {
     review.host_id = this.props.params.hostId;
 
     this.props.createReview(review)
-      .then(() => this.setState({ body: "", rating: null, errors: [] }))
+      .then(() => {
+        $('input[type="radio"][name="rating"]').removeClass('starred');
+        this.setState({ body: "", rating: null, errors: [] });
+      })
       .fail(res => this.setState({ errors: res.responseJSON }));
   }
 
