@@ -19,6 +19,10 @@ form input, form textarea, form select {
   align-items: center;
 }
 
+.join.modal-body {
+  text-align: center;
+}
+
 .modal-footer ul {
   display: flex;
   flex-direction: column;
