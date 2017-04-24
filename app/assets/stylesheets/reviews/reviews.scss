@@ -56,6 +56,20 @@
   vertical-align: bottom;
 }
 
+.review-form-radio-group > input[type="radio"]:checked {
+  background-position: 30px 30px;
+}
+
+.review-form-radio-group > input[type="radio"]:hover {
+  cursor: pointer;
+  background-position: 30px 60px;
+}
+
+.review-form-radio-group > input[type="radio"]:focus {
+  outline:none;
+  background-position: 30px 30px;
+}
+
 .review-form-radio-group-and-submit {
   display: flex;
   flex-direction: column;
