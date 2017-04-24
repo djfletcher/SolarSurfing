@@ -35,6 +35,10 @@ class Request < ApplicationRecord
     self.host.planet.image_url
   end
 
+  def planet_id
+    self.host.planet_id
+  end
+
   def host_name
     self.host.username
   end

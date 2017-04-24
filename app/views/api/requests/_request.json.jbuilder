@@ -7,6 +7,7 @@ json.extract! request,
   :num_travelers,
   :planet_name,
   :planet_image_url,
+  :planet_id,
   :host_name,
   :host_image_url,
   :guest_name
