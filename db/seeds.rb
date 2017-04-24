@@ -71,7 +71,6 @@ BIOS = [
   "Greetings [BEEP] I am honored to make your acquaintance [BEEP] My goal is to catalogue and classify every organism in this solar system [BEEP] I am hoping to meet you soon and to add the idiosyncrasies of your species' culture to my evergrowing database [BEEP] If you arrive in the night please make sure to not step on the moonflower beds [BEEP]",
   "If you are lucky you will one day stay with my people and experience the might of the Ubuk Vanguarleeds from GloopGlop-9. I think you will find that I am kind, and willing to share the boundless power of my personality with you. You will stay with me, if you are lucky.",
   "Mxxxxxxxxxxxxxxmph! ooooooooOOOP meem -eh- eh-eh -eh- mxxxxxxxxxxxxxxmpH!",
-  "Heeeeeelllooooooo. IIII''mmmm pllleeeeeeaaasssseeed tooo meeeett youuuuu. Moooosssstt ottthhherrr tttraaaaveelleeeers liiiikee toooo buuuzzzzz bbyyyy aaattttt thhheee sppeeeedd oooff liiiggghhtt buuut noootttt meeeee. IIII liiiikkke tooooo ssstooooppp annddd smmmeeeeelll ttthhheeeee spppaaacceeee dduuuussst. Seeeee yooouuuu ssoooonnnn III hhhoooopppe.",
   "I think you will find my planet very hospitable. We have eighteen moon rises per day and you can see the planet Fleebleflorp in the distance from my back patio. In my spare time I enjoy moonwalking my mumbupoo, eating at the local joints, and taking long walks on the glass sand beach."
 ]
 
@@ -94,7 +93,7 @@ PICTURES = [
   User.create!(
     username: NAMES[i % 64],
     password: "alien1",
-    bio: BIOS[i % 6],
+    bio: BIOS[i % 5],
     image_url: PICTURES.sample,
     planet_id: (i % 8) + 1
   )
