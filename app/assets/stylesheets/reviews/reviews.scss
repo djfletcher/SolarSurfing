@@ -40,13 +40,20 @@
 
 .review-form-radio-group {
   display: flex;
+  justify-content: space-around;
   min-width: 100px;
   margin: 10px 0 16px;
 }
 
 .review-form-radio-group > input[type=radio] {
   position: relative;
-  left: 13px;
+
+  -webkit-appearance: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-image: url(https://res.cloudinary.com/dmgrq5xrb/image/upload/v1493058326/review_stars_lxewht.png);
+  vertical-align: bottom;
 }
 
 .review-form-radio-group-and-submit {
