@@ -7,6 +7,7 @@ class ReviewForm extends React.Component {
     this.state = { body: "", rating: null, errors: [] };
     this.updateBody = this.updateBody.bind(this);
     this.updateRating = this.updateRating.bind(this);
+    this.fillOtherStars = this.fillOtherStars.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
@@ -23,7 +24,18 @@ class ReviewForm extends React.Component {
   }
 
   updateRating(e) {
+    this.fillOtherStars(e);
     this.setState({ rating: e.target.value });
+  }
+
+  fillOtherStars(e) {
+    $('input[type="radio"][name="rating"]')
+      .removeClass('starred')
+      .addClass(index => {
+      if (index <= parseInt(e.target.value) - 1) {
+        return 'starred';
+      }
+    });
   }
 
   handleSubmit(e) {

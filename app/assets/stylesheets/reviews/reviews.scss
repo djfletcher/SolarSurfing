@@ -56,7 +56,7 @@
   vertical-align: bottom;
 }
 
-.review-form-radio-group > input[type="radio"]:checked {
+.review-form-radio-group > input[type="radio"].starred {
   background-position: 30px 30px;
 }
 
