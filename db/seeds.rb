@@ -2,16 +2,16 @@
 # =====
 
 NAMES = ['Globxor', 'Grup-Grup', 'Floobzoid', 'Nomryls', 'Snert the Snoot', 'Esiotrot',
-  'Bawbaw-8', 'Uisqp', 'Cecil-9000', 'Klawg', 'Eoj', 'Haras T\'seirg', 'Rrrrrrrrr', 'Shpazzaqe',
-  'Blorg the Unconquerable', 'Kork', 'King Kang', 'Blim Blam the Klorblok', 'ET-D2',
+  'Bawbaw-8', 'Uisqp', 'Cecil-9000', 'Klawg', 'Eoj', 'Haras Tseirg', 'Rrrrrrrrr', 'Shpazzaqe',
+  'Blorg the Unconquered', 'Kork', 'King Kang', 'Blim Blam the Klorblok', 'ET-D2',
   'Purmeot', 'Nox', 'Cloumz', 'Cecil-8080', 'Monarg', 'Blogarp', 'Dynash', 'Rakshoosa',
   'Wyrg', 'Fuiglox', 'Florqgq', 'Quixlox', 'Albaxore', 'Hortituminax', 'Xalfa',
   'Cal Ha-Rmbaba', 'Jobatron “Jo” Steiner', 'Ouiamaana', 'Crinkle the Pentahorn',
-  'Qristy', 'Phlegomon', 'Gnossien', 'Snorrel Hubbensnatcher', 'Casimir Zacc’uana',
+  'Qristy', 'Phlegomon', 'Gnossien', 'Snorrel Hubben-snatcher', 'Casimir Zacc’uana',
   'Uquurian', 'Edric the Effervescent', 'Omnipresent We', 'Glorpikins', 'High-Pitched Squunk',
-  'Torvalds the Tugboat', 'Dr. X.', 'Tammaflimflom', 'Sentient Ficus', 'Shimmer Seafarer',
+  'Torvalds the Tugboat', 'Dr. X.', 'Tammaflamma Flimflom', 'Sentient Ficus', 'Shimmer Seafarer',
   'Wumpus of Proon', 'Ylinnua, E.D.S.-B.B.D.', 'HRH President Toaster', 'Ipiniqizzi',
-  'THE OMNISCIENT ZOR-EYE', 'Macronimus Macronimus', 'Septimus, Regent of Doylches',
+  'THE OMNISCIENT ZOR-EYE', 'Macronimus Macrominus', 'Septimus, Regent of Doylches',
   'Truman the Human', 'Sylvia Suncrusher', 'Brer Rabinowitz', 'The Federator']
 
 BIOS = [
