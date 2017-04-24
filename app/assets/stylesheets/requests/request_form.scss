@@ -17,6 +17,11 @@
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
+
+  button[type="submit"] {
+    width: 50%;
+    align-self: center;
+  }
 }
 
 .request-form-container .form-errors {
@@ -29,12 +34,6 @@
 .request-dates {
   display: flex;
   flex-direction: column;
-}
-
-.request-dates label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .request-form input, .request-form select {
@@ -53,7 +52,10 @@
   text-align: center;
 }
 
-.request-form > label {
+.request-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 6px;
 }
 
