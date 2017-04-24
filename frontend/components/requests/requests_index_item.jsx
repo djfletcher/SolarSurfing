@@ -54,7 +54,8 @@ class RequestsIndexItem extends React.Component {
       planetId
     } = this.props.request;
 
-    const bookingDates = `${this.parseDate(arriveDate)} to ${this.parseDate(departDate)}`;
+    const arrive = this.parseDate(arriveDate);
+    const depart = this.parseDate(departDate);
 
     let name, title;
     if (this.props.type === "host") {
@@ -78,7 +79,8 @@ class RequestsIndexItem extends React.Component {
             <p>{ title }: { name }</p>
           </div>
           <div className="requests-index-item-booking-dates">
-            <p>{ bookingDates }</p>
+            <p>Arrive: { arrive }</p>
+            <p>Depart: { depart }</p>
           </div>
         </div>
       </li>
