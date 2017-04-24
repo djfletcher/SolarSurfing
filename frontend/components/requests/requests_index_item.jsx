@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class RequestsIndexItem extends React.Component {
 
@@ -41,22 +42,40 @@ class RequestsIndexItem extends React.Component {
   }
 
   render() {
-    const request = this.props.request;
-    const bookingDates = `${this.parseDate(request.arriveDate)} to ${this.parseDate(request.departDate)}`;
-    const title = this.props.type === "host" ?
-      `Guest: ${request.guestName}` : `Host: ${request.hostName}`;
+    const {
+      arriveDate,
+      departDate,
+      guestName,
+      guestId,
+      hostName,
+      hostId,
+      planetName,
+      planetImageUrl,
+      planetId
+    } = this.props.request;
+
+    const bookingDates = `${this.parseDate(arriveDate)} to ${this.parseDate(departDate)}`;
+
+    let name, title;
+    if (this.props.type === "host") {
+      name = <Link to={ `/planets/${planetId}/hosts/${guestId}` }>{ guestName }</Link>;
+      title = 'Guest';
+    } else {
+      name = <Link to={ `/planets/${planetId}/hosts/${hostId}` }>{ hostName }</Link>;
+      title = 'Host';
+    }
 
     return(
       <li className="requests-index-item">
         <div className="requests-index-item-planet-thumbnail">
-          <img src={ request.planetImageUrl } alt={ request.planetName }/>
+          <img src={ planetImageUrl } alt={ planetName }/>
         </div>
         <div className="requests-index-item-content">
           <div className="requests-index-item-planet-name">
-            <p>{ request.planetName }</p>
+            <p>{ planetName }</p>
           </div>
           <div className="requests-index-item-username">
-            <p>{ title }</p>
+            <p>{ title }: { name }</p>
           </div>
           <div className="requests-index-item-booking-dates">
             <p>{ bookingDates }</p>
