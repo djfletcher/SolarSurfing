@@ -36,9 +36,10 @@ SolarSurfing is a single-page application built on Rails and React.js.
 + Display realtime information on planets, such as current distance from Earth, and atmospheric conditions using NASA's Horizons API.
 + Allow users to submit new planets to the database, pending approval by minimum number of other users.
 + Add dynamic list of "popular hosts" to the dashboard.
++ Add testing suites using RSpec for the database models and Enzyme or Jest for the React components.
 
 
-[solarsurfing]: https://solarsurfing.herokuapp.com
+[solarsurfing]: http://solarsurfing.space
 [proposal]: ./docs/README.md
 [schema]: ./docs/schema.md
 [components]: ./docs/component-hierarchy.md
