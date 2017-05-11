@@ -55,12 +55,12 @@
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
-    "enzyme": "^2.5.1",
+    "enzyme": "^2.8.2",
     "jest": "^15.1.1",
     "jest-cli": "^15.1.1",
     "jquery": "^2.2.3",
     "node-loader": "^0.5.0",
-    "react-addons-test-utils": "~0.14.0",
+    "react-addons-test-utils": "^15.4.2",
     "webpack": "^1.12.2"
   },
   "jest": {
