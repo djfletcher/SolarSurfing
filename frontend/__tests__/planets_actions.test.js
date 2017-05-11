@@ -1,6 +1,5 @@
 /* globals jest */
 
-import { hashHistory } from 'react-router';
 import * as APIUtil from '../util/planets_api_util';
 
 import {
