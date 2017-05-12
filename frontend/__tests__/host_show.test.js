@@ -1,18 +1,13 @@
 /* globals jest */
 
-// jest.mock('../components/reviews/reviews', () => <div></div>);
 jest.mock('../components/reviews/reviews', () => (
   () => ({ render: () => ( <div></div> ) })
 ));
-// jest.mock('../components/requests/request_form_container', () => (
-//   <div id='request-form-container'></div>
-// ));
-jest.mock('../components/requests/request_form_container', () => {
-  // need to name function so we can query for it later
-  return function RequestFormContainer() {
-    return { render: () => ( <div id='request-form-container'></div> ) }
-  }
-});
+jest.mock('../components/requests/request_form_container', () => (
+  () => ({
+    render: () => ( <div id='request-form-container'></div> )
+  })
+));
 
 import React from 'react';
 import { mount } from 'enzyme';
